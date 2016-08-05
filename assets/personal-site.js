@@ -3808,7 +3808,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+319177ad"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+fc59fd99"});
 }
 
 /* jshint ignore:end */
