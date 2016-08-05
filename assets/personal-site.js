@@ -2652,7 +2652,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
                 "column": 12
               },
               "end": {
-                "line": 11,
+                "line": 10,
                 "column": 12
               }
             },
@@ -2682,7 +2682,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
             var el2 = dom.createComment("");
             dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n\n");
+            var el1 = dom.createTextNode("\n");
             dom.appendChild(el0, el1);
             return el0;
           },
@@ -2707,7 +2707,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
               "column": 8
             },
             "end": {
-              "line": 13,
+              "line": 11,
               "column": 8
             }
           },
@@ -2721,17 +2721,16 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
           var el0 = dom.createDocumentFragment();
           var el1 = dom.createComment("");
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
-          dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
           var morphs = new Array(1);
           morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
           dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [["block", "link-to", ["projects.glob", ["get", "value.id", ["loc", [null, [4, 39], [4, 47]]], 0, 0, 0, 0]], ["class", ["subexpr", "join", [" ", ["subexpr", "flatten", [["subexpr", "array", ["grid-item", ["get", "value.customClasses", ["loc", [null, [4, 92], [4, 111]]], 0, 0, 0, 0]], [], ["loc", [null, [4, 73], [4, 112]]], 0, 0]], [], ["loc", [null, [4, 64], [4, 113]]], 0, 0]], [], ["loc", [null, [4, 54], [4, 114]]], 0, 0]], 0, null, ["loc", [null, [4, 12], [11, 24]]]]],
+        statements: [["block", "link-to", ["projects.glob", ["get", "value.id", ["loc", [null, [4, 39], [4, 47]]], 0, 0, 0, 0]], ["class", ["subexpr", "join", [" ", ["subexpr", "flatten", [["subexpr", "array", ["grid-item", ["get", "value.customClasses", ["loc", [null, [4, 92], [4, 111]]], 0, 0, 0, 0]], [], ["loc", [null, [4, 73], [4, 112]]], 0, 0]], [], ["loc", [null, [4, 64], [4, 113]]], 0, 0]], [], ["loc", [null, [4, 54], [4, 114]]], 0, 0]], 0, null, ["loc", [null, [4, 12], [10, 24]]]]],
         locals: ["value"],
         templates: [child0]
       };
@@ -2746,7 +2745,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
             "column": 0
           },
           "end": {
-            "line": 15,
+            "line": 13,
             "column": 10
           }
         },
@@ -2781,7 +2780,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0, 1]), 1, 1);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [3, 16], [3, 21]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [3, 8], [13, 17]]]]],
+      statements: [["block", "each", [["get", "model", ["loc", [null, [3, 16], [3, 21]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [3, 8], [11, 17]]]]],
       locals: [],
       templates: [child0]
     };
@@ -3808,7 +3807,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+95616033"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+c518dda9"});
 }
 
 /* jshint ignore:end */
