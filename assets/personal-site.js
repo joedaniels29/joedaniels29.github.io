@@ -248,11 +248,11 @@ define("personal-site/application/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 14,
+              "line": 15,
               "column": 8
             },
             "end": {
-              "line": 14,
+              "line": 15,
               "column": 34
             }
           },
@@ -283,11 +283,11 @@ define("personal-site/application/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 15,
+              "line": 16,
               "column": 8
             },
             "end": {
-              "line": 15,
+              "line": 16,
               "column": 39
             }
           },
@@ -318,11 +318,11 @@ define("personal-site/application/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 16,
+              "line": 17,
               "column": 8
             },
             "end": {
-              "line": 16,
+              "line": 17,
               "column": 35
             }
           },
@@ -356,7 +356,7 @@ define("personal-site/application/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 21,
+            "line": 22,
             "column": 0
           }
         },
@@ -377,51 +377,73 @@ define("personal-site/application/template", ["exports"], function (exports) {
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n    ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createElement("aside");
+        var el2 = dom.createElement("ul");
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("a");
-        dom.setAttribute(el3, "href", "http://github.com/joedaniels29");
-        var el4 = dom.createTextNode("Github");
+        var el3 = dom.createElement("li");
+        var el4 = dom.createElement("a");
+        dom.setAttribute(el4, "href", "http://github.com/joedaniels29");
+        var el5 = dom.createTextNode("Github");
+        dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("a");
-        dom.setAttribute(el3, "href", "mailto:joedaniels29@me.com");
-        var el4 = dom.createTextNode("Email Me");
+        var el3 = dom.createElement("li");
+        var el4 = dom.createElement("a");
+        dom.setAttribute(el4, "href", "mailto:joedaniels29@me.com");
+        var el5 = dom.createTextNode("Email Me");
+        dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("a");
-        dom.setAttribute(el3, "class", "npm-button");
-        dom.setAttribute(el3, "href", "https://www.npmjs.com/~joedaniels29");
-        var el4 = dom.createTextNode("NPM");
+        var el3 = dom.createElement("li");
+        var el4 = dom.createElement("a");
+        dom.setAttribute(el4, "class", "npm-button");
+        dom.setAttribute(el4, "href", "https://www.npmjs.com/~joedaniels29");
+        var el5 = dom.createTextNode("NPM");
+        dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("a");
-        dom.setAttribute(el3, "class", "facebook");
-        dom.setAttribute(el3, "href", "https://www.npmjs.com/~joedaniels29");
-        var el4 = dom.createTextNode("Facebook");
+        var el3 = dom.createElement("li");
+        var el4 = dom.createElement("a");
+        dom.setAttribute(el4, "class", "facebook");
+        dom.setAttribute(el4, "href", "https://www.npmjs.com/~joedaniels29");
+        var el5 = dom.createTextNode("Facebook");
+        dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("a");
-        dom.setAttribute(el3, "class", "twitter");
-        dom.setAttribute(el3, "href", "https://www.npmjs.com/~joedaniels29");
-        var el4 = dom.createTextNode("Twitter");
+        var el3 = dom.createElement("li");
+        var el4 = dom.createElement("a");
+        dom.setAttribute(el4, "class", "twitter");
+        dom.setAttribute(el4, "href", "https://www.npmjs.com/~joedaniels29");
+        var el5 = dom.createTextNode("Twitter");
+        dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("a");
-        dom.setAttribute(el3, "class", "linked-in");
-        dom.setAttribute(el3, "href", "https://www.npmjs.com/~joedaniels29");
-        var el4 = dom.createTextNode("LinkedIn");
+        var el3 = dom.createElement("li");
+        var el4 = dom.createElement("a");
+        dom.setAttribute(el4, "class", "linked-in");
+        dom.setAttribute(el4, "href", "https://www.npmjs.com/~joedaniels29");
+        var el5 = dom.createTextNode("LinkedIn");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n        ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("li");
+        var el4 = dom.createElement("a");
+        dom.setAttribute(el4, "class", "good-reads");
+        dom.setAttribute(el4, "href", "https://www.goodreads.com/joedaniels29");
+        var el5 = dom.createTextNode("GoodReads");
+        dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n    ");
@@ -473,7 +495,7 @@ define("personal-site/application/template", ["exports"], function (exports) {
         morphs[4] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         return morphs;
       },
-      statements: [["inline", "application/lett-r", [], ["models", ["subexpr", "@mut", [["get", "model", ["loc", [null, [12, 39], [12, 44]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [12, 11], [12, 46]]], 0, 0], ["block", "link-to", ["index"], [], 0, null, ["loc", [null, [14, 8], [14, 46]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [15, 8], [15, 51]]]], ["block", "link-to", ["projects"], [], 2, null, ["loc", [null, [16, 8], [16, 47]]]], ["content", "liquid-outlet", ["loc", [null, [20, 0], [20, 17]]], 0, 0, 0, 0]],
+      statements: [["inline", "application/lett-r", [], ["models", ["subexpr", "@mut", [["get", "model", ["loc", [null, [13, 39], [13, 44]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [13, 11], [13, 46]]], 0, 0], ["block", "link-to", ["index"], [], 0, null, ["loc", [null, [15, 8], [15, 46]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [16, 8], [16, 51]]]], ["block", "link-to", ["projects"], [], 2, null, ["loc", [null, [17, 8], [17, 47]]]], ["content", "liquid-outlet", ["loc", [null, [21, 0], [21, 17]]], 0, 0, 0, 0]],
       locals: [],
       templates: [child0, child1, child2]
     };
@@ -633,6 +655,59 @@ define("personal-site/components/lm-container", ["exports", "liquid-fire/compone
 });
 define('personal-site/components/scroll-to', ['exports', 'ember-scroll-to/components/scroll-to'], function (exports, _emberScrollToComponentsScrollTo) {
   exports['default'] = _emberScrollToComponentsScrollTo['default'];
+});
+define('personal-site/components/skill/skill-display/component', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Component.extend({});
+});
+define("personal-site/components/skill/skill-display/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "revision": "Ember@2.7.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 0
+          }
+        },
+        "moduleName": "personal-site/components/skill/skill-display/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        dom.insertBoundary(fragment, 0);
+        return morphs;
+      },
+      statements: [["content", "yield", ["loc", [null, [1, 0], [1, 9]]], 0, 0, 0, 0]],
+      locals: [],
+      templates: []
+    };
+  })());
+});
+define('personal-site/components/slick-carousel', ['exports', 'ember-cli-slick-carousel/components/slick-carousel'], function (exports, _emberCliSlickCarouselComponentsSlickCarousel) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberCliSlickCarouselComponentsSlickCarousel['default'];
+    }
+  });
 });
 define('personal-site/helpers/and', ['exports', 'ember', 'ember-truth-helpers/helpers/and'], function (exports, _ember, _emberTruthHelpersHelpersAnd) {
 
@@ -1452,7 +1527,7 @@ define("personal-site/index/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 192,
+            "line": 188,
             "column": 7
           }
         },
@@ -1636,7 +1711,7 @@ define("personal-site/index/template", ["exports"], function (exports) {
         var el7 = dom.createTextNode("\n                        ");
         dom.appendChild(el6, el7);
         var el7 = dom.createElement("li");
-        var el8 = dom.createTextNode("Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit\n                        ");
+        var el8 = dom.createTextNode("Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit");
         dom.appendChild(el7, el8);
         dom.appendChild(el6, el7);
         var el7 = dom.createTextNode("\n                    ");
@@ -1714,15 +1789,6 @@ define("personal-site/index/template", ["exports"], function (exports) {
         dom.appendChild(el6, el7);
         var el7 = dom.createElement("h6");
         var el8 = dom.createTextNode("Teaching tool gives resident radiologists feedback on their reports by showing a diff\n                            between\n                            their report and the final report.");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("aside");
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "http://youtu.be/XM1nrW_uLqM");
-        var el9 = dom.createTextNode("Video");
-        dom.appendChild(el8, el9);
         dom.appendChild(el7, el8);
         dom.appendChild(el6, el7);
         var el7 = dom.createTextNode("\n                    ");
@@ -1825,21 +1891,6 @@ define("personal-site/index/template", ["exports"], function (exports) {
         dom.appendChild(el6, el7);
         var el7 = dom.createElement("h3");
         var el8 = dom.createTextNode("Accomplishments");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("h6");
-        var el8 = dom.createTextNode("An iOS teleconsultation application connecting radiologists to clinicians.");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("aside");
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "http://youtu.be/XM1nrW_uLqM");
-        var el9 = dom.createTextNode("Video");
-        dom.appendChild(el8, el9);
         dom.appendChild(el7, el8);
         dom.appendChild(el6, el7);
         var el7 = dom.createTextNode("\n                    ");
@@ -2449,6 +2500,328 @@ define("personal-site/instance-initializers/ember-data", ["exports", "ember-data
     initialize: _emberDataPrivateInstanceInitializersInitializeStoreService["default"]
   };
 });
+define("personal-site/payload", ["exports"], function (exports) {
+  exports["default"] = {
+    "skills": [{
+      "name": "Swift",
+      "id": "swift",
+      "icon": true
+    }, {
+      "name": "Objective-C",
+      "id": "ObjectiveC"
+    }, {
+      "name": "C",
+      "id": "C"
+    }, {
+      "name": "C++",
+      "id": "C++"
+    }, {
+      "name": "ReactiveCocoa",
+      "id": "reactiveCocoa",
+      "logo": true
+    }, {
+      "name": "Core Data",
+      "id": "coreData",
+      "icon": true
+    }, {
+      "name": "Ruby",
+      "id": "ruby",
+      "icon": true
+    }, {
+      "name": "Rails",
+      "id": "rails",
+      "logo": true
+    }, {
+      "name": "JRuby",
+      "id": "jruby",
+      "logo": true
+    }, {
+      "name": "Gem Development",
+      "id": "GemDevelopment"
+    }, {
+      "name": "ActiveRecord",
+      "id": "ActiveRecord"
+    }, {
+      "name": "Javascript (ES6)",
+      "id": "javascript",
+      "icon": true
+    }, {
+      "name": "Ember.js",
+      "id": "Ember"
+
+    }, {
+      "name": "Ember Data",
+      "id": "emberData",
+      "logo": true
+    }, {
+      "name": "jQuery",
+      "id": "jquery",
+      "logo": true
+    }, {
+      "name": "CoffeeScript",
+      "id": "coffeeScript",
+      "logo": true
+    }, {
+      "name": "Cordova",
+      "id": "cordova",
+      "logo": true
+    }, {
+      "name": "Node.js",
+      "id": "nodejs",
+      "logo": true
+    }, {
+      "name": "NPM Package Development",
+      "id": "npm",
+      "logo": true
+    }, {
+      "name": "Express",
+      "id": "Express"
+    }, {
+      "name": "Appgyver Supersonic/Steroids",
+      "id": "appgyver",
+      "logo": true
+    }, {
+      "name": "HTML",
+      "id": "html",
+      "logo": true
+    }, {
+      "name": "SCSS",
+      "id": "sass",
+      "logo": true
+    }, {
+      "name": "LESS",
+      "id": "less",
+      "logo": true
+    }, {
+      "name": "Bootstrap",
+      "id": "bootstrap",
+      "logo": true
+    }, {
+      "name": "Git",
+      "id": "git",
+      "logo": true
+    }, {
+      "name": "SDLC",
+      "id": "SDLC"
+    }, {
+      "name": "Agile",
+      "id": "Agile"
+    }, {
+      "name": "Wireframing",
+      "id": "Wireframing"
+    }, {
+      "name": "Mockups",
+      "id": "Mockups"
+    }, {
+      "name": "Prototyping",
+      "id": "Prototyping"
+    }, {
+      "name": "PostgreSQL",
+      "id": "PostgreSQL"
+    }, {
+      "name": "Python",
+      "id": "python",
+      "icon": true
+    }, {
+      "name": "Asterisk PBX with WebRTC",
+      "id": "asterisk",
+      "logo": true
+    }, {
+      "name": "ZSH",
+      "id": "ZSH"
+    }, {
+      "name": "Bash",
+      "id": "Bash"
+    }, {
+      "name": "Mathematica",
+      "id": "mathematica",
+      "icon": true
+    }, {
+      "name": "Lisp",
+      "id": "Lisp"
+    }],
+    "hopkins": [{
+      "tagline": "An iOS teleconsultation application connecting radiologists to clinicians.",
+      "title": "REACH",
+      "name": "Radiologists Engaging and Collaborating in Healthcare",
+      "fullName": "Radiologists Engaging and Collaborating in Healthcare (REACH)",
+      "links": {},
+
+      "detailedBackground": "In the old days before PACS (Image servers for Radiological Images) existed, clinicians would go down to the Radiology film rooms to consult with Radiologists. Clinicians and radiologists used to spend a fair amount of time together, discussing and interpreting medical Images, providing consultation in real time without waiting for the final report from the radiology department.\nNowadays this face to face communication has diminished to non-existence with the advancement of RIS and PACS technologies, all radiological images and the generated reports are written, signed, and sent electronically.  As a result, Radiologists' productivity has increased, enabling them to read more and more cases every day; a radiologist goes through a worklist of radiology examinations every day. Because they see more cases per capta, their time has become more valuable. They are located in dark reading rooms, where clinicians rarely visit due to the geographical inconvenience dedicated reading rooms create. Though modern technological advances have increased turnaround time for radiology reports, communication and consults generally happen only after coordinating  between two stacked schedules, over phone while both parties have the image viewer open, both doing their best to always be looking at the same images (usually among many in a given procedure). They attempt to discuss the same artifacts on images while talking over the phone and there is no face to face contact. Organic interaction between clinicians and radiologists has almost disappeared. \nWe call this a form of “Signal Loss”: Analog phones do not do a good job of coordinate schedules, they also drop all visual feedback that humans use to communicate.",
+      "video": "http://youtu.be/XM1nrW_uLqM",
+      "color": {
+        "primary": "#FFC700",
+        "secondary": "#515BB2"
+      },
+      "background": {
+        "src": "reach.png",
+        "card-size": 2,
+        "offset": { "width": 0, "height": 400 },
+        "color": {
+          "primary": "#FFC700",
+          "secondary": "#515BB2"
+        }
+      },
+      "id": "reach",
+      "icon": "",
+      "logo": "",
+      "headshot": "",
+      "screenshots": [],
+      "news": [],
+      "customClasses": ["grid-item-big"],
+      "description": "",
+      "technologies": [7, 8, 9, 10, 11, 12, 13, 14],
+      "content": ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
+    }, {
+      "title": "OASIS",
+      "name": "OASIS",
+      "fullName": "Outcomes Analytics Surveillance Information System",
+      "tagline": "Clinical data research tool",
+      "color": {
+        "primary": "#81a2be"
+      },
+      "background": {},
+      "customClasses": [],
+      "id": "oasis",
+      "icon": "",
+      "logo": "",
+      "headshot": "",
+      "screenshots": [],
+      "news": [],
+      "description": "",
+      "detailedDescription": "Beginning clinical research requires the discovery of a 'cohort'. Finding subjects that match a given criteria and exluding those that match exclusion critiera, . This is often performed via manual search through any number of data sources (e.g. PACS, RIS, EMR, billing systems, etc.) and manual entry into a generic spreadsheet. The number of data points are often extremely large, even for small studies involving a few dozen or a few hundred patients, and such manual search and entry is therefore exceedingly time consuming and prone to human errors. Furthermore, manipulation of the dataset following the establishment of the cohort (i.e. during data entry) can result in errors and data loss, leading many researchers to save numerous different versions of their working dataset. The process of blinding data (for research integrity) and protecting patient identifiers (for ethical integrity) is also a burdensome, nonstandardized task that is subject to mistakes and noncompliance. \nA robust software solution that automates any of the above processes would save time and reduce human error. Furthermore, providing a customizable user interface in which to work would decrease errors when manipulating the dataset, allow easier collaboration between researchers, and save time given appropriate form design. Finally, robust data governance would decrease errors, allow more efficient error-discovery, and provide a safer means for multiple researchers to contribute to a single project.",
+      "technologies": [],
+      "content": ["Implemented ETL technologies in ruby to model/import exam data from disparate data sources into user’s project", "Deployed and released first version.", "Rapidly prototyped and released features, integrating feedback from preliminary users.", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
+    }, {
+      "name": "EpiWatch",
+      "tagline": "Seizure Tracking on Apple Watch.",
+      "color": {
+        "primary": "#9A5BB9",
+        "secondary": "#00C5AC"
+      },
+      "links": {
+        "homepage": "hopkinsmedicine.org/epiwatch"
+      },
+      "background": {
+        "src": "epiwatch.png",
+        "card-size": 2
+      },
+      "customClasses": ["grid-item-big"],
+      "id": "epiwatch",
+      "icon": "",
+      "logo": "",
+      "headshot": "",
+      "screenshots": [],
+      "news": [{
+        "title": "The Apple Watch App For Seizures May Soon Predict Their Onset",
+        "date": " 07.25.16",
+        "link": "http://www.fastcompany.com/3059828/the-apple-watch-app-for-seizures-may-soon-predict-their-onset",
+        "comment": "This article was awesome, You should read it!"
+      }, {
+        "title": "Johns Hopkins tests EpiWatch app on Apple Watch to track seizures",
+        "date": " 08.05.2016",
+        "link": "http://www.healthcareitnews.com/news/john-hopkins-tests-epiwatch-app-apple-watch-track-seizures"
+      }, {
+        "title": "Apple Watch used to study epileptic seizures",
+        "date": "11.22.2015",
+        "link": "http://money.cnn.com/2015/10/19/technology/researchkit-seizure/"
+      }, {
+        "title": "Turning the Apple Watch into a seizure detector",
+        "date": "10.19.2015",
+        "link": "http://money.cnn.com/2015/10/19/technology/researchkit-seizure/"
+      }, {
+        "title": "Johns Hopkins researchers to use Apple Watch data to study epilepsy",
+        "date": "10.15.2015",
+        "link": "http://hub.jhu.edu/2015/10/15/apple-watch-epiwatch/"
+      }],
+      "description": "",
+      "technologies": [],
+      "content": ["<i>Currently:</i>Lead development on version 2. Implemented new UI on both iPhone and Apple Watch.", "Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit"]
+    }, {
+      "name": "Resident Worklist",
+      "tagline": "Teaching tool gives resident radiologists feedback on their reports by showing a diff between their report and the final report.",
+      "color": {
+        "primary": "#264358"
+      },
+      "background": "",
+      "customClasses": [],
+      "id": "resident-worklist",
+      "icon": "",
+      "logo": "",
+      "headshot": "",
+      "detailedDescription": "The radiology resident review manager is an application designed to assist residents (as well as fellows and faculty) in tracking the reports produced as part of normal workflow during the course of a day, night shift, or across several weeks of a rotation. The application is designed to list reports authored by a single person across a specified amount of time with multiple options for sorting.  Additionally, the application will track the changes made to reports, allowing residents to easily and quickly see what changes were made to their reports.  The current solutions available for tracking workflow are each limited by speed and/or functionality.\nThe aim of this project is to create an easily accessible, lightweight, extensible interface for tracking reports and changes made to these reports as available through the RIS.  The open architecture created by this project could then later be integrated into other initiatives (such as the dashboard).",
+      "screenshots": [],
+      "news": [],
+      "description": "",
+      "technologies": [],
+      "content": ["Developed Ember.js front end.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Used daily by over 80 clinicians and radiology residents at Johns Hopkins Hospital."]
+    }, {
+      "name": "Peer Review",
+      "tagline": "federal departmental compliance",
+      "color": {
+        "primary": "blue"
+      },
+      "background": "",
+      "customClasses": [],
+      "id": "peer-review",
+      "icon": "",
+      "logo": "",
+      "headshot": "",
+      "screenshots": [],
+      "news": [],
+      "description": "",
+      "technologies": [],
+      "content": ["Used by 80 clinicians and radiology residents at Johns Hopkins Hospital.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Managed development for 7 months during a senior developer’s leave of absence.", "Implemented Patient search functionality, leading to deployment at new hospital."]
+    }, {
+      "name": "Accomplishments",
+      "tagline": "An iOS teleconsultation application connecting radiologists to clinicians.",
+      "color": {
+        "primary": "red"
+      },
+      "background": "",
+      "customClasses": [],
+      "id": "achievements",
+      "icon": "",
+      "logo": "",
+      "headshot": "",
+      "screenshots": [],
+      "news": [],
+      "description": "",
+      "technologies": [],
+      "content": ["Created on Ruby on Rails gem consolidating assets, deployment and development scripts, common app functionality, and RESTful APIs to patient data. This gem is now integrated into 5 applications. ", "3 published NPM packages for Ember-CLI."]
+    }],
+    "contract": [{
+      "title": "ReadAhead Hybrid",
+      "fullName": "ReadAhead Hybrid, Anacrusis LLC",
+      "tagline": "Sightreading for the modern musician.",
+      "color": {
+        "primary": "#2e83d6",
+        "secondary": "#8ac53e"
+      },
+      "background": {
+        "src": "readahead",
+        "card-size": 2,
+        "offset": { "width": 0, "height": 200 }
+      },
+      "customClasses": ["grid-item-big"],
+      "id": "readahead",
+      "icon": "readahead_icon.png",
+      "logo": "",
+      "headshot": "",
+      "screenshots": [],
+      "news": [],
+      "links": {
+        "Homepage": "https://readaheadapp.com/",
+        "iTunes": "https://itunes.apple.com/us/app/read-ahead-hybrid-piano-sight/id1057615897?mt=8",
+        "Tablet app": "https://itunes.apple.com/us/app/read-ahead-practice-piano/id806292431?mt=8",
+        "Google Play": "https://play.google.com/store/apps/details?id=com.anacrusisllc.readahead&hl=en"
+      },
+      "description": "",
+      "technologies": [],
+      "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application.", "Implemented UI Implemented in-app purchases.", "Implemented open source Cordova plugin to access iOS Microphone."]
+    }]
+  };
+});
 define('personal-site/poll/poll', ['exports', 'ember'], function (exports, _ember) {
     exports['default'] = _ember['default'].Object.extend({
         interval: (function () {
@@ -2523,6 +2896,9 @@ define("personal-site/projects/achievements/template", ["exports"], function (ex
     };
   })());
 });
+define('personal-site/projects/controller', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Controller.extend({});
+});
 define('personal-site/projects/epiwatch/route', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
 });
@@ -2577,6 +2953,539 @@ define("personal-site/projects/glob/route", ["exports", "ember"], function (expo
 });
 define("personal-site/projects/glob/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 4,
+              "column": 8
+            },
+            "end": {
+              "line": 6,
+              "column": 8
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("            ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("img");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element2 = dom.childAt(fragment, [1]);
+          var morphs = new Array(2);
+          morphs[0] = dom.createAttrMorph(element2, 'src');
+          morphs[1] = dom.createAttrMorph(element2, 'alt');
+          return morphs;
+        },
+        statements: [["attribute", "src", ["concat", ["assets/images/", ["subexpr", "or", [["get", "model.icon.src", ["loc", [null, [5, 41], [5, 55]]], 0, 0, 0, 0], ["get", "model.icon", ["loc", [null, [5, 56], [5, 66]]], 0, 0, 0, 0]], [], ["loc", [null, [5, 36], [5, 68]]], 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["attribute", "alt", ["subexpr", "or", [["get", "model.icon.alt", ["loc", [null, [5, 79], [5, 93]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [5, 94], [5, 104]]], 0, 0, 0, 0]], [], ["loc", [null, [null, null], [5, 106]]], 0, 0], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child1 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 8,
+              "column": 8
+            },
+            "end": {
+              "line": 10,
+              "column": 8
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("            ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("h2");
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element1 = dom.childAt(fragment, [1]);
+          var morphs = new Array(2);
+          morphs[0] = dom.createAttrMorph(element1, 'style');
+          morphs[1] = dom.createMorphAt(element1, 0, 0);
+          return morphs;
+        },
+        statements: [["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [9, 32], [9, 51]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "model.name", ["loc", [null, [9, 56], [9, 70]]], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child2 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 11,
+              "column": 8
+            },
+            "end": {
+              "line": 13,
+              "column": 8
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("            ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("h4");
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
+          return morphs;
+        },
+        statements: [["content", "model.tagline", ["loc", [null, [12, 16], [12, 33]]], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child3 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 16,
+              "column": 4
+            },
+            "end": {
+              "line": 20,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "description");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("p");
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 1]), 0, 0);
+          return morphs;
+        },
+        statements: [["content", "model.description", ["loc", [null, [18, 15], [18, 36]]], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child4 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 21,
+              "column": 4
+            },
+            "end": {
+              "line": 25,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "detailed-background");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("p");
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 1]), 0, 0);
+          return morphs;
+        },
+        statements: [["content", "model.detailedBackground", ["loc", [null, [23, 15], [23, 43]]], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child5 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "revision": "Ember@2.7.0",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 28,
+                "column": 12
+              },
+              "end": {
+                "line": 30,
+                "column": 12
+              }
+            },
+            "moduleName": "personal-site/projects/glob/template.hbs"
+          },
+          isEmpty: false,
+          arity: 1,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("                ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("li");
+            var el2 = dom.createComment("");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
+            return morphs;
+          },
+          statements: [["content", "val", ["loc", [null, [29, 20], [29, 27]]], 0, 0, 0, 0]],
+          locals: ["val"],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 26,
+              "column": 4
+            },
+            "end": {
+              "line": 32,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("ul");
+          var el2 = dom.createTextNode("\n");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
+          return morphs;
+        },
+        statements: [["block", "each", [["get", "model.content", ["loc", [null, [28, 20], [28, 33]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [28, 12], [30, 21]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })();
+    var child6 = (function () {
+      var child0 = (function () {
+        var child0 = (function () {
+          return {
+            meta: {
+              "revision": "Ember@2.7.0",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 42,
+                  "column": 12
+                },
+                "end": {
+                  "line": 44,
+                  "column": 12
+                }
+              },
+              "moduleName": "personal-site/projects/glob/template.hbs"
+            },
+            isEmpty: false,
+            arity: 1,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              var el1 = dom.createTextNode("                ");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createElement("div");
+              var el2 = dom.createElement("img");
+              dom.appendChild(el1, el2);
+              dom.appendChild(el0, el1);
+              var el1 = dom.createTextNode("\n");
+              dom.appendChild(el0, el1);
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+              var element0 = dom.childAt(fragment, [1, 0]);
+              var morphs = new Array(1);
+              morphs[0] = dom.createAttrMorph(element0, 'src');
+              return morphs;
+            },
+            statements: [["attribute", "src", ["get", "s", ["loc", [null, [43, 32], [43, 33]]], 0, 0, 0, 0], 0, 0, 0, 0]],
+            locals: ["s"],
+            templates: []
+          };
+        })();
+        return {
+          meta: {
+            "revision": "Ember@2.7.0",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 34,
+                "column": 8
+              },
+              "end": {
+                "line": 46,
+                "column": 8
+              }
+            },
+            "moduleName": "personal-site/projects/glob/template.hbs"
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            return morphs;
+          },
+          statements: [["block", "each", [["get", "model.screenshots", ["loc", [null, [42, 20], [42, 37]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [42, 12], [44, 21]]]]],
+          locals: [],
+          templates: [child0]
+        };
+      })();
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 33,
+              "column": 4
+            },
+            "end": {
+              "line": 47,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+          dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
+          return morphs;
+        },
+        statements: [["block", "slick-carousel", [], ["class", "ember-carousel", "autoplay", true, "autoplaySpeed", 2000, "slidesToShow", 1, "slidesToScroll", 1, "dots", true, "fade", true], 0, null, ["loc", [null, [34, 8], [46, 27]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })();
+    var child7 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "revision": "Ember@2.7.0",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 50,
+                "column": 12
+              },
+              "end": {
+                "line": 52,
+                "column": 12
+              }
+            },
+            "moduleName": "personal-site/projects/glob/template.hbs"
+          },
+          isEmpty: false,
+          arity: 1,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("                ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+            return morphs;
+          },
+          statements: [["inline", "skill/skill-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [51, 46], [51, 51]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [51, 16], [51, 53]]], 0, 0]],
+          locals: ["skill"],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 48,
+              "column": 4
+            },
+            "end": {
+              "line": 55,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "technologies");
+          var el2 = dom.createTextNode("\n");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
+          return morphs;
+        },
+        statements: [["block", "each", [["get", "model.technologies", ["loc", [null, [50, 20], [50, 38]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [50, 12], [52, 21]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })();
     return {
       meta: {
         "revision": "Ember@2.7.0",
@@ -2587,7 +3496,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 5,
+            "line": 57,
             "column": 10
           }
         },
@@ -2602,9 +3511,39 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         var el1 = dom.createElement("article");
         var el2 = dom.createTextNode("\n    ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
+        var el2 = dom.createElement("header");
+        var el3 = dom.createTextNode("\n\n");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("        ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h1");
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("    ");
+        dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
@@ -2614,21 +3553,39 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element0 = dom.childAt(fragment, [0]);
-        var morphs = new Array(2);
-        morphs[0] = dom.createMorphAt(element0, 1, 1);
-        morphs[1] = dom.createMorphAt(element0, 3, 3);
+        var element3 = dom.childAt(fragment, [0]);
+        var element4 = dom.childAt(element3, [1]);
+        var element5 = dom.childAt(element4, [3]);
+        var morphs = new Array(11);
+        morphs[0] = dom.createMorphAt(element4, 1, 1);
+        morphs[1] = dom.createAttrMorph(element5, 'style');
+        morphs[2] = dom.createMorphAt(element5, 0, 0);
+        morphs[3] = dom.createMorphAt(element4, 5, 5);
+        morphs[4] = dom.createMorphAt(element4, 6, 6);
+        morphs[5] = dom.createMorphAt(element3, 3, 3);
+        morphs[6] = dom.createMorphAt(element3, 4, 4);
+        morphs[7] = dom.createMorphAt(element3, 5, 5);
+        morphs[8] = dom.createMorphAt(element3, 6, 6);
+        morphs[9] = dom.createMorphAt(element3, 7, 7);
+        morphs[10] = dom.createMorphAt(element3, 9, 9);
         return morphs;
       },
-      statements: [["content", "model.name", ["loc", [null, [2, 4], [2, 18]]], 0, 0, 0, 0], ["content", "outlet", ["loc", [null, [4, 0], [4, 10]]], 0, 0, 0, 0]],
+      statements: [["block", "if", [["get", "model.icon", ["loc", [null, [4, 14], [4, 24]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [4, 8], [6, 15]]]], ["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [7, 28], [7, 47]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["inline", "or", [["get", "model.title", ["loc", [null, [7, 57], [7, 68]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [7, 69], [7, 79]]], 0, 0, 0, 0]], [], ["loc", [null, [7, 52], [7, 81]]], 0, 0], ["block", "if", [["get", "model.title", ["loc", [null, [8, 14], [8, 25]]], 0, 0, 0, 0]], [], 1, null, ["loc", [null, [8, 8], [10, 15]]]], ["block", "if", [["get", "model.tagline", ["loc", [null, [11, 14], [11, 27]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [11, 8], [13, 15]]]], ["block", "if", [["get", "model.description", ["loc", [null, [16, 10], [16, 27]]], 0, 0, 0, 0]], [], 3, null, ["loc", [null, [16, 4], [20, 11]]]], ["block", "if", [["get", "model.detailedBackground", ["loc", [null, [21, 10], [21, 34]]], 0, 0, 0, 0]], [], 4, null, ["loc", [null, [21, 4], [25, 11]]]], ["block", "if", [["get", "model.content", ["loc", [null, [26, 10], [26, 23]]], 0, 0, 0, 0]], [], 5, null, ["loc", [null, [26, 4], [32, 11]]]], ["block", "if", [["get", "model.screenshots", ["loc", [null, [33, 10], [33, 27]]], 0, 0, 0, 0]], [], 6, null, ["loc", [null, [33, 4], [47, 11]]]], ["block", "if", [["get", "model.technologies", ["loc", [null, [48, 10], [48, 28]]], 0, 0, 0, 0]], [], 7, null, ["loc", [null, [48, 4], [55, 11]]]], ["content", "outlet", ["loc", [null, [56, 4], [56, 14]]], 0, 0, 0, 0]],
       locals: [],
-      templates: []
+      templates: [child0, child1, child2, child3, child4, child5, child6, child7]
     };
   })());
 });
 define("personal-site/projects/index/controller", ["exports", "ember"], function (exports, _ember) {
     exports["default"] = _ember["default"].Controller.extend({
-        tagName: "article"
+        tagName: "article",
+        id: "project",
+        actions: {
+            transition: function transition() {
+                this.transitionToRoute.apply(this, arguments);
+            }
+        }
+
     });
 });
 define("personal-site/projects/index/route", ["exports", "ember"], function (exports, _ember) {
@@ -2648,12 +3605,12 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
             "loc": {
               "source": null,
               "start": {
-                "line": 4,
-                "column": 12
+                "line": 17,
+                "column": 16
               },
               "end": {
-                "line": 10,
-                "column": 12
+                "line": 19,
+                "column": 16
               }
             },
             "moduleName": "personal-site/projects/index/template.hbs"
@@ -2664,35 +3621,22 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
           hasRendered: false,
           buildFragment: function buildFragment(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createTextNode("                ");
+            var el1 = dom.createTextNode("                    ");
             dom.appendChild(el0, el1);
             var el1 = dom.createElement("img");
-            dom.setAttribute(el1, "src", "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png");
-            dom.setAttribute(el1, "alt", "");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n                ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("h1");
-            var el2 = dom.createComment("");
-            dom.appendChild(el1, el2);
-            dom.appendChild(el0, el1);
-            var el1 = dom.createTextNode("\n                ");
-            dom.appendChild(el0, el1);
-            var el1 = dom.createElement("aside");
-            var el2 = dom.createComment("");
-            dom.appendChild(el1, el2);
             dom.appendChild(el0, el1);
             var el1 = dom.createTextNode("\n");
             dom.appendChild(el0, el1);
             return el0;
           },
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var element0 = dom.childAt(fragment, [1]);
             var morphs = new Array(2);
-            morphs[0] = dom.createMorphAt(dom.childAt(fragment, [3]), 0, 0);
-            morphs[1] = dom.createMorphAt(dom.childAt(fragment, [5]), 0, 0);
+            morphs[0] = dom.createAttrMorph(element0, 'src');
+            morphs[1] = dom.createAttrMorph(element0, 'alt');
             return morphs;
           },
-          statements: [["content", "value.name", ["loc", [null, [8, 20], [8, 34]]], 0, 0, 0, 0], ["content", "value.description", ["loc", [null, [9, 23], [9, 44]]], 0, 0, 0, 0]],
+          statements: [["attribute", "src", ["concat", ["assets/images/", ["subexpr", "or", [["get", "m.icon.src", ["loc", [null, [18, 49], [18, 59]]], 0, 0, 0, 0], ["get", "m.icon", ["loc", [null, [18, 60], [18, 66]]], 0, 0, 0, 0]], [], ["loc", [null, [18, 44], [18, 68]]], 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["attribute", "alt", ["subexpr", "or", [["get", "m.icon.alt", ["loc", [null, [18, 79], [18, 89]]], 0, 0, 0, 0], ["get", "m.name", ["loc", [null, [18, 90], [18, 96]]], 0, 0, 0, 0]], [], ["loc", [null, [null, null], [18, 99]]], 0, 0], 0, 0, 0, 0]],
           locals: [],
           templates: []
         };
@@ -2707,7 +3651,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
               "column": 8
             },
             "end": {
-              "line": 12,
+              "line": 25,
               "column": 8
             }
           },
@@ -2719,20 +3663,45 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createComment("");
+          var el1 = dom.createTextNode("            ");
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
+          var el1 = dom.createElement("a");
+          var el2 = dom.createTextNode("\n\n");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n                ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h1");
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n                ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("aside");
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n\n");
           dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var morphs = new Array(1);
-          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-          dom.insertBoundary(fragment, 0);
+          var element1 = dom.childAt(fragment, [1]);
+          var morphs = new Array(6);
+          morphs[0] = dom.createAttrMorph(element1, 'style');
+          morphs[1] = dom.createAttrMorph(element1, 'class');
+          morphs[2] = dom.createElementMorph(element1);
+          morphs[3] = dom.createMorphAt(element1, 1, 1);
+          morphs[4] = dom.createMorphAt(dom.childAt(element1, [3]), 0, 0);
+          morphs[5] = dom.createMorphAt(dom.childAt(element1, [5]), 0, 0);
           return morphs;
         },
-        statements: [["block", "link-to", ["projects.glob", ["get", "value.id", ["loc", [null, [4, 39], [4, 47]]], 0, 0, 0, 0]], ["class", ["subexpr", "join", [" ", ["subexpr", "flatten", [["subexpr", "array", ["grid-item", ["get", "value.customClasses", ["loc", [null, [4, 92], [4, 111]]], 0, 0, 0, 0]], [], ["loc", [null, [4, 73], [4, 112]]], 0, 0]], [], ["loc", [null, [4, 64], [4, 113]]], 0, 0]], [], ["loc", [null, [4, 54], [4, 114]]], 0, 0]], 0, null, ["loc", [null, [4, 12], [10, 24]]]]],
-        locals: ["value"],
+        statements: [["attribute", "style", ["subexpr", "concat", ["background-color:", ["get", "m.color.primary", ["loc", [null, [6, 35], [6, 50]]], 0, 0, 0, 0], ";", ["subexpr", "if", [["subexpr", "and", [["get", "m.background", ["loc", [null, [7, 24], [7, 36]]], 0, 0, 0, 0], ["get", "m.background.image", ["loc", [null, [7, 37], [7, 55]]], 0, 0, 0, 0]], [], ["loc", [null, [7, 19], [7, 56]]], 0, 0], ["subexpr", "concat", ["background-image: url(", "assets/images/", ["get", "m.background.image", ["loc", [null, [8, 66], [8, 84]]], 0, 0, 0, 0], ");"], [], ["loc", [null, [8, 16], [8, 90]]], 0, 0], ["subexpr", "if", [["get", "m.background", ["loc", [null, [9, 20], [9, 32]]], 0, 0, 0, 0], ["subexpr", "concat", ["background-color:", ["get", "m.color.primary", ["loc", [null, [10, 48], [10, 63]]], 0, 0, 0, 0], ";"], [], ["loc", [null, [10, 20], [10, 68]]], 0, 0]], [], ["loc", [null, [9, 16], [11, 21]]], 0, 0]], [], ["loc", [null, [7, 15], [12, 16]]], 0, 0]], [], ["loc", [null, [null, null], [13, 17]]], 0, 0], 0, 0, 0, 0], ["attribute", "class", ["subexpr", "join", [" ", ["subexpr", "flatten", [["subexpr", "array", ["grid-item", ["get", "m.customClasses", ["loc", [null, [15, 60], [15, 75]]], 0, 0, 0, 0]], [], ["loc", [null, [15, 41], [15, 76]]], 0, 0]], [], ["loc", [null, [15, 32], [15, 77]]], 0, 0]], [], ["loc", [null, [null, null], [15, 79]]], 0, 0], 0, 0, 0, 0], ["element", "action", ["transition", "projects.glob", ["get", "m.id", ["loc", [null, [4, 53], [4, 57]]], 0, 0, 0, 0]], [], ["loc", [null, [4, 15], [4, 59]]], 0, 0], ["block", "if", [["get", "m.icon", ["loc", [null, [17, 22], [17, 28]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [17, 16], [19, 23]]]], ["content", "m.name", ["loc", [null, [21, 20], [21, 30]]], 0, 0, 0, 0], ["content", "m.description", ["loc", [null, [22, 23], [22, 40]]], 0, 0, 0, 0]],
+        locals: ["m"],
         templates: [child0]
       };
     })();
@@ -2746,7 +3715,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
             "column": 0
           },
           "end": {
-            "line": 14,
+            "line": 27,
             "column": 10
           }
         },
@@ -2781,7 +3750,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0, 1]), 1, 1);
         return morphs;
       },
-      statements: [["block", "each", [["get", "model", ["loc", [null, [3, 16], [3, 21]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [3, 8], [12, 17]]]]],
+      statements: [["block", "each", [["get", "model", ["loc", [null, [3, 16], [3, 21]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [3, 8], [25, 17]]]]],
       locals: [],
       templates: [child0]
     };
@@ -2832,154 +3801,8 @@ define("personal-site/projects/oasis/template", ["exports"], function (exports) 
     };
   })());
 });
-define("personal-site/projects/outline", ["exports", "ember"], function (exports, _ember) {
-    exports["default"] = {
-        "skills": [{ name: "Swift" }, { name: "Objective-C" }, { name: "C" }, { name: "C++" }, { name: "ReactiveCocoa" }, { name: "Core Data" }, { name: "Ruby" }, { name: "Rails" }, { name: "JRuby" }, { name: "Gem Development" }, { name: "ActiveRecord" }, { name: "Javascript (ES6)" }, { name: "Ember.js" }, { name: "jQuery" }, { name: "CoffeeScript" }, { name: "Cordova" }, { name: "Node.js" }, { name: "NPM Package Development" }, { name: "Express" }, { name: "Appgyver Supersonic/Steroids" }, { name: "HTML" }, { name: "SCSS" }, { name: "LESS" }, { name: "Bootstrap" }, { name: "Git" }, { name: "SDLC" }, { name: "Agile" }, { name: "Wireframing" }, { name: "Mockups" }, { name: "Prototyping" }, { name: "PostgreSQL" }, { name: "Python" }, { name: "Asterisk PBX with WebRTC" }, { name: "ZSH" }, { name: "Bash" }, { name: "Mathematica" }, { name: "Lisp" }],
-        "hopkins": [{
-            "tagline": "",
-            "name": "Radiologists Engaging and Collaborating in Healthcare (REACH)",
-            "color": { "primary": "#FFC700", "secondary": "#515BB2" },
-            "id": "reach",
-            "icon": "",
-            "logo": "",
-            "headshot": "",
-            "screenshots": [],
-            "news": [],
-            "customClasses": ["grid-item-big"],
-            "description": "An iOS teleconsultation application connecting radiologists to clinicians.",
-            "technologies": [7, 8, 9, 10, 11, 12, 13, 14],
-            'content': ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
-
-        }, {
-            "name": "OASIS",
-            "tagline": "",
-            "color": { "primary": "#81a2be" },
-            "customClasses": [],
-            "id": "oasis",
-            "icon": "",
-            "logo": "",
-            "headshot": "",
-            "screenshots": [],
-            "news": [],
-            "description": "Clinical data research tool",
-            "technologies": [],
-            'content': ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
-
-        }, {
-            "name": "EpiWatch",
-            "tagline": "",
-            "color": { "primary": "#9A5BB9", "secondary": "#00C5AC" },
-            "customClasses": ["grid-item-big"],
-            "id": "epiwatch",
-            "icon": "",
-            "logo": "",
-            "headshot": "",
-            "screenshots": [],
-            "news": [{
-                "title": "The Apple Watch App For Seizures May Soon Predict Their Onset",
-                "date": " 07.25.16",
-                "link": "http://www.fastcompany.com/3059828/the-apple-watch-app-for-seizures-may-soon-predict-their-onset",
-                "comment": "This article was awesome, You should read it!"
-            }, {
-                "title": "Johns Hopkins tests EpiWatch app on Apple Watch to track seizures",
-                "date": " 08.05.2016",
-                "link": "http://www.healthcareitnews.com/news/john-hopkins-tests-epiwatch-app-apple-watch-track-seizures"
-            }, {
-                "title": "Apple Watch used to study epileptic seizures",
-                "date": "11.22.2015",
-                "link": "http://money.cnn.com/2015/10/19/technology/researchkit-seizure/"
-            }, {
-                "title": "Turning the Apple Watch into a seizure detector",
-                "date": "10.19.2015",
-                "link": "http://money.cnn.com/2015/10/19/technology/researchkit-seizure/"
-            }, {
-                "title": "Johns Hopkins researchers to use Apple Watch data to study epilepsy",
-                "date": "10.15.2015",
-                "link": "http://hub.jhu.edu/2015/10/15/apple-watch-epiwatch/"
-            }],
-            "description": "Seizure Tracking on Apple Watch.",
-            "technologies": [],
-            "links": {
-                "Homepage": "hopkinsmedicine.org/epiwatch"
-            },
-            'content': ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
-        },
-
-        // $base_color: #264358;
-        // $rw00: lighten($base_color, 10%);
-        // $rw01: desaturate($base_color, 30%);
-        // $rw02: saturate(lighten($base_color, 45%), 5%);
-        // $rw04: desaturate($rw02, 30%);
-
-        {
-            "name": "Resident Worklist",
-            "tagline": "",
-            "color": { "primary": "#264358" },
-            "customClasses": [],
-            "id": "resident-worklist",
-            "icon": "",
-            "logo": "",
-            "headshot": "",
-            "screenshots": [],
-            "news": [],
-            "description": "Teaching tool gives resident radiologists feedback on their reports by showing a diff between their report and the final report.",
-            "technologies": [],
-            'content': ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
-
-        }, {
-            "name": "Peer Review",
-            "tagline": "",
-            "color": { "primary": "blue" },
-            "customClasses": [],
-            "id": "peer-review",
-            "icon": "",
-            "logo": "",
-            "headshot": "",
-            "screenshots": [],
-            "news": [],
-            "description": "federal departmental compliance",
-            "technologies": [],
-            'content': ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
-
-        }, {
-            "name": "Accomplishments",
-            "tagline": "",
-            "color": { "primary": "red" },
-            "customClasses": [],
-            "id": "achievements",
-            "icon": "",
-            "logo": "",
-            "headshot": "",
-            "screenshots": [],
-            "news": [],
-            "description": "An iOS teleconsultation application connecting radiologists to clinicians.",
-            "technologies": [],
-            'content': ["Created on Ruby on Rails gem consolidating assets, deployment and development scripts, common app functionality, and RESTful APIs to patient data. This gem is now integrated into 5 applications.", "3 published NPM packages for Ember-CLI."]
-
-        }],
-        "contract": [{
-            "name": "ReadAhead Hybrid",
-            "tagline": "",
-            "color": { "primary": "#2e83d6", "secondary": "#8ac53e" },
-            "customClasses": ["grid-item-big"],
-            "id": "achievements",
-            "icon": "",
-            "logo": "",
-            "headshot": "",
-            "screenshots": [],
-            "news": [],
-            "links": {
-                "Homepage": "http://youtu.be/XM1nrW_uLqM",
-                "iTunes": "http://youtu.be/XM1nrW_uLqM",
-                "Google Play": "http://youtu.be/XM1nrW_uLqM"
-            },
-            "description": "An iOS teleconsultation application connecting radiologists to clinicians.",
-            "technologies": [],
-            'content': ["Created on Ruby on Rails gem consolidating assets, deployment and development scripts, common app functionality, and RESTful APIs to patient data. This gem is now integrated into 5 applications.", "3 published NPM packages for Ember-CLI."]
-
-        }]
-
-    };
+define('personal-site/projects/outline', ['exports', 'ember', 'personal-site/payload'], function (exports, _ember, _personalSitePayload) {
+  exports['default'] = _personalSitePayload['default'];
 });
 define('personal-site/projects/peer-review/route', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = _ember['default'].Route.extend({});
@@ -3878,7 +4701,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+e7c7eab0"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+33bd8655"});
 }
 
 /* jshint ignore:end */

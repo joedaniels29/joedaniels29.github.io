@@ -273,6 +273,38 @@ body > div.ember-view > header {
     margin: 0; }
   body > div.ember-view > header aside {
     text-align: right; }
+  body > div.ember-view > header aside {
+    flex-basis: 13em;
+    flex-shrink: 0;
+    margin-bottom: 3em;
+    padding: 0; }
+    body > div.ember-view > header aside a {
+      line-height: 1.5em;
+      list-style: none;
+      text-align: center;
+      color: #333;
+      text-decoration: none; }
+      body > div.ember-view > header aside a:focus, body > div.ember-view > header aside a:hover {
+        color: white; }
+  body > div.ember-view > header nav {
+    padding: 0.75em; }
+    body > div.ember-view > header nav ul {
+      padding: 0; }
+    body > div.ember-view > header nav a {
+      color: #333;
+      display: block;
+      font-size: 1.3em;
+      font-weight: normal;
+      border-right: 1px solid rgba(51, 51, 51, 0.2);
+      color: #54b6bc;
+      display: inline;
+      float: left;
+      line-height: 1.5em;
+      padding: 0 0.7em; }
+      body > div.ember-view > header nav a:first-child {
+        padding-left: 0; }
+      body > div.ember-view > header nav a:last-child {
+        border-right: 0; }
 
 .lettr span {
   top: 0 !important; }
@@ -335,6 +367,26 @@ main.resume > section#projects article.project {
 main.projects article#project-select, main.projects article#project {
   min-height: 1000px; }
 
+main.projects header h1 {
+  font-weight: 100;
+  font-size: 4em; }
+
+main.projects header h2 {
+  font-size: 2em;
+  font-weight: 200; }
+
+main.projects header h4 {
+  font-size: 1.5em;
+  font-weight: 300; }
+
+main.projects section.description p {
+  font-size: 1.2em;
+  font-weight: 200; }
+
+main.projects ul li {
+  font-size: 1em;
+  font-weight: 300; }
+
 main.projects .grid-items::after {
   clear: both;
   content: "";
@@ -355,66 +407,61 @@ main.projects .grid-items .grid-item {
   text-align: center;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
-  width: 100%; }
+  width: 100%;
+  background-size: cover; }
   @media screen and (min-width: 900px) {
     main.projects .grid-items .grid-item {
       width: 33.33333%; } }
   main.projects .grid-items .grid-item:nth-child(1) {
-    background-color: #5f7c7e;
-    box-shadow: inset 0 0 1px 2px #495f61; }
+    background-color: #FFC700;
+    box-shadow: inset 0 0 1px 2px #cc9f00;
+    background-image: url("images/background/reach.png"); }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      main.projects .grid-items .grid-item:nth-child(1) {
+        background-image: url("images/background/reach_2x.png");
+        background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(1):focus, main.projects .grid-items .grid-item:nth-child(1):hover {
-      background-color: #495f61;
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover; }
+      background-color: #cc9f00; }
   main.projects .grid-items .grid-item:nth-child(2) {
-    background-color: #8b21a5;
-    box-shadow: inset 0 0 1px 2px #67197b; }
+    background-color: #81a2be;
+    box-shadow: inset 0 0 1px 2px #5f89ad; }
     main.projects .grid-items .grid-item:nth-child(2):focus, main.projects .grid-items .grid-item:nth-child(2):hover {
-      background-color: #67197b;
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover; }
+      background-color: #5f89ad; }
   main.projects .grid-items .grid-item:nth-child(3) {
-    background-color: #bebd13;
-    box-shadow: inset 0 0 1px 2px #908f0e; }
+    background-color: #9A5BB9;
+    box-shadow: inset 0 0 1px 2px #80439e;
+    background-image: url("images/background/epiwatch.png"); }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      main.projects .grid-items .grid-item:nth-child(3) {
+        background-image: url("images/background/epiwatch_2x.png");
+        background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(3):focus, main.projects .grid-items .grid-item:nth-child(3):hover {
-      background-color: #908f0e;
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover; }
+      background-color: #80439e; }
   main.projects .grid-items .grid-item:nth-child(4) {
-    background-color: #98C79A;
-    box-shadow: inset 0 0 1px 2px #77b57a; }
+    background-color: #264358;
+    box-shadow: inset 0 0 1px 2px #172834; }
     main.projects .grid-items .grid-item:nth-child(4):focus, main.projects .grid-items .grid-item:nth-child(4):hover {
-      background-color: #77b57a;
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover; }
+      background-color: #172834; }
   main.projects .grid-items .grid-item:nth-child(5) {
-    background-color: #a80022;
-    box-shadow: inset 0 0 1px 2px #750018; }
+    background-color: blue;
+    box-shadow: inset 0 0 1px 2px #0000cc; }
     main.projects .grid-items .grid-item:nth-child(5):focus, main.projects .grid-items .grid-item:nth-child(5):hover {
-      background-color: #750018;
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover; }
+      background-color: #0000cc; }
   main.projects .grid-items .grid-item:nth-child(6) {
-    background-color: #BDCC97;
-    box-shadow: inset 0 0 1px 2px #a7bb75; }
+    background-color: red;
+    box-shadow: inset 0 0 1px 2px #cc0000; }
     main.projects .grid-items .grid-item:nth-child(6):focus, main.projects .grid-items .grid-item:nth-child(6):hover {
-      background-color: #a7bb75;
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover; }
+      background-color: #cc0000; }
   main.projects .grid-items .grid-item:nth-child(7) {
-    background-color: #979EA0;
-    box-shadow: inset 0 0 1px 2px #7c8588; }
+    background-color: #2e83d6;
+    box-shadow: inset 0 0 1px 2px #2269af;
+    background-image: url("images/background/readahead.png"); }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      main.projects .grid-items .grid-item:nth-child(7) {
+        background-image: url("images/background/readahead_2x.png");
+        background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(7):focus, main.projects .grid-items .grid-item:nth-child(7):hover {
-      background-color: #7c8588;
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: cover; }
+      background-color: #2269af; }
 
 main.projects .grid-items .grid-item img {
   display: block;
