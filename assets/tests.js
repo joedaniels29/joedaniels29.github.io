@@ -16,6 +16,15 @@ define('personal-site/tests/application/controller.jshint', ['exports'], functio
     assert.ok(true, 'application/controller.js should pass jshint.');
   });
 });
+define('personal-site/tests/application/hosted-img/component.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | application/hosted-img/component.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'application/hosted-img/component.js should pass jshint.\napplication/hosted-img/component.js: line 2, col 8, \'Poll\' is defined but never used.\n\n1 error');
+  });
+});
 define('personal-site/tests/application/lett-r-char/component.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -43,13 +52,13 @@ define('personal-site/tests/application/route.jshint', ['exports'], function (ex
     assert.ok(true, 'application/route.js should pass jshint.');
   });
 });
-define('personal-site/tests/components/skill/skill-display/component.jshint', ['exports'], function (exports) {
+define('personal-site/tests/components/very-custom-text/component.jshint', ['exports'], function (exports) {
   'use strict';
 
-  QUnit.module('JSHint | components/skill/skill-display/component.js');
+  QUnit.module('JSHint | components/very-custom-text/component.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'components/skill/skill-display/component.js should pass jshint.');
+    assert.ok(true, 'components/very-custom-text/component.js should pass jshint.');
   });
 });
 define('personal-site/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
@@ -308,9 +317,9 @@ define('personal-site/tests/integration/application/lett-r/component-test.jshint
     assert.ok(true, 'integration/application/lett-r/component-test.js should pass jshint.');
   });
 });
-define('personal-site/tests/integration/components/skill/skill-display/component-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+define('personal-site/tests/integration/components/very-custom-text/component-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
 
-  (0, _emberQunit.moduleForComponent)('skill/skill-display', 'Integration | Component | skill/skill display', {
+  (0, _emberQunit.moduleForComponent)('very-custom-text', 'Integration | Component | very custom text', {
     integration: true
   });
 
@@ -330,7 +339,7 @@ define('personal-site/tests/integration/components/skill/skill-display/component
             },
             'end': {
               'line': 1,
-              'column': 23
+              'column': 20
             }
           }
         },
@@ -351,7 +360,7 @@ define('personal-site/tests/integration/components/skill/skill-display/component
           dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [['content', 'skill/skill-display', ['loc', [null, [1, 0], [1, 23]]], 0, 0, 0, 0]],
+        statements: [['content', 'very-custom-text', ['loc', [null, [1, 0], [1, 20]]], 0, 0, 0, 0]],
         locals: [],
         templates: []
       };
@@ -430,7 +439,7 @@ define('personal-site/tests/integration/components/skill/skill-display/component
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [['block', 'skill/skill-display', [], [], 0, null, ['loc', [null, [2, 4], [4, 28]]]]],
+        statements: [['block', 'very-custom-text', [], [], 0, null, ['loc', [null, [2, 4], [4, 25]]]]],
         locals: [],
         templates: [child0]
       };
@@ -439,13 +448,13 @@ define('personal-site/tests/integration/components/skill/skill-display/component
     assert.equal(this.$().text().trim(), 'template block text');
   });
 });
-define('personal-site/tests/integration/components/skill/skill-display/component-test.jshint', ['exports'], function (exports) {
+define('personal-site/tests/integration/components/very-custom-text/component-test.jshint', ['exports'], function (exports) {
   'use strict';
 
-  QUnit.module('JSHint | integration/components/skill/skill-display/component-test.js');
+  QUnit.module('JSHint | integration/components/very-custom-text/component-test.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(true, 'integration/components/skill/skill-display/component-test.js should pass jshint.');
+    assert.ok(true, 'integration/components/very-custom-text/component-test.js should pass jshint.');
   });
 });
 define('personal-site/tests/integration/projects/project-square/component-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
@@ -586,6 +595,146 @@ define('personal-site/tests/integration/projects/project-square/component-test.j
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/projects/project-square/component-test.js should pass jshint.');
+  });
+});
+define('personal-site/tests/integration/skills/skill-display/component-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('skill/skills.skill-display', 'Integration | Component | skill/skill display', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template((function () {
+      return {
+        meta: {
+          'revision': 'Ember@2.7.0',
+          'loc': {
+            'source': null,
+            'start': {
+              'line': 1,
+              'column': 0
+            },
+            'end': {
+              'line': 1,
+              'column': 23
+            }
+          }
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment('');
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+          dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
+          return morphs;
+        },
+        statements: [['content', 'skill/skill-display', ['loc', [null, [1, 0], [1, 23]]], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })()));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template((function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            'revision': 'Ember@2.7.0',
+            'loc': {
+              'source': null,
+              'start': {
+                'line': 2,
+                'column': 4
+              },
+              'end': {
+                'line': 4,
+                'column': 4
+              }
+            }
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode('      template block text\n');
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes() {
+            return [];
+          },
+          statements: [],
+          locals: [],
+          templates: []
+        };
+      })();
+
+      return {
+        meta: {
+          'revision': 'Ember@2.7.0',
+          'loc': {
+            'source': null,
+            'start': {
+              'line': 1,
+              'column': 0
+            },
+            'end': {
+              'line': 5,
+              'column': 2
+            }
+          }
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode('\n');
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment('');
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode('  ');
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [['block', 'skill/skill-display', [], [], 0, null, ['loc', [null, [2, 4], [4, 28]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })()));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('personal-site/tests/integration/skills/skill-display/component-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | integration/skills/skill-display/component-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/skills/skill-display/component-test.js should pass jshint.');
   });
 });
 define('personal-site/tests/poll/poll.jshint', ['exports'], function (exports) {
@@ -730,6 +879,15 @@ define('personal-site/tests/router.jshint', ['exports'], function (exports) {
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'router.js should pass jshint.');
+  });
+});
+define('personal-site/tests/skills/skill-display/component.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | skills/skill-display/component.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'skills/skill-display/component.js should pass jshint.');
   });
 });
 define('personal-site/tests/test-helper', ['exports', 'personal-site/tests/helpers/resolver', 'ember-qunit'], function (exports, _personalSiteTestsHelpersResolver, _emberQunit) {

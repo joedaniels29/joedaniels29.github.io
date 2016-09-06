@@ -412,6 +412,30 @@ main.projects .grid-items .grid-item {
   @media screen and (min-width: 900px) {
     main.projects .grid-items .grid-item {
       width: 33.33333%; } }
+  main.projects .grid-items .grid-item img {
+    display: block;
+    height: 5em;
+    margin: 0 auto 1em; }
+  main.projects .grid-items .grid-item h1 {
+    color: white;
+    font-size: 3.6em;
+    font-weight: 100;
+    height: 80px;
+    margin-bottom: 20px; }
+  main.projects .grid-items .grid-item h2 {
+    color: white;
+    font-size: 2.2em;
+    font-weight: 300;
+    margin-bottom: 0.0em; }
+  main.projects .grid-items .grid-item aside {
+    color: white; }
+  main.projects .grid-items .grid-item p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5em;
+    margin: auto; }
+    @media screen and (min-width: 600px) {
+      main.projects .grid-items .grid-item p {
+        max-width: 70%; } }
   main.projects .grid-items .grid-item:nth-child(1) {
     background-color: #FFC700;
     box-shadow: inset 0 0 1px 2px #cc9f00;
@@ -423,10 +447,10 @@ main.projects .grid-items .grid-item {
     main.projects .grid-items .grid-item:nth-child(1):focus, main.projects .grid-items .grid-item:nth-child(1):hover {
       background-color: #cc9f00; }
   main.projects .grid-items .grid-item:nth-child(2) {
-    background-color: #81a2be;
-    box-shadow: inset 0 0 1px 2px #5f89ad; }
+    background-color: #01325c;
+    box-shadow: inset 0 0 1px 2px #00172a; }
     main.projects .grid-items .grid-item:nth-child(2):focus, main.projects .grid-items .grid-item:nth-child(2):hover {
-      background-color: #5f89ad; }
+      background-color: #00172a; }
   main.projects .grid-items .grid-item:nth-child(3) {
     background-color: #9A5BB9;
     box-shadow: inset 0 0 1px 2px #80439e;
@@ -439,7 +463,12 @@ main.projects .grid-items .grid-item {
       background-color: #80439e; }
   main.projects .grid-items .grid-item:nth-child(4) {
     background-color: #264358;
-    box-shadow: inset 0 0 1px 2px #172834; }
+    box-shadow: inset 0 0 1px 2px #172834;
+    background-image: url("images/background/resident-worklist.png"); }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      main.projects .grid-items .grid-item:nth-child(4) {
+        background-image: url("images/background/resident-worklist_2x.png");
+        background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(4):focus, main.projects .grid-items .grid-item:nth-child(4):hover {
       background-color: #172834; }
   main.projects .grid-items .grid-item:nth-child(5) {
@@ -453,33 +482,47 @@ main.projects .grid-items .grid-item {
     main.projects .grid-items .grid-item:nth-child(6):focus, main.projects .grid-items .grid-item:nth-child(6):hover {
       background-color: #cc0000; }
   main.projects .grid-items .grid-item:nth-child(7) {
+    background-color: #01325c;
+    box-shadow: inset 0 0 1px 2px #00172a;
+    background-image: url("images/background/readahead_hybrid.png"); }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      main.projects .grid-items .grid-item:nth-child(7) {
+        background-image: url("images/background/readahead_hybrid_2x.png");
+        background-size: 215 800; } }
+    main.projects .grid-items .grid-item:nth-child(7):focus, main.projects .grid-items .grid-item:nth-child(7):hover {
+      background-color: #00172a; }
+  main.projects .grid-items .grid-item:nth-child(8) {
     background-color: #2e83d6;
     box-shadow: inset 0 0 1px 2px #2269af;
     background-image: url("images/background/readahead.png"); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
-      main.projects .grid-items .grid-item:nth-child(7) {
+      main.projects .grid-items .grid-item:nth-child(8) {
         background-image: url("images/background/readahead_2x.png");
         background-size: 215 800; } }
-    main.projects .grid-items .grid-item:nth-child(7):focus, main.projects .grid-items .grid-item:nth-child(7):hover {
+    main.projects .grid-items .grid-item:nth-child(8):focus, main.projects .grid-items .grid-item:nth-child(8):hover {
       background-color: #2269af; }
-
-main.projects .grid-items .grid-item img {
-  display: block;
-  height: 3em;
-  margin: 0 auto 1em; }
-
-main.projects .grid-items .grid-item h1 {
-  color: white;
-  font-size: 1.3em;
-  margin-bottom: 0.4em; }
-
-main.projects .grid-items .grid-item p {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5em;
-  margin: auto; }
-  @media screen and (min-width: 600px) {
-    main.projects .grid-items .grid-item p {
-      max-width: 70%; } }
+  main.projects .grid-items .grid-item:nth-child(9) {
+    background-color: #C100FF;
+    box-shadow: inset 0 0 1px 2px #9a00cc;
+    background-image: url("images/background/10Clock.png"); }
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
+      main.projects .grid-items .grid-item:nth-child(9) {
+        background-image: url("images/background/10Clock_2x.png");
+        background-size: 215 800; } }
+    main.projects .grid-items .grid-item:nth-child(9):focus, main.projects .grid-items .grid-item:nth-child(9):hover {
+      background-color: #9a00cc; }
+  main.projects .grid-items .grid-item.moar-spacing img {
+    margin-bottom: 30px; }
+  main.projects .grid-items .grid-item.moar-spacing h2 {
+    margin: 0;
+    font-size: 1.8em; }
+  main.projects .grid-items .grid-item.less-spacing img {
+    margin-bottom: 20px; }
+  main.projects .grid-items .grid-item.less-spacing h2 {
+    margin: 0;
+    font-size: 1.8em; }
+  main.projects .grid-items .grid-item.grid-item-white-glow h1, main.projects .grid-items .grid-item.grid-item-white-glow h2 {
+    text-shadow: 0 0 7px white; }
 
 @media screen and (min-width: 900px) {
   main.projects .grid-items .grid-item-big {
