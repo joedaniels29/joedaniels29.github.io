@@ -267,16 +267,29 @@ body > div.ember-view > header {
     clear: both;
     content: "";
     display: table; }
-  body > div.ember-view > header h1 {
+  body > div.ember-view > header > h1 {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
     font-size: 5em;
     font-weight: 100;
     margin: 0; }
+    body > div.ember-view > header > h1:last-child {
+      margin-right: 0; }
+  body > div.ember-view > header > ul {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    margin-right: 0; }
+    body > div.ember-view > header > ul:last-child {
+      margin-right: 0; }
   body > div.ember-view > header aside {
     text-align: right; }
   body > div.ember-view > header aside {
     flex-basis: 13em;
     flex-shrink: 0;
-    margin-bottom: 3em;
     padding: 0; }
     body > div.ember-view > header aside a {
       line-height: 1.5em;
@@ -286,8 +299,21 @@ body > div.ember-view > header {
       text-decoration: none; }
       body > div.ember-view > header aside a:focus, body > div.ember-view > header aside a:hover {
         color: white; }
+  body > div.ember-view > header ul {
+    vertical-align: baseline;
+    text-align: center;
+    padding: auto; }
+    body > div.ember-view > header ul li {
+      display: inline-block;
+      padding: 0.75em; }
   body > div.ember-view > header nav {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
     padding: 0.75em; }
+    body > div.ember-view > header nav:last-child {
+      margin-right: 0; }
     body > div.ember-view > header nav ul {
       padding: 0; }
     body > div.ember-view > header nav a {
@@ -311,6 +337,9 @@ body > div.ember-view > header {
 
 .liquid-container, .liquid-child {
   overflow: visible; }
+
+code {
+  white-space: pre; }
 
 main {
   max-width: 1200px;
@@ -538,5 +567,68 @@ main.projects .grid-items .grid-item-image {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover; }
+
+.skillBlock {
+  display: inline-block;
+  margin: 1.5em;
+  text-align: center; }
+  .skillBlock img.logo {
+    width: 200px; }
+  .skillBlock img.icon {
+    width: 80px; }
+
+.platforms .skillBlock {
+  margin: 0;
+  display: inline-block;
+  text-align: center; }
+  .platforms .skillBlock img.logo {
+    width: 100px; }
+  .platforms .skillBlock img.icon {
+    width: 80px; }
+
+main.projects article p {
+  font-weight: 200; }
+
+main.projects article header > div.project-title {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  main.projects article header > div.project-title::after {
+    clear: both;
+    content: "";
+    display: table; }
+  main.projects article header > div.project-title > img.logo {
+    width: 40px;
+    height: 40px; }
+  main.projects article header > div.project-title > h1.title {
+    display: inline; }
+
+main.projects article > section {
+  padding: 1.5em 0; }
+  main.projects article > section > h3 {
+    font-weight: 400;
+    font-size: 1.5em;
+    border-bottom: black solid 1px; }
+
+main.projects article section.news > ul > li {
+  padding: 0.5em 0; }
+  main.projects article section.news > ul > li > header > span.host {
+    color: grey; }
+  main.projects article section.news > ul > li a, main.projects article section.news > ul > li h6 {
+    margin-bottom: 0;
+    font-weight: 300; }
+
+main.projects article section.readme h1 {
+  display: none; }
+
+main.projects article section.readme th, main.projects article section.readme h2, main.projects article section.readme h3 {
+  margin-top: 1.5em;
+  font-weight: 300; }
+
+main.projects article section.readme h4, main.projects article section.readme h5, main.projects article section.readme h6, main.projects article section.readme p {
+  font-weight: 200; }
+
+main.projects article section.readme p {
+  margin-bottom: 0; }
 
 /*# sourceMappingURL=personal-site.css.map */

@@ -29,12 +29,13 @@ define('personal-site/application/hosted-img/component', ['exports', 'ember', 'p
     exports['default'] = _ember['default'].Component.extend({
         idx: 0,
         tagName: "img",
-        bindAttrs: ["src"],
+        attributeBindings: ["src", "title"],
 
         src: _ember['default'].computed("attrs.name", "pch", function () {
             var src = this.get("name");
             var pch = this.get("pch");
-            return 'assets/' + (pch ? pch + "/" : "") + src;
+            var ext = src && src.split('.').length > 1 ? "" : "_2x.png";
+            return 'assets/images/' + (pch ? pch + "/" : "") + src + ext;
         }),
 
         // classNameBindings:[""],
@@ -46,7 +47,7 @@ define('personal-site/application/hosted-img/component', ['exports', 'ember', 'p
         }),
         willDestroyElement: function willDestroyElement() {
             this._super.apply(this, arguments);
-            this.get("poll").stop();
+            this.get("poll") && this.get("poll").stop();
             this.set("poll", null);
         }
 
@@ -292,10 +293,10 @@ define("personal-site/application/lett-r/template", ["exports"], function (expor
     };
   })());
 });
-define('personal-site/application/route', ['exports', 'ember', 'personal-site/projects/outline'], function (exports, _ember, _personalSiteProjectsOutline) {
+define('personal-site/application/route', ['exports', 'ember', 'personal-site/skills/skills'], function (exports, _ember, _personalSiteSkillsSkills) {
     exports['default'] = _ember['default'].Route.extend({
         model: function model() {
-            return _personalSiteProjectsOutline['default']['skills'].map(function (o) {
+            return _personalSiteSkillsSkills['default']['skill'].map(function (o) {
                 return o["name"];
             });
         }
@@ -373,41 +374,6 @@ define("personal-site/application/template", ["exports"], function (exports) {
         templates: []
       };
     })();
-    var child2 = (function () {
-      return {
-        meta: {
-          "revision": "Ember@2.7.0",
-          "loc": {
-            "source": null,
-            "start": {
-              "line": 17,
-              "column": 8
-            },
-            "end": {
-              "line": 17,
-              "column": 35
-            }
-          },
-          "moduleName": "personal-site/application/template.hbs"
-        },
-        isEmpty: false,
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("Blog");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes() {
-          return [];
-        },
-        statements: [],
-        locals: [],
-        templates: []
-      };
-    })();
     return {
       meta: {
         "revision": "Ember@2.7.0",
@@ -418,7 +384,7 @@ define("personal-site/application/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 22,
+            "line": 23,
             "column": 0
           }
         },
@@ -473,7 +439,7 @@ define("personal-site/application/template", ["exports"], function (exports) {
         var el3 = dom.createElement("li");
         var el4 = dom.createElement("a");
         dom.setAttribute(el4, "class", "facebook");
-        dom.setAttribute(el4, "href", "https://www.npmjs.com/~joedaniels29");
+        dom.setAttribute(el4, "href", "https://www.facebook.com/joedaniels29");
         var el5 = dom.createTextNode("Facebook");
         dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
@@ -502,6 +468,16 @@ define("personal-site/application/template", ["exports"], function (exports) {
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("li");
         var el4 = dom.createElement("a");
+        dom.setAttribute(el4, "class", "instagram");
+        dom.setAttribute(el4, "href", "https://www.instagram.com/joedaniels29/");
+        var el5 = dom.createTextNode("Instagram");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n        ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("li");
+        var el4 = dom.createElement("a");
         dom.setAttribute(el4, "class", "good-reads");
         dom.setAttribute(el4, "href", "https://www.goodreads.com/joedaniels29");
         var el5 = dom.createTextNode("GoodReads");
@@ -513,12 +489,6 @@ define("personal-site/application/template", ["exports"], function (exports) {
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n    ");
         dom.appendChild(el1, el2);
-        var el2 = dom.createElement("aside");
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n    ");
-        dom.appendChild(el1, el2);
         var el2 = dom.createElement("nav");
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
@@ -528,9 +498,13 @@ define("personal-site/application/template", ["exports"], function (exports) {
         dom.appendChild(el2, el3);
         var el3 = dom.createComment("");
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n        ");
+        var el3 = dom.createTextNode("\n");
         dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
+        var el3 = dom.createTextNode("        ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("aside");
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
@@ -547,19 +521,78 @@ define("personal-site/application/template", ["exports"], function (exports) {
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element0 = dom.childAt(fragment, [0]);
-        var element1 = dom.childAt(element0, [7]);
-        var morphs = new Array(5);
-        morphs[0] = dom.createMorphAt(dom.childAt(element0, [5]), 0, 0);
-        morphs[1] = dom.createMorphAt(element1, 1, 1);
-        morphs[2] = dom.createMorphAt(element1, 3, 3);
-        morphs[3] = dom.createMorphAt(element1, 5, 5);
-        morphs[4] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        var element0 = dom.childAt(fragment, [0, 5]);
+        var morphs = new Array(4);
+        morphs[0] = dom.createMorphAt(element0, 1, 1);
+        morphs[1] = dom.createMorphAt(element0, 3, 3);
+        morphs[2] = dom.createMorphAt(dom.childAt(element0, [6]), 0, 0);
+        morphs[3] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         return morphs;
       },
-      statements: [["inline", "application/lett-r", [], ["models", ["subexpr", "@mut", [["get", "model", ["loc", [null, [13, 39], [13, 44]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [13, 11], [13, 46]]], 0, 0], ["block", "link-to", ["index"], [], 0, null, ["loc", [null, [15, 8], [15, 46]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [16, 8], [16, 51]]]], ["block", "link-to", ["projects"], [], 2, null, ["loc", [null, [17, 8], [17, 47]]]], ["content", "liquid-outlet", ["loc", [null, [21, 0], [21, 17]]], 0, 0, 0, 0]],
+      statements: [["block", "link-to", ["index"], [], 0, null, ["loc", [null, [15, 8], [15, 46]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [16, 8], [16, 51]]]], ["inline", "application/lett-r", [], ["models", ["subexpr", "@mut", [["get", "model", ["loc", [null, [18, 43], [18, 48]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [18, 15], [18, 50]]], 0, 0], ["content", "liquid-outlet", ["loc", [null, [22, 0], [22, 17]]], 0, 0, 0, 0]],
       locals: [],
-      templates: [child0, child1, child2]
+      templates: [child0, child1]
+    };
+  })());
+});
+define('personal-site/application/youtube-embed/component', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Component.extend({});
+});
+define("personal-site/application/youtube-embed/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "revision": "Ember@2.7.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 0
+          }
+        },
+        "moduleName": "personal-site/application/youtube-embed/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "class", "video");
+        var el2 = dom.createTextNode("\n    ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        dom.setAttribute(el2, "class", "video-wrapper");
+        var el3 = dom.createTextNode("\n        ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("iframe");
+        dom.setAttribute(el3, "frameborder", "0");
+        dom.setAttribute(el3, "allowfullscreen", "");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var element0 = dom.childAt(fragment, [0, 1, 1]);
+        var morphs = new Array(1);
+        morphs[0] = dom.createAttrMorph(element0, 'src');
+        return morphs;
+      },
+      statements: [["attribute", "src", ["get", "src", ["loc", [null, [3, 22], [3, 25]]], 0, 0, 0, 0], 0, 0, 0, 0]],
+      locals: [],
+      templates: []
     };
   })());
 });
@@ -715,6 +748,151 @@ define("personal-site/components/lm-container", ["exports", "liquid-fire/compone
     }
   });
 });
+define('personal-site/components/markdown-to-html', ['exports', 'ember-cli-showdown/components/markdown-to-html'], function (exports, _emberCliShowdownComponentsMarkdownToHtml) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberCliShowdownComponentsMarkdownToHtml['default'];
+    }
+  });
+});
+define("personal-site/components/render-markdown/component", ["exports", "ember"], function (exports, _ember) {
+    exports["default"] = _ember["default"].Component.extend({
+        ext: {},
+        didReceiveAttrs: function didReceiveAttrs() {
+            var _this = this;
+
+            this._super.apply(this, arguments);
+            return _ember["default"].$.get(this.get("url")).then(function (x) {
+                return _this.set("content", x);
+            });
+        }
+    });
+});
+define("personal-site/components/render-markdown/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 3,
+              "column": 0
+            }
+          },
+          "moduleName": "personal-site/components/render-markdown/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("    ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [["inline", "markdown-to-html", [["get", "content", ["loc", [null, [2, 23], [2, 30]]], 0, 0, 0, 0]], ["tablesHeaderId", true, "tables", true], ["loc", [null, [2, 4], [2, 64]]], 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child1 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 0
+            }
+          },
+          "moduleName": "personal-site/components/render-markdown/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("    ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("span");
+          var el2 = dom.createTextNode("loading...");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
+    return {
+      meta: {
+        "revision": "Ember@2.7.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 7,
+            "column": 0
+          }
+        },
+        "moduleName": "personal-site/components/render-markdown/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+        dom.insertBoundary(fragment, 0);
+        return morphs;
+      },
+      statements: [["block", "if", [["get", "content", ["loc", [null, [1, 6], [1, 13]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [1, 0], [5, 7]]]]],
+      locals: [],
+      templates: [child0, child1]
+    };
+  })());
+});
 define('personal-site/components/scroll-to', ['exports', 'ember-scroll-to/components/scroll-to'], function (exports, _emberScrollToComponentsScrollTo) {
   exports['default'] = _emberScrollToComponentsScrollTo['default'];
 });
@@ -726,8 +904,16 @@ define('personal-site/components/slick-carousel', ['exports', 'ember-cli-slick-c
     }
   });
 });
-define('personal-site/components/very-custom-text/component', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Component.extend({});
+define("personal-site/components/very-custom-text/component", ["exports", "ember"], function (exports, _ember) {
+  exports["default"] = _ember["default"].Component.extend({
+    computedCss: _ember["default"].computed.alias("css"),
+    didRecieveAttrs: function didRecieveAttrs() {
+      this.__super();
+      this.get("computedCss");
+      this.$().css(this.get("computedCss"));
+    }
+
+  });
 });
 define("personal-site/components/very-custom-text/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
@@ -2564,157 +2750,17 @@ define("personal-site/instance-initializers/ember-data", ["exports", "ember-data
 });
 define("personal-site/payload", ["exports"], function (exports) {
   exports["default"] = {
-    "skills": [{
-      "name": "Swift",
-      "id": "swift",
-      "icon": true
-    }, {
-      "name": "Objective-C",
-      "id": "ObjectiveC"
-    }, {
-      "name": "C",
-      "id": "C"
-    }, {
-      "name": "C++",
-      "id": "C++"
-    }, {
-      "name": "ReactiveCocoa",
-      "id": "reactiveCocoa",
-      "logo": true
-    }, {
-      "name": "Core Data",
-      "id": "coreData",
-      "icon": true
-    }, {
-      "name": "Ruby",
-      "id": "ruby",
-      "icon": true
-    }, {
-      "name": "Rails",
-      "id": "rails",
-      "logo": true
-    }, {
-      "name": "JRuby",
-      "id": "jruby",
-      "logo": true
-    }, {
-      "name": "Gem Development",
-      "id": "GemDevelopment"
-    }, {
-      "name": "ActiveRecord",
-      "id": "ActiveRecord"
-    }, {
-      "name": "Javascript (ES6)",
-      "id": "javascript",
-      "icon": true
-    }, {
-      "name": "Ember.js",
-      "id": "Ember"
-
-    }, {
-      "name": "Ember Data",
-      "id": "emberData",
-      "logo": true
-    }, {
-      "name": "jQuery",
-      "id": "jquery",
-      "logo": true
-    }, {
-      "name": "CoffeeScript",
-      "id": "coffeeScript",
-      "logo": true
-    }, {
-      "name": "Cordova",
-      "id": "cordova",
-      "logo": true
-    }, {
-      "name": "Node.js",
-      "id": "nodejs",
-      "logo": true
-    }, {
-      "name": "NPM Package Development",
-      "id": "npm",
-      "logo": true
-    }, {
-      "name": "Express",
-      "id": "Express"
-    }, {
-      "name": "Appgyver Supersonic/Steroids",
-      "id": "appgyver",
-      "logo": true
-    }, {
-      "name": "HTML",
-      "id": "html",
-      "logo": true
-    }, {
-      "name": "SCSS",
-      "id": "sass",
-      "logo": true
-    }, {
-      "name": "LESS",
-      "id": "less",
-      "logo": true
-    }, {
-      "name": "Bootstrap",
-      "id": "bootstrap",
-      "logo": true
-    }, {
-      "name": "Git",
-      "id": "git",
-      "logo": true
-    }, {
-      "name": "SDLC",
-      "id": "SDLC"
-    }, {
-      "name": "Agile",
-      "id": "Agile"
-    }, {
-      "name": "Wireframing",
-      "id": "Wireframing"
-    }, {
-      "name": "Mockups",
-      "id": "Mockups"
-    }, {
-      "name": "Prototyping",
-      "id": "Prototyping"
-    }, {
-      "name": "PostgreSQL",
-      "id": "PostgreSQL"
-    }, {
-      "name": "Python",
-      "id": "python",
-      "icon": true
-    }, {
-      "name": "Asterisk PBX with WebRTC",
-      "id": "asterisk",
-      "logo": true
-    }, {
-      "name": "ZSH",
-      "id": "ZSH"
-    }, {
-      "name": "Bash",
-      "id": "Bash"
-    }, {
-      "name": "Mathematica",
-      "id": "mathematica",
-      "icon": true
-    }, {
-      "name": "Lisp",
-      "id": "Lisp"
-    }, {
-      "name": "Core Animation",
-      "id": "coreanimation",
-      "icon": true
-    }],
     "hopkins": [{
       "tagline": "An iOS teleconsultation application connecting radiologists to clinicians.",
       "title": "REACH",
       "name": "Radiologists Engaging and Collaborating in Healthcare",
       "fullName": "Radiologists Engaging and Collaborating in Healthcare (REACH)",
       "links": {},
-
       "detailedBackground": "In the old days before PACS (Image servers for Radiological Images) existed, clinicians would go down to the Radiology film rooms to consult with Radiologists. Clinicians and radiologists used to spend a fair amount of time together, discussing and interpreting medical Images, providing consultation in real time without waiting for the final report from the radiology department.\nNowadays this face to face communication has diminished to non-existence with the advancement of RIS and PACS technologies, all radiological images and the generated reports are written, signed, and sent electronically.  As a result, Radiologists' productivity has increased, enabling them to read more and more cases every day; a radiologist goes through a worklist of radiology examinations every day. Because they see more cases per capta, their time has become more valuable. They are located in dark reading rooms, where clinicians rarely visit due to the geographical inconvenience dedicated reading rooms create. Though modern technological advances have increased turnaround time for radiology reports, communication and consults generally happen only after coordinating  between two stacked schedules, over phone while both parties have the image viewer open, both doing their best to always be looking at the same images (usually among many in a given procedure). They attempt to discuss the same artifacts on images while talking over the phone and there is no face to face contact. Organic interaction between clinicians and radiologists has almost disappeared. \nWe call this a form of “Signal Loss”: Analog phones do not do a good job of coordinate schedules, they also drop all visual feedback that humans use to communicate.",
-      "video": "http://youtu.be/XM1nrW_uLqM",
+      "video": {
+        "link": "http://youtu.be/XM1nrW_uLqM",
+        "embed": "https://www.youtube.com/embed/XM1nrW_uLqM"
+      },
       "color": {
         "primary": "#FFC700",
         "secondary": "#515BB2"
@@ -2722,7 +2768,10 @@ define("personal-site/payload", ["exports"], function (exports) {
       "background": {
         "src": "reach.png",
         "card-size": 2,
-        "offset": { "width": 0, "height": 200 },
+        "offset": {
+          "width": 0,
+          "height": 200
+        },
         "color": {
           "primary": "#FFC700",
           "secondary": "#515BB2"
@@ -2736,7 +2785,8 @@ define("personal-site/payload", ["exports"], function (exports) {
       "news": [],
       "customClasses": ["grid-item-big", "less-spacing"],
       "description": "",
-      "technologies": [7, 8, 9, 10, 11, 12, 13, 14],
+      "platforms": ["ipad", "web"],
+      "technologies": ["ActiveRecord", "rails", "fastlane", "jruby", "ReactiveCocoa", "PostgreSQL", "ember", "javascript", "emberData", "asterisk"],
       "content": ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
     }, {
       "name": "OASIS",
@@ -2745,17 +2795,22 @@ define("personal-site/payload", ["exports"], function (exports) {
       "color": {
         "primary": "#01325c"
       },
-      "background": { "color": "grey" },
+      "background": {
+        "color": "grey"
+      },
       "customClasses": ["less-spacing"],
       "id": "oasis",
-      "icon": { "src": "oasis_icon.png" },
+      "icon": {
+        "src": "oasis_icon.png"
+      },
       "logo": "",
       "headshot": "",
       "screenshots": [],
       "news": [],
       "description": "Clinical data research tool",
       "detailedDescription": "Beginning clinical research requires the discovery of a 'cohort'. Finding subjects that match a given criteria and exluding those that match exclusion critiera, . This is often performed via manual search through any number of data sources (e.g. PACS, RIS, EMR, billing systems, etc.) and manual entry into a generic spreadsheet. The number of data points are often extremely large, even for small studies involving a few dozen or a few hundred patients, and such manual search and entry is therefore exceedingly time consuming and prone to human errors. Furthermore, manipulation of the dataset following the establishment of the cohort (i.e. during data entry) can result in errors and data loss, leading many researchers to save numerous different versions of their working dataset. The process of blinding data (for research integrity) and protecting patient identifiers (for ethical integrity) is also a burdensome, nonstandardized task that is subject to mistakes and noncompliance. \nA robust software solution that automates any of the above processes would save time and reduce human error. Furthermore, providing a customizable user interface in which to work would decrease errors when manipulating the dataset, allow easier collaboration between researchers, and save time given appropriate form design. Finally, robust data governance would decrease errors, allow more efficient error-discovery, and provide a safer means for multiple researchers to contribute to a single project.",
-      "technologies": [],
+      "platforms": ["web"],
+      "technologies": ["rails", "PostgreSQL", "jruby", "ember", "emberData"],
       "content": ["Implemented ETL technologies in ruby to model/import exam data from disparate data sources into user’s project", "Deployed and released first version.", "Rapidly prototyped and released features, integrating feedback from preliminary users.", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
     }, {
       "name": "EpiWatch",
@@ -2765,8 +2820,12 @@ define("personal-site/payload", ["exports"], function (exports) {
         "copy": "#9A5BB9",
         "secondary": "#00C5AC"
       },
+      "video": {
+        "link": "http://youtu.be/k8N6zQnNpGI",
+        "embed": "https://www.youtube.com/embed/k8N6zQnNpGI"
+      },
       "links": {
-        "homepage": "hopkinsmedicine.org/epiwatch"
+        "Homepage": "hopkinsmedicine.org/epiwatch"
       },
       "background": {
         "src": "epiwatch.png",
@@ -2774,35 +2833,45 @@ define("personal-site/payload", ["exports"], function (exports) {
       },
       "customClasses": ["grid-item-big"],
       "id": "epiwatch",
-      "icon": { "src": "epiwatch_icon.png" },
+      "icon": {
+        "src": "epiwatch_icon.png"
+      },
       "logo": "",
       "headshot": "",
+      "detailedBackground": "Johns Hopkins EpiWatch™ is an app for Apple Watch™ and research study. EpiWatch helps you manage your epilepsy by tracking your seizures and possible triggers, medications and side effects. You can view this information at any time, and a dashboard lets you share a summary of the data with your doctor or caregiver if you want. With EpiWatch, you can also send a message to family members or caregivers to let them know when you are tracking a seizure.",
       "screenshots": [],
       "news": [{
         "title": "The Apple Watch App For Seizures May Soon Predict Their Onset",
         "date": " 07.25.16",
-        "link": "http://www.fastcompany.com/3059828/the-apple-watch-app-for-seizures-may-soon-predict-their-onset",
+        "host": "Fast Company",
+        "url": "http://www.fastcompany.com/3059828/the-apple-watch-app-for-seizures-may-soon-predict-their-onset",
         "comment": "This article was awesome, You should read it!"
       }, {
         "title": "Johns Hopkins tests EpiWatch app on Apple Watch to track seizures",
         "date": " 08.05.2016",
-        "link": "http://www.healthcareitnews.com/news/john-hopkins-tests-epiwatch-app-apple-watch-track-seizures"
+        "host": "HealthcareITNews",
+        "url": "http://www.healthcareitnews.com/news/john-hopkins-tests-epiwatch-app-apple-watch-track-seizures"
       }, {
         "title": "Apple Watch used to study epileptic seizures",
         "date": "11.22.2015",
-        "link": "http://money.cnn.com/2015/10/19/technology/researchkit-seizure/"
+        "host": "CNN",
+        "url": "http://money.cnn.com/2015/10/19/technology/researchkit-seizure/"
       }, {
         "title": "Turning the Apple Watch into a seizure detector",
         "date": "10.19.2015",
-        "link": "http://money.cnn.com/2015/10/19/technology/researchkit-seizure/"
+        "host": "CNN",
+        "url": "http://money.cnn.com/2015/10/19/technology/researchkit-seizure/"
       }, {
         "title": "Johns Hopkins researchers to use Apple Watch data to study epilepsy",
         "date": "10.15.2015",
-        "link": "http://hub.jhu.edu/2015/10/15/apple-watch-epiwatch/"
+        "host": "HUB–JHU",
+        "url": "http://hub.jhu.edu/2015/10/15/apple-watch-epiwatch/"
       }],
       "description": "",
-      "technologies": [],
-      "content": ["<i>Currently:</i>Leading development on version 2. Implemented new UI on both iPhone and Apple Watch.", "Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit", "Implemented Dynamic Type, Auto Layout throughout App.", "Lead iOS 10/WatchOS 3 release."]
+      "platforms": ["iphone", "watch"],
+      "technologies": ["swift", "healthkit", "crashlytics", "researchkit", "bamboo", "fastlane", "fabric", "watch"],
+      "content": ["<i>Currently:</i>Leading development on version 2. Implemented new UI on both iPhone and Apple Watch.", "Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit", "Implemented Dynamic Type, Auto Layout throughout App.", "Lead iOS 10/WatchOS 3 release.", "Configured CI testing with Bamboo and Fastlane. ", "Configured Fastlane Match to simplify the management of Apple Developer Certificates/Keys."]
+
     }, {
       "name": "Resident Worklist",
       "color": {
@@ -2821,7 +2890,8 @@ define("personal-site/payload", ["exports"], function (exports) {
       "screenshots": [],
       "news": [],
       "description": "Teaching tool gives resident radiologists feedback on their reports by showing a diff between their report and the final report.",
-      "technologies": [],
+      "platforms": ["web"],
+      "technologies": ["rails", "PostgreSQL", "jruby", "ember", "emberData"],
       "content": ["Developed Ember.js front end.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Used daily by over 80 clinicians and radiology residents at Johns Hopkins Hospital."]
     }, {
       "name": "Peer Review",
@@ -2838,7 +2908,8 @@ define("personal-site/payload", ["exports"], function (exports) {
       "screenshots": [],
       "news": [],
       "description": "",
-      "technologies": [],
+      "platforms": [],
+      "technologies": ["rails", "ruby", "ember"],
       "content": ["Used by 80 clinicians and radiology residents at Johns Hopkins Hospital.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Managed development for 7 months during a senior developer’s leave of absence.", "Implemented Patient search functionality, leading to deployment at new hospital."]
     }, {
       "name": "Accomplishments",
@@ -2858,7 +2929,8 @@ define("personal-site/payload", ["exports"], function (exports) {
       "screenshots": [],
       "news": [],
       "description": "",
-      "technologies": [],
+      "platforms": [],
+      "technologies": ["Rails", "GemDevelopment", "NPM", "ember"],
       "content": ["Created on Ruby on Rails gem consolidating assets, deployment and development scripts, common app functionality, and RESTful APIs to patient data. This gem is now integrated into 5 applications. ", "3 published NPM packages for Ember-CLI."]
     }],
     "contract": [{
@@ -2878,19 +2950,21 @@ define("personal-site/payload", ["exports"], function (exports) {
       },
       "customClasses": ["moar-spacing"],
       "id": "readahead",
-      "icon": { "src": "readahead_icon.png" },
+      "icon": {
+        "src": "readahead_icon.png"
+      },
       "logo": "",
       "headshot": "",
       "screenshots": [],
       "news": [],
+      "platforms": ["iphone", "android"],
       "links": {
         "Homepage": "https://readaheadapp.com/",
         "iTunes": "https://itunes.apple.com/us/app/read-ahead-hybrid-piano-sight/id1057615897?mt=8",
-        "Tablet app": "https://itunes.apple.com/us/app/read-ahead-practice-piano/id806292431?mt=8",
         "Google Play": "https://play.google.com/store/apps/details?id=com.anacrusisllc.readahead&hl=en"
       },
       "description": "",
-      "technologies": [],
+      "technologies": ["html", "appgyver", "cordova", "jquery"],
       "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application."]
     }, {
       "name": "ReadAhead Tablet",
@@ -2904,27 +2978,31 @@ define("personal-site/payload", ["exports"], function (exports) {
       "background": {
         "src": "readahead",
         "card-size": 2,
-        "offset": { "width": 0, "height": 200 }
+        "offset": {
+          "width": 0,
+          "height": 200
+        }
       },
       "customClasses": ["less-spacing", "moar-spacing", "grid-item-big", "grid-item-white-glow"],
-      "id": "readahead",
-      "icon": { "src": "readahead_icon.png" },
+      "id": "readahead-tablet",
+      "icon": {
+        "src": "readahead_icon.png"
+      },
       "logo": "",
       "headshot": "",
       "screenshots": [],
       "news": [],
+      "platforms": ["ipad"],
       "links": {
         "Homepage": "https://readaheadapp.com/",
-        "iTunes": "https://itunes.apple.com/us/app/read-ahead-hybrid-piano-sight/id1057615897?mt=8",
-        "Tablet app": "https://itunes.apple.com/us/app/read-ahead-practice-piano/id806292431?mt=8",
-        "Google Play": "https://play.google.com/store/apps/details?id=com.anacrusisllc.readahead&hl=en"
+        "iTunes": "https://itunes.apple.com/us/app/read-ahead-practice-piano/id806292431?mt=8"
       },
       "description": "",
-      "technologies": [],
-      "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application.", "Implemented UI Implemented in-app purchases.", "Implemented open source Cordova plugin to access iOS Microphone."]
+      "technologies": ["appgyver", "html", "jquery"],
+      "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application.", "Implemented in-app purchases to allow the user to buy lessons.", "Implemented open source Cordova plugin to access iOS Microphone."]
     }],
     "oss": [{
-      "name": "iOS 10 Clock",
+      "name": "10Clock",
       "fullName": "iOS 10 Clock",
       "color": {
         "text": "white",
@@ -2938,23 +3016,24 @@ define("personal-site/payload", ["exports"], function (exports) {
         "color": "white"
       },
       "customClasses": ["grid-item-white-glow"],
-      "id": "readahead",
-      "icon": {},
+      "id": "10Clock",
       "logo": "",
       "headshot": "",
       "screenshots": [],
-      "readme": "https://github.com/joedaniels29/SwiftClock",
+      "readme": {
+        "markdown": "https://raw.githubusercontent.com/joedaniels29/10Clock/master/README.md"
+      },
       "news": [],
+      "platforms": ["iphone", "ipad"],
       "links": {
         "Github": "https://github.com/joedaniels29/SwiftClock",
         "CocoaPods": "https://github.com/joedaniels29/SwiftClock",
         "Report an Issue": "https://github.com/joedaniels29/SwiftClock/issues"
       },
       "description": "",
-      "technologies": [39],
+      "technologies": ["coreanimation", "pod", "swift"],
       "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application."]
     }]
-
   };
 });
 define('personal-site/poll/poll', ['exports', 'ember'], function (exports, _ember) {
@@ -3095,11 +3174,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 4,
+              "line": 3,
               "column": 8
             },
             "end": {
-              "line": 6,
+              "line": 9,
               "column": 8
             }
           },
@@ -3113,20 +3192,36 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           var el0 = dom.createDocumentFragment();
           var el1 = dom.createTextNode("            ");
           dom.appendChild(el0, el1);
-          var el1 = dom.createElement("img");
+          var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "class", "project-title");
+          var el2 = dom.createTextNode("\n                ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n                ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h1");
+          dom.setAttribute(el2, "class", "title");
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
+          var el1 = dom.createTextNode("\n\n");
           dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element2 = dom.childAt(fragment, [1]);
-          var morphs = new Array(2);
-          morphs[0] = dom.createAttrMorph(element2, 'src');
-          morphs[1] = dom.createAttrMorph(element2, 'alt');
+          var element7 = dom.childAt(fragment, [1]);
+          var element8 = dom.childAt(element7, [3]);
+          var morphs = new Array(3);
+          morphs[0] = dom.createMorphAt(element7, 1, 1);
+          morphs[1] = dom.createAttrMorph(element8, 'style');
+          morphs[2] = dom.createMorphAt(element8, 0, 0);
           return morphs;
         },
-        statements: [["attribute", "src", ["concat", ["assets/images/", ["subexpr", "or", [["get", "model.icon.src", ["loc", [null, [5, 41], [5, 55]]], 0, 0, 0, 0], ["get", "model.icon", ["loc", [null, [5, 56], [5, 66]]], 0, 0, 0, 0]], [], ["loc", [null, [5, 36], [5, 68]]], 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["attribute", "alt", ["subexpr", "or", [["get", "model.icon.alt", ["loc", [null, [5, 79], [5, 93]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [5, 94], [5, 104]]], 0, 0, 0, 0]], [], ["loc", [null, [null, null], [5, 106]]], 0, 0], 0, 0, 0, 0]],
+        statements: [["inline", "application/hosted-img", [], ["pch", "icon", "name", ["subexpr", "or", [["get", "model.icon.src", ["loc", [null, [5, 61], [5, 75]]], 0, 0, 0, 0], ["get", "model.icon", ["loc", [null, [5, 76], [5, 86]]], 0, 0, 0, 0]], [], ["loc", [null, [5, 57], [5, 87]]], 0, 0], "alt", ["subexpr", "or", [["get", "model.icon.alt", ["loc", [null, [5, 96], [5, 110]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [5, 111], [5, 121]]], 0, 0, 0, 0]], [], ["loc", [null, [5, 92], [5, 122]]], 0, 0], "class", "logo"], ["loc", [null, [5, 16], [5, 137]]], 0, 0], ["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [6, 50], [6, 69]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["inline", "or", [["get", "model.title", ["loc", [null, [6, 79], [6, 90]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [6, 91], [6, 101]]], 0, 0, 0, 0]], [], ["loc", [null, [6, 74], [6, 103]]], 0, 0]],
         locals: [],
         templates: []
       };
@@ -3138,11 +3233,56 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 8,
+              "line": 9,
               "column": 8
             },
             "end": {
-              "line": 10,
+              "line": 11,
+              "column": 8
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("            ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("h1");
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element6 = dom.childAt(fragment, [1]);
+          var morphs = new Array(2);
+          morphs[0] = dom.createAttrMorph(element6, 'style');
+          morphs[1] = dom.createMorphAt(element6, 0, 0);
+          return morphs;
+        },
+        statements: [["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [10, 32], [10, 51]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["inline", "or", [["get", "model.title", ["loc", [null, [10, 61], [10, 72]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [10, 73], [10, 83]]], 0, 0, 0, 0]], [], ["loc", [null, [10, 56], [10, 85]]], 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child2 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 13,
+              "column": 8
+            },
+            "end": {
+              "line": 15,
               "column": 8
             }
           },
@@ -3165,29 +3305,29 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element1 = dom.childAt(fragment, [1]);
+          var element5 = dom.childAt(fragment, [1]);
           var morphs = new Array(2);
-          morphs[0] = dom.createAttrMorph(element1, 'style');
-          morphs[1] = dom.createMorphAt(element1, 0, 0);
+          morphs[0] = dom.createAttrMorph(element5, 'style');
+          morphs[1] = dom.createMorphAt(element5, 0, 0);
           return morphs;
         },
-        statements: [["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [9, 32], [9, 51]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "model.name", ["loc", [null, [9, 56], [9, 70]]], 0, 0, 0, 0]],
+        statements: [["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [14, 32], [14, 51]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "model.name", ["loc", [null, [14, 56], [14, 70]]], 0, 0, 0, 0]],
         locals: [],
         templates: []
       };
     })();
-    var child2 = (function () {
+    var child3 = (function () {
       return {
         meta: {
           "revision": "Ember@2.7.0",
           "loc": {
             "source": null,
             "start": {
-              "line": 11,
+              "line": 16,
               "column": 8
             },
             "end": {
-              "line": 13,
+              "line": 18,
               "column": 8
             }
           },
@@ -3214,23 +3354,23 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
           return morphs;
         },
-        statements: [["content", "model.tagline", ["loc", [null, [12, 16], [12, 33]]], 0, 0, 0, 0]],
+        statements: [["content", "model.tagline", ["loc", [null, [17, 16], [17, 33]]], 0, 0, 0, 0]],
         locals: [],
         templates: []
       };
     })();
-    var child3 = (function () {
+    var child4 = (function () {
       return {
         meta: {
           "revision": "Ember@2.7.0",
           "loc": {
             "source": null,
             "start": {
-              "line": 16,
+              "line": 21,
               "column": 4
             },
             "end": {
-              "line": 20,
+              "line": 25,
               "column": 4
             }
           },
@@ -3264,57 +3404,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 1]), 0, 0);
           return morphs;
         },
-        statements: [["content", "model.description", ["loc", [null, [18, 15], [18, 36]]], 0, 0, 0, 0]],
-        locals: [],
-        templates: []
-      };
-    })();
-    var child4 = (function () {
-      return {
-        meta: {
-          "revision": "Ember@2.7.0",
-          "loc": {
-            "source": null,
-            "start": {
-              "line": 21,
-              "column": 4
-            },
-            "end": {
-              "line": 25,
-              "column": 4
-            }
-          },
-          "moduleName": "personal-site/projects/glob/template.hbs"
-        },
-        isEmpty: false,
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("        ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("section");
-          dom.setAttribute(el1, "class", "detailed-background");
-          var el2 = dom.createTextNode("\n            ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createElement("p");
-          var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n        ");
-          dom.appendChild(el1, el2);
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var morphs = new Array(1);
-          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 1]), 0, 0);
-          return morphs;
-        },
-        statements: [["content", "model.detailedBackground", ["loc", [null, [23, 15], [23, 43]]], 0, 0, 0, 0]],
+        statements: [["content", "model.description", ["loc", [null, [23, 15], [23, 36]]], 0, 0, 0, 0]],
         locals: [],
         templates: []
       };
@@ -3327,11 +3417,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 28,
+                "line": 29,
                 "column": 12
               },
               "end": {
-                "line": 30,
+                "line": 31,
                 "column": 12
               }
             },
@@ -3358,7 +3448,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
             return morphs;
           },
-          statements: [["content", "val", ["loc", [null, [29, 20], [29, 27]]], 0, 0, 0, 0]],
+          statements: [["inline", "safe-string", [["get", "val", ["loc", [null, [30, 34], [30, 37]]], 0, 0, 0, 0]], [], ["loc", [null, [30, 20], [30, 39]]], 0, 0]],
           locals: ["val"],
           templates: []
         };
@@ -3369,11 +3459,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 26,
+              "line": 27,
               "column": 4
             },
             "end": {
-              "line": 32,
+              "line": 33,
               "column": 4
             }
           },
@@ -3404,12 +3494,183 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model.content", ["loc", [null, [28, 20], [28, 33]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [28, 12], [30, 21]]]]],
+        statements: [["block", "each", [["get", "model.content", ["loc", [null, [29, 20], [29, 33]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [29, 12], [31, 21]]]]],
         locals: [],
         templates: [child0]
       };
     })();
     var child6 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 36,
+              "column": 4
+            },
+            "end": {
+              "line": 41,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "detailed-background");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h3");
+          var el3 = dom.createTextNode("About:");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("p");
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 3]), 0, 0);
+          return morphs;
+        },
+        statements: [["content", "model.detailedBackground", ["loc", [null, [39, 15], [39, 43]]], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child7 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 42,
+              "column": 4
+            },
+            "end": {
+              "line": 47,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "readme");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h3");
+          var el3 = dom.createTextNode("README:");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("p");
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 3]), 0, 0);
+          return morphs;
+        },
+        statements: [["inline", "render-markdown", [], ["url", ["subexpr", "@mut", [["get", "model.readme.markdown", ["loc", [null, [45, 37], [45, 58]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [45, 15], [45, 60]]], 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child8 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 49,
+              "column": 4
+            },
+            "end": {
+              "line": 54,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "description");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h3");
+          var el3 = dom.createTextNode("Video");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("iframe");
+          dom.setAttribute(el2, "width", "854");
+          dom.setAttribute(el2, "height", "480");
+          dom.setAttribute(el2, "frameborder", "0");
+          dom.setAttribute(el2, "allowfullscreen", "");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var element4 = dom.childAt(fragment, [1, 3]);
+          var morphs = new Array(1);
+          morphs[0] = dom.createAttrMorph(element4, 'src');
+          return morphs;
+        },
+        statements: [["attribute", "src", ["concat", [["get", "model.video.embed", ["loc", [null, [52, 52], [52, 69]]], 0, 0, 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child9 = (function () {
       var child0 = (function () {
         var child0 = (function () {
           return {
@@ -3418,11 +3679,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 42,
+                  "line": 65,
                   "column": 12
                 },
                 "end": {
-                  "line": 44,
+                  "line": 67,
                   "column": 12
                 }
               },
@@ -3445,12 +3706,12 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
               return el0;
             },
             buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var element0 = dom.childAt(fragment, [1, 0]);
+              var element3 = dom.childAt(fragment, [1, 0]);
               var morphs = new Array(1);
-              morphs[0] = dom.createAttrMorph(element0, 'src');
+              morphs[0] = dom.createAttrMorph(element3, 'src');
               return morphs;
             },
-            statements: [["attribute", "src", ["get", "s", ["loc", [null, [43, 32], [43, 33]]], 0, 0, 0, 0], 0, 0, 0, 0]],
+            statements: [["attribute", "src", ["get", "s", ["loc", [null, [66, 32], [66, 33]]], 0, 0, 0, 0], 0, 0, 0, 0]],
             locals: ["s"],
             templates: []
           };
@@ -3461,11 +3722,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 34,
+                "line": 57,
                 "column": 8
               },
               "end": {
-                "line": 46,
+                "line": 69,
                 "column": 8
               }
             },
@@ -3489,7 +3750,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             dom.insertBoundary(fragment, 0);
             return morphs;
           },
-          statements: [["block", "each", [["get", "model.screenshots", ["loc", [null, [42, 20], [42, 37]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [42, 12], [44, 21]]]]],
+          statements: [["block", "each", [["get", "model.screenshots", ["loc", [null, [65, 20], [65, 37]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [65, 12], [67, 21]]]]],
           locals: [],
           templates: [child0]
         };
@@ -3500,11 +3761,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 33,
+              "line": 56,
               "column": 4
             },
             "end": {
-              "line": 47,
+              "line": 70,
               "column": 4
             }
           },
@@ -3527,12 +3788,197 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [["block", "slick-carousel", [], ["class", "ember-carousel", "autoplay", true, "autoplaySpeed", 2000, "slidesToShow", 1, "slidesToScroll", 1, "dots", true, "fade", true], 0, null, ["loc", [null, [34, 8], [46, 27]]]]],
+        statements: [["block", "slick-carousel", [], ["class", "ember-carousel", "autoplay", true, "autoplaySpeed", 2000, "slidesToShow", 1, "slidesToScroll", 1, "dots", true, "fade", true], 0, null, ["loc", [null, [57, 8], [69, 27]]]]],
         locals: [],
         templates: [child0]
       };
     })();
-    var child7 = (function () {
+    var child10 = (function () {
+      var child0 = (function () {
+        var child0 = (function () {
+          return {
+            meta: {
+              "revision": "Ember@2.7.0",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 84,
+                  "column": 24
+                },
+                "end": {
+                  "line": 86,
+                  "column": 24
+                }
+              },
+              "moduleName": "personal-site/projects/glob/template.hbs"
+            },
+            isEmpty: false,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              var el1 = dom.createTextNode("                            ");
+              dom.appendChild(el0, el1);
+              var el1 = dom.createElement("section");
+              var el2 = dom.createComment("");
+              dom.appendChild(el1, el2);
+              dom.appendChild(el0, el1);
+              var el1 = dom.createTextNode("\n");
+              dom.appendChild(el0, el1);
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+              var morphs = new Array(1);
+              morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
+              return morphs;
+            },
+            statements: [["content", "story.comment", ["loc", [null, [85, 37], [85, 54]]], 0, 0, 0, 0]],
+            locals: [],
+            templates: []
+          };
+        })();
+        return {
+          meta: {
+            "revision": "Ember@2.7.0",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 78,
+                "column": 16
+              },
+              "end": {
+                "line": 88,
+                "column": 16
+              }
+            },
+            "moduleName": "personal-site/projects/glob/template.hbs"
+          },
+          isEmpty: false,
+          arity: 1,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("                    ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("li");
+            var el2 = dom.createTextNode("\n                        ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("header");
+            var el3 = dom.createTextNode("\n                            ");
+            dom.appendChild(el2, el3);
+            var el3 = dom.createElement("span");
+            dom.setAttribute(el3, "class", "date");
+            var el4 = dom.createComment("");
+            dom.appendChild(el3, el4);
+            dom.appendChild(el2, el3);
+            var el3 = dom.createTextNode(" • ");
+            dom.appendChild(el2, el3);
+            var el3 = dom.createElement("span");
+            dom.setAttribute(el3, "class", "host");
+            var el4 = dom.createComment("");
+            dom.appendChild(el3, el4);
+            dom.appendChild(el2, el3);
+            var el3 = dom.createTextNode("\n                        ");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n                        ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("a");
+            var el3 = dom.createElement("h6");
+            var el4 = dom.createComment("");
+            dom.appendChild(el3, el4);
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createComment("");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("                    ");
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var element0 = dom.childAt(fragment, [1]);
+            var element1 = dom.childAt(element0, [1]);
+            var element2 = dom.childAt(element0, [3]);
+            var morphs = new Array(5);
+            morphs[0] = dom.createMorphAt(dom.childAt(element1, [1]), 0, 0);
+            morphs[1] = dom.createMorphAt(dom.childAt(element1, [3]), 0, 0);
+            morphs[2] = dom.createAttrMorph(element2, 'href');
+            morphs[3] = dom.createMorphAt(dom.childAt(element2, [0]), 0, 0);
+            morphs[4] = dom.createMorphAt(element0, 5, 5);
+            return morphs;
+          },
+          statements: [["content", "story.date", ["loc", [null, [81, 47], [81, 61]]], 0, 0, 0, 0], ["content", "story.host", ["loc", [null, [81, 90], [81, 104]]], 0, 0, 0, 0], ["attribute", "href", ["concat", [["get", "story.url", ["loc", [null, [83, 35], [83, 44]]], 0, 0, 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "story.title", ["loc", [null, [83, 52], [83, 67]]], 0, 0, 0, 0], ["block", "if", [["get", "story.comment", ["loc", [null, [84, 30], [84, 43]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [84, 24], [86, 31]]]]],
+          locals: ["story"],
+          templates: [child0]
+        };
+      })();
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 74,
+              "column": 4
+            },
+            "end": {
+              "line": 93,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "news");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h3");
+          var el3 = dom.createTextNode("In the News:");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("ul");
+          var el3 = dom.createTextNode("\n");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createComment("");
+          dom.appendChild(el2, el3);
+          var el3 = dom.createTextNode("            ");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n\n\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 3]), 1, 1);
+          return morphs;
+        },
+        statements: [["block", "each", [["get", "model.news", ["loc", [null, [78, 24], [78, 34]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [78, 16], [88, 25]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })();
+    var child11 = (function () {
       var child0 = (function () {
         return {
           meta: {
@@ -3540,11 +3986,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 55,
+                "line": 99,
                 "column": 12
               },
               "end": {
-                "line": 57,
+                "line": 101,
                 "column": 12
               }
             },
@@ -3569,7 +4015,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "skill/skill-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [56, 46], [56, 51]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [56, 16], [56, 53]]], 0, 0]],
+          statements: [["inline", "skills/platform-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [100, 50], [100, 55]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [100, 16], [100, 57]]], 0, 0]],
           locals: ["skill"],
           templates: []
         };
@@ -3580,11 +4026,106 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 53,
+              "line": 96,
               "column": 4
             },
             "end": {
-              "line": 60,
+              "line": 104,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "platforms");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h3");
+          var el3 = dom.createTextNode("Avalable on:");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 3, 3);
+          return morphs;
+        },
+        statements: [["block", "each", [["get", "model.platforms", ["loc", [null, [99, 20], [99, 35]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [99, 12], [101, 21]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })();
+    var child12 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "revision": "Ember@2.7.0",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 108,
+                "column": 12
+              },
+              "end": {
+                "line": 110,
+                "column": 12
+              }
+            },
+            "moduleName": "personal-site/projects/glob/template.hbs"
+          },
+          isEmpty: false,
+          arity: 1,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("                ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+            return morphs;
+          },
+          statements: [["inline", "skills/skill-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [109, 47], [109, 52]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [109, 16], [109, 54]]], 0, 0]],
+          locals: ["skill"],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 105,
+              "column": 4
+            },
+            "end": {
+              "line": 113,
               "column": 4
             }
           },
@@ -3600,6 +4141,12 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("section");
           dom.setAttribute(el1, "class", "technologies");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h3");
+          var el3 = dom.createTextNode("Tech that made this app possible:");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("\n");
           dom.appendChild(el1, el2);
           var el2 = dom.createComment("");
@@ -3613,10 +4160,10 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
           var morphs = new Array(1);
-          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 3, 3);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model.technologies", ["loc", [null, [55, 20], [55, 38]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [55, 12], [57, 21]]]]],
+        statements: [["block", "each", [["get", "model.technologies", ["loc", [null, [108, 20], [108, 38]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [108, 12], [110, 21]]]]],
         locals: [],
         templates: [child0]
       };
@@ -3631,7 +4178,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 62,
+            "line": 115,
             "column": 10
           }
         },
@@ -3647,15 +4194,9 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         var el2 = dom.createTextNode("\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("header");
-        var el3 = dom.createTextNode("\n\n");
+        var el3 = dom.createTextNode("\n");
         dom.appendChild(el2, el3);
         var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("        ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("h1");
-        var el4 = dom.createComment("");
-        dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n");
         dom.appendChild(el2, el3);
@@ -3663,8 +4204,16 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         dom.appendChild(el2, el3);
         var el3 = dom.createComment("");
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("    ");
+        var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n");
         dom.appendChild(el1, el2);
@@ -3672,11 +4221,21 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
-        var el2 = dom.createComment("");
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n\n\n\n\n");
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
@@ -3690,26 +4249,27 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element3 = dom.childAt(fragment, [0]);
-        var element4 = dom.childAt(element3, [1]);
-        var element5 = dom.childAt(element4, [3]);
-        var morphs = new Array(11);
-        morphs[0] = dom.createMorphAt(element4, 1, 1);
-        morphs[1] = dom.createAttrMorph(element5, 'style');
-        morphs[2] = dom.createMorphAt(element5, 0, 0);
-        morphs[3] = dom.createMorphAt(element4, 5, 5);
-        morphs[4] = dom.createMorphAt(element4, 6, 6);
-        morphs[5] = dom.createMorphAt(element3, 3, 3);
-        morphs[6] = dom.createMorphAt(element3, 4, 4);
-        morphs[7] = dom.createMorphAt(element3, 5, 5);
-        morphs[8] = dom.createMorphAt(element3, 6, 6);
-        morphs[9] = dom.createMorphAt(element3, 8, 8);
-        morphs[10] = dom.createMorphAt(element3, 10, 10);
+        var element9 = dom.childAt(fragment, [0]);
+        var element10 = dom.childAt(element9, [1]);
+        var morphs = new Array(13);
+        morphs[0] = dom.createMorphAt(element10, 1, 1);
+        morphs[1] = dom.createMorphAt(element10, 3, 3);
+        morphs[2] = dom.createMorphAt(element10, 4, 4);
+        morphs[3] = dom.createMorphAt(element9, 3, 3);
+        morphs[4] = dom.createMorphAt(element9, 5, 5);
+        morphs[5] = dom.createMorphAt(element9, 7, 7);
+        morphs[6] = dom.createMorphAt(element9, 8, 8);
+        morphs[7] = dom.createMorphAt(element9, 10, 10);
+        morphs[8] = dom.createMorphAt(element9, 12, 12);
+        morphs[9] = dom.createMorphAt(element9, 14, 14);
+        morphs[10] = dom.createMorphAt(element9, 16, 16);
+        morphs[11] = dom.createMorphAt(element9, 17, 17);
+        morphs[12] = dom.createMorphAt(element9, 19, 19);
         return morphs;
       },
-      statements: [["block", "if", [["get", "model.icon", ["loc", [null, [4, 14], [4, 24]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [4, 8], [6, 15]]]], ["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [7, 28], [7, 47]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["inline", "or", [["get", "model.title", ["loc", [null, [7, 57], [7, 68]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [7, 69], [7, 79]]], 0, 0, 0, 0]], [], ["loc", [null, [7, 52], [7, 81]]], 0, 0], ["block", "if", [["get", "model.title", ["loc", [null, [8, 14], [8, 25]]], 0, 0, 0, 0]], [], 1, null, ["loc", [null, [8, 8], [10, 15]]]], ["block", "if", [["get", "model.tagline", ["loc", [null, [11, 14], [11, 27]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [11, 8], [13, 15]]]], ["block", "if", [["get", "model.description", ["loc", [null, [16, 10], [16, 27]]], 0, 0, 0, 0]], [], 3, null, ["loc", [null, [16, 4], [20, 11]]]], ["block", "if", [["get", "model.detailedBackground", ["loc", [null, [21, 10], [21, 34]]], 0, 0, 0, 0]], [], 4, null, ["loc", [null, [21, 4], [25, 11]]]], ["block", "if", [["get", "model.content", ["loc", [null, [26, 10], [26, 23]]], 0, 0, 0, 0]], [], 5, null, ["loc", [null, [26, 4], [32, 11]]]], ["block", "if", [["get", "model.screenshots", ["loc", [null, [33, 10], [33, 27]]], 0, 0, 0, 0]], [], 6, null, ["loc", [null, [33, 4], [47, 11]]]], ["block", "if", [["get", "model.technologies", ["loc", [null, [53, 10], [53, 28]]], 0, 0, 0, 0]], [], 7, null, ["loc", [null, [53, 4], [60, 11]]]], ["content", "outlet", ["loc", [null, [61, 4], [61, 14]]], 0, 0, 0, 0]],
+      statements: [["block", "if", [["get", "model.icon", ["loc", [null, [3, 14], [3, 24]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [3, 8], [11, 15]]]], ["block", "if", [["get", "model.title", ["loc", [null, [13, 14], [13, 25]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [13, 8], [15, 15]]]], ["block", "if", [["get", "model.tagline", ["loc", [null, [16, 14], [16, 27]]], 0, 0, 0, 0]], [], 3, null, ["loc", [null, [16, 8], [18, 15]]]], ["block", "if", [["get", "model.description", ["loc", [null, [21, 10], [21, 27]]], 0, 0, 0, 0]], [], 4, null, ["loc", [null, [21, 4], [25, 11]]]], ["block", "if", [["get", "model.content", ["loc", [null, [27, 10], [27, 23]]], 0, 0, 0, 0]], [], 5, null, ["loc", [null, [27, 4], [33, 11]]]], ["block", "if", [["get", "model.detailedBackground", ["loc", [null, [36, 10], [36, 34]]], 0, 0, 0, 0]], [], 6, null, ["loc", [null, [36, 4], [41, 11]]]], ["block", "if", [["get", "model.readme", ["loc", [null, [42, 10], [42, 22]]], 0, 0, 0, 0]], [], 7, null, ["loc", [null, [42, 4], [47, 11]]]], ["block", "if", [["get", "model.video", ["loc", [null, [49, 10], [49, 21]]], 0, 0, 0, 0]], [], 8, null, ["loc", [null, [49, 4], [54, 11]]]], ["block", "if", [["get", "model.screenshots", ["loc", [null, [56, 10], [56, 27]]], 0, 0, 0, 0]], [], 9, null, ["loc", [null, [56, 4], [70, 11]]]], ["block", "if", [["get", "model.news", ["loc", [null, [74, 10], [74, 20]]], 0, 0, 0, 0]], [], 10, null, ["loc", [null, [74, 4], [93, 11]]]], ["block", "if", [["get", "model.platforms", ["loc", [null, [96, 10], [96, 25]]], 0, 0, 0, 0]], [], 11, null, ["loc", [null, [96, 4], [104, 11]]]], ["block", "if", [["get", "model.technologies", ["loc", [null, [105, 10], [105, 28]]], 0, 0, 0, 0]], [], 12, null, ["loc", [null, [105, 4], [113, 11]]]], ["content", "outlet", ["loc", [null, [114, 4], [114, 14]]], 0, 0, 0, 0]],
       locals: [],
-      templates: [child0, child1, child2, child3, child4, child5, child6, child7]
+      templates: [child0, child1, child2, child3, child4, child5, child6, child7, child8, child9, child10, child11, child12]
     };
   })());
 });
@@ -4223,7 +4783,6 @@ define('personal-site/projects/route', ['exports', 'ember', 'personal-site/proje
         model: function model() {
             var projects = [];
             for (var p in _personalSiteProjectsOutline['default']) {
-                if (p == 'skills') continue;
                 projects = projects.concat(_personalSiteProjectsOutline['default'][p]);
             }
             return projects;
@@ -4257,13 +4816,9 @@ define("personal-site/projects/template", ["exports"], function (exports) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("main");
         dom.setAttribute(el1, "class", "projects");
-        var el2 = dom.createTextNode("\n    ");
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
-        var el2 = dom.createElement("h1");
-        var el3 = dom.createTextNode("Projects");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n    ");
+        var el2 = dom.createTextNode("    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
@@ -4274,7 +4829,7 @@ define("personal-site/projects/template", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 3, 3);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 2, 2);
         return morphs;
       },
       statements: [["content", "liquid-outlet", ["loc", [null, [3, 4], [3, 21]]], 0, 0, 0, 0]],
@@ -4301,7 +4856,7 @@ define('personal-site/router', ['exports', 'ember', 'personal-site/config/enviro
       // this.route('epiwatch');
       // this.route('oasis');
       // this.route('resident-worklist');
-      // this.route('peer-review');
+      this.route('credits');
       // this.route('achievements');
       this.route('glob', { path: ':project' });
     });
@@ -4331,8 +4886,142 @@ define('personal-site/services/scroller', ['exports', 'ember-scroll-to/services/
     }
   });
 });
-define('personal-site/skills/skill-display/component', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Component.extend({});
+define('personal-site/skills/company-display/component', ['exports', 'ember', 'personal-site/skills/skills'], function (exports, _ember, _personalSiteSkillsSkills) {
+    exports['default'] = _ember['default'].Component.extend({
+        tagName: "div",
+        attributeBindings: ["title"],
+        classNames: ["skillBlock"],
+        model: _ember['default'].computed("modelId", function () {
+            return _personalSiteSkillsSkills['default'].platform.findBy("id", this.get("modelId"));
+        })
+    });
+});
+define("personal-site/skills/company-display/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "revision": "Ember@2.7.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 0
+          }
+        },
+        "moduleName": "personal-site/skills/company-display/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createTextNode(" ");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+        return morphs;
+      },
+      statements: [["inline", "application/hosted-img", [], ["pch", "company", "name", ["subexpr", "@mut", [["get", "model.id", ["loc", [null, [1, 45], [1, 53]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [1, 1], [1, 55]]], 0, 0]],
+      locals: [],
+      templates: []
+    };
+  })());
+});
+define("personal-site/skills/company", ["exports"], function (exports) {
+  exports["default"] = {
+    "company": [{
+      "name": "Technology Innovation Center, Johns Hopkins Medicine",
+      "id": "jhmtic",
+      "icon": true
+    }, {
+      "name": "Johns Hopkins Medicine",
+      "id": "jhm",
+      "logo": true
+    }, {
+      "name": "Anacrusis llc",
+      "id": "anacrusis",
+      "logo": true
+    }, {
+      "name": "Open Source",
+      "id": "github",
+      "icon": true
+    }]
+  };
+});
+define('personal-site/skills/platform-display/component', ['exports', 'ember', 'personal-site/skills/skills'], function (exports, _ember, _personalSiteSkillsSkills) {
+    exports['default'] = _ember['default'].Component.extend({
+        tagName: "div",
+        attributeBindings: ["title"],
+        classNames: ["skillBlock"],
+        model: _ember['default'].computed("modelId", function () {
+            return _personalSiteSkillsSkills['default'].platform.findBy("id", this.get("modelId"));
+        })
+    });
+});
+define("personal-site/skills/platform-display/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    return {
+      meta: {
+        "revision": "Ember@2.7.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 0
+          }
+        },
+        "moduleName": "personal-site/skills/platform-display/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createTextNode(" ");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createComment("");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+        return morphs;
+      },
+      statements: [["inline", "application/hosted-img", [], ["pch", "platform/logo", "class", "logo", "title", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [1, 66], [1, 76]]], 0, 0, 0, 0]], [], [], 0, 0], "name", ["subexpr", "@mut", [["get", "model.id", ["loc", [null, [1, 82], [1, 90]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [1, 1], [1, 92]]], 0, 0]],
+      locals: [],
+      templates: []
+    };
+  })());
+});
+define('personal-site/skills/skill-display/component', ['exports', 'ember', 'personal-site/skills/skills'], function (exports, _ember, _personalSiteSkillsSkills) {
+    exports['default'] = _ember['default'].Component.extend({
+        tagName: "div",
+        attributeBindings: ["title"],
+        classNames: ["skillBlock"],
+        model: _ember['default'].computed("modelId", function () {
+            return _personalSiteSkillsSkills['default'].skill.findBy("id", this.get("modelId"));
+        })
+    });
 });
 define("personal-site/skills/skill-display/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
@@ -4348,7 +5037,7 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
             },
             "end": {
               "line": 3,
-              "column": 4
+              "column": 0
             }
           },
           "moduleName": "personal-site/skills/skill-display/template.hbs"
@@ -4372,7 +5061,7 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
           morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "hosted-img", [], ["pch", "skill/icon", "name", ["subexpr", "@mut", [["get", "model.id", ["loc", [null, [2, 39], [2, 47]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [2, 4], [2, 49]]], 0, 0]],
+        statements: [["inline", "application/hosted-img", [], ["class", "logo", "title", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [2, 48], [2, 58]]], 0, 0, 0, 0]], [], [], 0, 0], "pch", "skill/logo", "name", ["subexpr", "@mut", [["get", "model.id", ["loc", [null, [2, 81], [2, 89]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [2, 4], [2, 91]]], 0, 0]],
         locals: [],
         templates: []
       };
@@ -4386,11 +5075,11 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 7,
+                  "line": 8,
                   "column": 8
                 },
                 "end": {
-                  "line": 9,
+                  "line": 10,
                   "column": 8
                 }
               },
@@ -4415,7 +5104,7 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
               morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
               return morphs;
             },
-            statements: [["content", "model.title", ["loc", [null, [8, 12], [8, 27]]], 0, 0, 0, 0]],
+            statements: [["content", "model.name", ["loc", [null, [9, 12], [9, 26]]], 0, 0, 0, 0]],
             locals: [],
             templates: []
           };
@@ -4426,11 +5115,11 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
             "loc": {
               "source": null,
               "start": {
-                "line": 4,
+                "line": 5,
                 "column": 4
               },
               "end": {
-                "line": 10,
+                "line": 11,
                 "column": 4
               }
             },
@@ -4459,89 +5148,42 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["inline", "hosted-img", [], ["name", ["subexpr", "@mut", [["get", "model.id", ["loc", [null, [5, 26], [5, 34]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [5, 8], [5, 36]]], 0, 0], ["block", "very-custom-text", [], ["pch", "skill/icon", "tag", "footer"], 0, null, ["loc", [null, [7, 8], [9, 29]]]]],
+          statements: [["inline", "application/hosted-img", [], ["class", "icon", "title", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [6, 52], [6, 62]]], 0, 0, 0, 0]], [], [], 0, 0], "pch", "skill/icon", "name", ["subexpr", "@mut", [["get", "model.id", ["loc", [null, [6, 86], [6, 94]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [6, 8], [6, 96]]], 0, 0], ["block", "very-custom-text", [], ["tag", "footer"], 0, null, ["loc", [null, [8, 8], [10, 29]]]]],
           locals: [],
           templates: [child0]
         };
       })();
       var child1 = (function () {
-        var child0 = (function () {
-          return {
-            meta: {
-              "revision": "Ember@2.7.0",
-              "loc": {
-                "source": null,
-                "start": {
-                  "line": 11,
-                  "column": 8
-                },
-                "end": {
-                  "line": 13,
-                  "column": 8
-                }
-              },
-              "moduleName": "personal-site/skills/skill-display/template.hbs"
-            },
-            isEmpty: false,
-            arity: 0,
-            cachedFragment: null,
-            hasRendered: false,
-            buildFragment: function buildFragment(dom) {
-              var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("            ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createComment("");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
-              dom.appendChild(el0, el1);
-              return el0;
-            },
-            buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var morphs = new Array(1);
-              morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-              return morphs;
-            },
-            statements: [["content", "model.title", ["loc", [null, [12, 12], [12, 27]]], 0, 0, 0, 0]],
-            locals: [],
-            templates: []
-          };
-        })();
         return {
           meta: {
             "revision": "Ember@2.7.0",
             "loc": {
               "source": null,
               "start": {
-                "line": 10,
+                "line": 11,
                 "column": 4
               },
               "end": {
-                "line": 14,
+                "line": 15,
                 "column": 4
               }
             },
             "moduleName": "personal-site/skills/skill-display/template.hbs"
           },
-          isEmpty: false,
+          isEmpty: true,
           arity: 0,
           cachedFragment: null,
           hasRendered: false,
           buildFragment: function buildFragment(dom) {
             var el0 = dom.createDocumentFragment();
-            var el1 = dom.createComment("");
-            dom.appendChild(el0, el1);
             return el0;
           },
-          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-            var morphs = new Array(1);
-            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-            dom.insertBoundary(fragment, 0);
-            dom.insertBoundary(fragment, null);
-            return morphs;
+          buildRenderNodes: function buildRenderNodes() {
+            return [];
           },
-          statements: [["block", "very-custom-text", [], ["tag", "footer"], 0, null, ["loc", [null, [11, 8], [13, 29]]]]],
+          statements: [],
           locals: [],
-          templates: [child0]
+          templates: []
         };
       })();
       return {
@@ -4551,10 +5193,10 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
             "source": null,
             "start": {
               "line": 3,
-              "column": 4
+              "column": 0
             },
             "end": {
-              "line": 15,
+              "line": 16,
               "column": 0
             }
           },
@@ -4566,18 +5208,19 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
           var el1 = dom.createComment("");
           dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
           var morphs = new Array(1);
-          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-          dom.insertBoundary(fragment, 0);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [["block", "if", [["get", "model.icon", ["loc", [null, [4, 10], [4, 20]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [4, 4], [14, 11]]]]],
+        statements: [["block", "if", [["get", "model.icon", ["loc", [null, [5, 10], [5, 20]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [5, 4], [15, 11]]]]],
         locals: [],
         templates: [child0, child1]
       };
@@ -4592,7 +5235,7 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
             "column": 0
           },
           "end": {
-            "line": 15,
+            "line": 16,
             "column": 7
           }
         },
@@ -4615,11 +5258,216 @@ define("personal-site/skills/skill-display/template", ["exports"], function (exp
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "if", [["get", "model.logo", ["loc", [null, [1, 6], [1, 16]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [1, 0], [15, 7]]]]],
+      statements: [["block", "if", [["get", "model.logo", ["loc", [null, [1, 6], [1, 16]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [1, 0], [16, 7]]]]],
       locals: [],
       templates: [child0, child1]
     };
   })());
+});
+define("personal-site/skills/skills", ["exports"], function (exports) {
+  exports["default"] = {
+    "skill": [{
+      "name": "Swift",
+      "id": "swift",
+      "icon": true
+    }, {
+      "name": "Objective-C",
+      "id": "ObjectiveC"
+    }, {
+      "name": "C",
+      "id": "C"
+    }, {
+      "name": "Fastlane",
+      "id": "fastlane",
+      "logo": true
+    }, {
+      "name": "C++",
+      "id": "C++"
+    }, {
+      "name": "ReactiveCocoa",
+      "id": "reactiveCocoa",
+      "logo": true
+    }, {
+      "name": "Core Data",
+      "id": "coreData",
+      "icon": true
+    }, {
+      "name": "Ruby",
+      "id": "ruby",
+      "icon": true
+    }, {
+      "name": "Rails",
+      "id": "rails",
+      "logo": true
+    }, {
+      "name": "JRuby",
+      "id": "jruby",
+      "logo": true
+    }, {
+      "name": "Gem Development",
+      "id": "GemDevelopment"
+    }, {
+      "name": "ActiveRecord",
+      "id": "ActiveRecord"
+    }, {
+      "name": "Javascript (ES6)",
+      "id": "javascript",
+      "icon": true
+    }, {
+      "name": "Ember.js",
+      "id": "ember",
+      "logo": true
+
+    }, {
+      "name": "Ember Data",
+      "id": "emberData",
+      "logo": true
+    }, {
+      "name": "jQuery",
+      "id": "jquery",
+      "logo": true
+    }, {
+      "name": "CoffeeScript",
+      "id": "coffeeScript",
+      "logo": true
+    }, {
+      "name": "Cordova",
+      "id": "cordova",
+      "logo": true
+    }, {
+      "name": "Node.js",
+      "id": "nodejs",
+      "logo": true
+    }, {
+      "name": "NPM Package Development",
+      "id": "npm",
+      "logo": true
+    }, {
+      "name": "Express",
+      "id": "Express"
+    }, {
+      "name": "Appgyver Supersonic/Steroids",
+      "id": "appgyver",
+      "logo": true
+    }, {
+      "name": "HTML",
+      "id": "html",
+      "logo": true
+    }, {
+      "name": "SCSS",
+      "id": "sass",
+      "logo": true
+    }, {
+      "name": "LESS",
+      "id": "less",
+      "logo": true
+    }, {
+      "name": "Bootstrap",
+      "id": "bootstrap",
+      "logo": true
+    }, {
+      "name": "Git",
+      "id": "git",
+      "logo": true
+    }, {
+      "name": "SDLC",
+      "id": "SDLC"
+    }, {
+      "name": "Agile",
+      "id": "Agile"
+    }, {
+      "name": "Wireframing",
+      "id": "Wireframing"
+    }, {
+      "name": "Mockups",
+      "id": "Mockups"
+    }, {
+      "name": "Prototyping",
+      "id": "Prototyping"
+    }, {
+      "name": "PostgreSQL",
+      "id": "PostgreSQL",
+      "logo": true
+    }, {
+      "name": "Python",
+      "id": "python",
+      "icon": true
+    }, {
+      "name": "Asterisk PBX with WebRTC",
+      "id": "asterisk",
+      "logo": true
+    }, {
+      "name": "ZSH",
+      "id": "ZSH"
+    }, {
+      "name": "Bash",
+      "id": "Bash"
+    }, {
+      "name": "Mathematica",
+      "id": "mathematica",
+      "icon": true
+    }, {
+      "name": "Lisp",
+      "id": "lisp"
+    }, {
+      "name": "Core Animation",
+      "id": "coreanimation",
+      "icon": true
+    }, {
+      "name": "HealthKit",
+      "id": "healthkit",
+      "icon": true
+    }, {
+      "name": "ResearchKit",
+      "id": "researchkit",
+      "icon": true
+    }, {
+      "name": "Twitter Fabric",
+      "id": "fabric",
+      "logo": true
+    }, {
+      "name": "Crashlytics",
+      "id": "crashlytics",
+      "logo": true
+    }, {
+      "name": "Atlassian Bamboo",
+      "id": "bamboo",
+      "logo": true
+    }, {
+      "name": "CocoaPods",
+      "id": "pod",
+      "logo": true
+    }],
+    "platform": [{
+      "name": "iPad",
+      "id": "ipad",
+      "logo": true
+    }, {
+      "name": "Android",
+      "id": "android",
+      "options": {
+        "gravity": "center",
+        "resize": "200x200"
+      },
+      "logo": true
+    }, {
+      "name": "iPhone",
+      "id": "iphone",
+      "logo": true
+    }, {
+      "name": "web",
+      "id": "web",
+      "logo": true
+    }, {
+      "name": "Apple Watch",
+      "id": "watch",
+      "options": {
+        "gravity": "center",
+        "resize": "120x120"
+      },
+      "logo": true
+    }]
+  };
 });
 define("personal-site/templates/components/scroll-to", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
@@ -5223,7 +6071,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+b602fc7e"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+a581cab7"});
 }
 
 /* jshint ignore:end */
