@@ -6321,7 +6321,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+e381f3e7"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+e5b2d687"});
 }
 
 /* jshint ignore:end */
