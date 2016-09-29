@@ -311,12 +311,12 @@ define("personal-site/application/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 15,
-              "column": 8
+              "line": 16,
+              "column": 12
             },
             "end": {
-              "line": 15,
-              "column": 34
+              "line": 16,
+              "column": 38
             }
           },
           "moduleName": "personal-site/application/template.hbs"
@@ -346,12 +346,12 @@ define("personal-site/application/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 16,
-              "column": 8
+              "line": 17,
+              "column": 12
             },
             "end": {
-              "line": 16,
-              "column": 39
+              "line": 17,
+              "column": 43
             }
           },
           "moduleName": "personal-site/application/template.hbs"
@@ -384,7 +384,7 @@ define("personal-site/application/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 23,
+            "line": 24,
             "column": 0
           }
         },
@@ -492,11 +492,15 @@ define("personal-site/application/template", ["exports"], function (exports) {
         var el2 = dom.createElement("nav");
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n        ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
+        var el3 = dom.createElement("section");
+        var el4 = dom.createTextNode("\n            ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n            ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n");
         dom.appendChild(el2, el3);
@@ -522,16 +526,137 @@ define("personal-site/application/template", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [0, 5]);
+        var element1 = dom.childAt(element0, [1]);
         var morphs = new Array(4);
-        morphs[0] = dom.createMorphAt(element0, 1, 1);
-        morphs[1] = dom.createMorphAt(element0, 3, 3);
-        morphs[2] = dom.createMorphAt(dom.childAt(element0, [6]), 0, 0);
+        morphs[0] = dom.createMorphAt(element1, 1, 1);
+        morphs[1] = dom.createMorphAt(element1, 3, 3);
+        morphs[2] = dom.createMorphAt(dom.childAt(element0, [4]), 0, 0);
         morphs[3] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         return morphs;
       },
-      statements: [["block", "link-to", ["index"], [], 0, null, ["loc", [null, [15, 8], [15, 46]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [16, 8], [16, 51]]]], ["inline", "application/lett-r", [], ["models", ["subexpr", "@mut", [["get", "model", ["loc", [null, [18, 43], [18, 48]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [18, 15], [18, 50]]], 0, 0], ["content", "liquid-outlet", ["loc", [null, [22, 0], [22, 17]]], 0, 0, 0, 0]],
+      statements: [["block", "link-to", ["index"], [], 0, null, ["loc", [null, [16, 12], [16, 50]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [17, 12], [17, 55]]]], ["inline", "application/lett-r", [], ["models", ["subexpr", "@mut", [["get", "model", ["loc", [null, [19, 43], [19, 48]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [19, 15], [19, 50]]], 0, 0], ["content", "liquid-outlet", ["loc", [null, [23, 0], [23, 17]]], 0, 0, 0, 0]],
       locals: [],
       templates: [child0, child1]
+    };
+  })());
+});
+define('personal-site/application/tweets-group/component', ['exports', 'ember', 'personal-site/poll/poll'], function (exports, _ember, _personalSitePollPoll) {
+    exports['default'] = _ember['default'].Component.extend({
+        idx: 0,
+        // tagName: "img",
+        // attributeBindings:["src", "title"],
+        //
+        // src: Ember.computed("attrs.name","pch", function(){
+        //     var src = this.get("name");
+        //     var pch = this.get("pch");
+        //     var ext = src && src.split('.').length > 1 ? "" : "_2x.png";
+        //     return `assets/images/${pch ? pch+"/": "" }${src}${ext}`;
+        // }),
+
+        // classNameBindings:[""],
+        didReceiveAttrs: function didReceiveAttrs() {
+            this._super.apply(this, arguments);
+        },
+        currentContent: _ember['default'].computed("idx", "models", function () {
+            return this.get("models").objectAt(this.get("idx")).split("");
+        }),
+        didRender: function didRender() {
+            this._super.apply(this, arguments);
+            // window.twittr.widget.load();
+            window.twttr.events.bind('rendered', function () {
+                _ember['default'].$(".tweets ul").masonry({
+                    // options
+                    itemSelector: 'li',
+                    columnWidth: 200
+                });
+            });
+        }
+
+    });
+});
+define("personal-site/application/tweets-group/template", ["exports"], function (exports) {
+  exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 2,
+              "column": 4
+            },
+            "end": {
+              "line": 4,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/application/tweets-group/template.hbs"
+        },
+        isEmpty: false,
+        arity: 1,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("li");
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
+          return morphs;
+        },
+        statements: [["inline", "safe-string", [["get", "story", ["loc", [null, [3, 26], [3, 31]]], 0, 0, 0, 0]], [], ["loc", [null, [3, 12], [3, 33]]], 0, 0]],
+        locals: ["story"],
+        templates: []
+      };
+    })();
+    return {
+      meta: {
+        "revision": "Ember@2.7.0",
+        "loc": {
+          "source": null,
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 5,
+            "column": 5
+          }
+        },
+        "moduleName": "personal-site/application/tweets-group/template.hbs"
+      },
+      isEmpty: false,
+      arity: 0,
+      cachedFragment: null,
+      hasRendered: false,
+      buildFragment: function buildFragment(dom) {
+        var el0 = dom.createDocumentFragment();
+        var el1 = dom.createElement("ul");
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        return el0;
+      },
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
+        return morphs;
+      },
+      statements: [["block", "each", [["get", "model", ["loc", [null, [2, 12], [2, 17]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [2, 4], [4, 13]]]]],
+      locals: [],
+      templates: [child0]
     };
   })());
 });
@@ -753,6 +878,22 @@ define('personal-site/components/markdown-to-html', ['exports', 'ember-cli-showd
     enumerable: true,
     get: function get() {
       return _emberCliShowdownComponentsMarkdownToHtml['default'];
+    }
+  });
+});
+define('personal-site/components/masonry-grid/component', ['exports', 'ember-masonry-grid/components/masonry-grid/component'], function (exports, _emberMasonryGridComponentsMasonryGridComponent) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberMasonryGridComponentsMasonryGridComponent['default'];
+    }
+  });
+});
+define('personal-site/components/masonry-item/component', ['exports', 'ember-masonry-grid/components/masonry-item/component'], function (exports, _emberMasonryGridComponentsMasonryItemComponent) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberMasonryGridComponentsMasonryItemComponent['default'];
     }
   });
 });
@@ -2748,6 +2889,34 @@ define("personal-site/instance-initializers/ember-data", ["exports", "ember-data
     initialize: _emberDataPrivateInstanceInitializersInitializeStoreService["default"]
   };
 });
+define('personal-site/mixins/google-pageview', ['exports', 'ember', 'personal-site/config/environment'], function (exports, _ember, _personalSiteConfigEnvironment) {
+  exports['default'] = _ember['default'].Mixin.create({
+    beforePageviewToGA: function beforePageviewToGA(ga) {},
+
+    pageviewToGA: _ember['default'].on('didTransition', function (page, title) {
+      var page = page ? page : this.get('url');
+      var title = title ? title : this.get('url');
+
+      if (_ember['default'].get(_personalSiteConfigEnvironment['default'], 'googleAnalytics.webPropertyId') != null) {
+        var trackerType = _ember['default'].getWithDefault(_personalSiteConfigEnvironment['default'], 'googleAnalytics.tracker', 'analytics.js');
+
+        if (trackerType === 'analytics.js') {
+          var globalVariable = _ember['default'].getWithDefault(_personalSiteConfigEnvironment['default'], 'googleAnalytics.globalVariable', 'ga');
+
+          this.beforePageviewToGA(window[globalVariable]);
+
+          window[globalVariable]('send', 'pageview', {
+            page: page,
+            title: title
+          });
+        } else if (trackerType === 'ga.js') {
+          window._gaq.push(['_trackPageview']);
+        }
+      }
+    })
+
+  });
+});
 define("personal-site/payload", ["exports"], function (exports) {
   exports["default"] = {
     "hopkins": [{
@@ -2756,7 +2925,7 @@ define("personal-site/payload", ["exports"], function (exports) {
       "name": "Radiologists Engaging and Collaborating in Healthcare",
       "fullName": "Radiologists Engaging and Collaborating in Healthcare (REACH)",
       "links": {},
-      "detailedBackground": "In the old days before PACS (Image servers for Radiological Images) existed, clinicians would go down to the Radiology film rooms to consult with Radiologists. Clinicians and radiologists used to spend a fair amount of time together, discussing and interpreting medical Images, providing consultation in real time without waiting for the final report from the radiology department.\nNowadays this face to face communication has diminished to non-existence with the advancement of RIS and PACS technologies, all radiological images and the generated reports are written, signed, and sent electronically.  As a result, Radiologists' productivity has increased, enabling them to read more and more cases every day; a radiologist goes through a worklist of radiology examinations every day. Because they see more cases per capta, their time has become more valuable. They are located in dark reading rooms, where clinicians rarely visit due to the geographical inconvenience dedicated reading rooms create. Though modern technological advances have increased turnaround time for radiology reports, communication and consults generally happen only after coordinating  between two stacked schedules, over phone while both parties have the image viewer open, both doing their best to always be looking at the same images (usually among many in a given procedure). They attempt to discuss the same artifacts on images while talking over the phone and there is no face to face contact. Organic interaction between clinicians and radiologists has almost disappeared. \nWe call this a form of “Signal Loss”: Analog phones do not do a good job of coordinate schedules, they also drop all visual feedback that humans use to communicate.",
+      "detailedBackground": "In the old days before the  PACS (Image servers for Radiological Images), clinicians would walk to Radiology film rooms to consult with Radiologists. Clinicians and radiologists used to spend lots of time together, discussing and interpreting medical Images. \n\nNowadays this face to face communication is virtually nonexistant. Radiological images becmome a formal written report that's signed and sent electronically.  As a result, Radiologists' productivity has increased—they're reading more and more cases every day but at a cost: \n\n Consults generally happen only after scheduling, and then usually happen over the phone where both parties have their image viewer open, trying their best to keep their screens in sync (there can be hundereds or thousands of images in a procedure).\n\n REACH solves these problems by reintroducing face to face contact through an iPad VoIP session. REACH has a search interface to find exams, an embedded clinical viewer that syncs between the people on the call, and an intuitive UI to make it easy to connect.",
       "video": {
         "link": "http://youtu.be/XM1nrW_uLqM",
         "embed": "https://www.youtube.com/embed/XM1nrW_uLqM"
@@ -2782,11 +2951,19 @@ define("personal-site/payload", ["exports"], function (exports) {
       "logo": "",
       "headshot": "",
       "screenshots": [],
-      "news": [],
+      "tweets": ["<blockquote class=\"twitter-tweet\" data-cards=\"hidden\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">VIDEO: adapting <a href=\"https://twitter.com/hashtag/digitalhealth?src=hash\">#digitalhealth</a> techniques to improve patient outcomes? iPad-based REACH conferencing is one way: <a href=\"http://t.co/8M1EAAXdaB\">http://t.co/8M1EAAXdaB</a></p>&mdash; Johns Hopkins TIC (@JHMTIC) <a href=\"https://twitter.com/JHMTIC/status/527119475687317504\">October 28, 2014</a></blockquote><script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>", "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">Excited to announce agreement with Johns Hopkins <a href=\"https://twitter.com/hashtag/RSNA14?src=hash\">#RSNA14</a> for REACH - Real Time Video Consultation <a href=\"https://twitter.com/hashtag/imaging3?src=hash\">#imaging3</a> <a href=\"http://t.co/aYC4dYqVPL\">http://t.co/aYC4dYqVPL</a>  <a href=\"https://twitter.com/JHMTIC\">@JHMTIC</a></p>&mdash; Analytical (@Analyticalinfo) <a href=\"https://twitter.com/Analyticalinfo/status/540546634284040193\">December 4, 2014</a></blockquote><script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>"],
       "customClasses": ["grid-item-big", "less-spacing"],
       "description": "",
       "platforms": ["ipad", "web"],
+      "news": [{
+        "title": "Analytical Informatics Announces License Agreement with Johns Hopkins University for REACH Radiologist Video Collaboration Software",
+        "date": " 12.04.14",
+        "host": "Analytical Informatics, Inc.",
+        "url": "http://www.analytical.info/news/jhu",
+        "comment": "REACH is built on the Analytical Informatics SDK. AI's platform (AI Bridge) provides a data warehouse that acts as a middle layer between client applications and the untenable HL7 messages that are so foundational to hospital IT systems."
+      }],
       "technologies": ["ActiveRecord", "rails", "fastlane", "jruby", "ReactiveCocoa", "PostgreSQL", "ember", "javascript", "emberData", "asterisk"],
+
       "content": ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
     }, {
       "name": "OASIS",
@@ -2808,7 +2985,7 @@ define("personal-site/payload", ["exports"], function (exports) {
       "screenshots": [],
       "news": [],
       "description": "Clinical data research tool",
-      "detailedDescription": "Beginning clinical research requires the discovery of a 'cohort'. Finding subjects that match a given criteria and exluding those that match exclusion critiera, . This is often performed via manual search through any number of data sources (e.g. PACS, RIS, EMR, billing systems, etc.) and manual entry into a generic spreadsheet. The number of data points are often extremely large, even for small studies involving a few dozen or a few hundred patients, and such manual search and entry is therefore exceedingly time consuming and prone to human errors. Furthermore, manipulation of the dataset following the establishment of the cohort (i.e. during data entry) can result in errors and data loss, leading many researchers to save numerous different versions of their working dataset. The process of blinding data (for research integrity) and protecting patient identifiers (for ethical integrity) is also a burdensome, nonstandardized task that is subject to mistakes and noncompliance. \nA robust software solution that automates any of the above processes would save time and reduce human error. Furthermore, providing a customizable user interface in which to work would decrease errors when manipulating the dataset, allow easier collaboration between researchers, and save time given appropriate form design. Finally, robust data governance would decrease errors, allow more efficient error-discovery, and provide a safer means for multiple researchers to contribute to a single project.",
+      "detailedBackground": "Beginning clinical research requires the discovery of a 'cohort'—the subjets of your research. This is often performed via manual search through any number of data sources (e.g. PACS, RIS, EMR, billing systems, etc.) and manual entry into a generic spreadsheet. This cohort building / query process usually produces enormus numbers of data points, even for small studies of a few dozen or a few hundred patients. The Process is, therfore,  exceedingly time consuming and prone to human errors. \n The process of blinding data (for research integrity) and protecting patient identifiers (for ethical integrity) is also a burdensome, nonstandardized task that is subject to mistakes and noncompliance. \n\nOASIS attempts to solve these problems. OASIS is a robust software solution that automates these arduous tasks. Oasis provides a UI taylored towards ingesting and manipulating these 'cohorts.' Oasis allows a researcher to attach custom metadata to exams, and to annotate studies with state labels in order to track and document exclusion critiria.",
       "platforms": ["web"],
       "technologies": ["rails", "PostgreSQL", "jruby", "ember", "emberData"],
       "content": ["Implemented ETL technologies in ruby to model/import exam data from disparate data sources into user’s project", "Deployed and released first version.", "Rapidly prototyped and released features, integrating feedback from preliminary users.", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
@@ -2838,7 +3015,7 @@ define("personal-site/payload", ["exports"], function (exports) {
       },
       "logo": "",
       "headshot": "",
-      "detailedBackground": "Johns Hopkins EpiWatch™ is an app for Apple Watch™ and research study. EpiWatch helps you manage your epilepsy by tracking your seizures and possible triggers, medications and side effects. You can view this information at any time, and a dashboard lets you share a summary of the data with your doctor or caregiver if you want. With EpiWatch, you can also send a message to family members or caregivers to let them know when you are tracking a seizure.",
+      "detailedBackground": "Johns Hopkins EpiWatch™ is an app for Apple Watch™ and research study. \n\nEpiWatch helps you manage your epilepsy by tracking your seizures and possible triggers, medications and side effects. You can view this information at any time, and a dashboard lets you share a summary of the data with your doctor or caregiver if you want. With EpiWatch, you can also send a message to family members or caregivers to let them know when you are tracking a seizure.",
       "screenshots": [],
       "news": [{
         "title": "The Apple Watch App For Seizures May Soon Predict Their Onset",
@@ -2867,10 +3044,11 @@ define("personal-site/payload", ["exports"], function (exports) {
         "host": "HUB–JHU",
         "url": "http://hub.jhu.edu/2015/10/15/apple-watch-epiwatch/"
       }],
+      "tweets": ["<blockquote class=\"twitter-tweet\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">TIC is now involved in <a href=\"https://twitter.com/hashtag/EpiWatch?src=hash\">#EpiWatch</a>! The <a href=\"https://twitter.com/hashtag/app?src=hash\">#app</a> helps epilepsy patients detect seizures and improve their quality of life <a href=\"https://t.co/xnQFkR6Cc8\">https://t.co/xnQFkR6Cc8</a></p>&mdash; Johns Hopkins TIC (@JHMTIC) <a href=\"https://twitter.com/JHMTIC/status/762724368065630212\">August 8, 2016</a></blockquote> <script async src=\"http://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>", "<blockquote class=\"twitter-tweet\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">Way to go EpiWatch! SXSW Innovation Award Finalists honoring most exciting tech in the connected world <a href=\"https://twitter.com/JHMTIC\">@JHMTIC</a> <a href=\"https://t.co/HJrXpsp6nA\">https://t.co/HJrXpsp6nA</a></p>&mdash; Paul Nagy (@pgnagy) <a href=\"https://twitter.com/pgnagy/status/695681838778556418\">February 5, 2016</a></blockquote> <script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>", "<blockquote class=\"twitter-tweet\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">Way to go EpiWatch! SXSW Innovation Award Finalists honoring most exciting tech in the connected world <a href=\"https://twitter.com/JHMTIC\">@JHMTIC</a> <a href=\"https://t.co/HJrXpsp6nA\">https://t.co/HJrXpsp6nA</a></p>&mdash; Paul Nagy (@pgnagy) <a href=\"https://twitter.com/pgnagy/status/695681838778556418\">February 5, 2016</a></blockquote> <script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>", "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">Johns Hopkins epilepsy study is first <a href=\"https://twitter.com/hashtag/ResearchKit?src=hash\">#ResearchKit</a> app (EpiWatch) to use Apple watch <a href=\"https://twitter.com/hashtag/JHResearchKit?src=hash\">#JHResearchKit</a> : <a href=\"https://t.co/jBJCGYH2CW\">https://t.co/jBJCGYH2CW</a></p>&mdash; Johns Hopkins TIC (@JHMTIC) <a href=\"https://twitter.com/JHMTIC/status/657178884560068608\">October 22, 2015</a></blockquote> <script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>", "<blockquote class=\"twitter-tweet\" data-lang=\"en\"><p lang=\"en\" dir=\"ltr\">Dr. Crone speaking now about EpiWatch for <a href=\"https://twitter.com/hashtag/JHResearchKit?src=hash\">#JHResearchKit</a> event <a href=\"https://twitter.com/JHMTIC\">@JHMTIC</a> <a href=\"https://t.co/FtAxYoAw3a\">pic.twitter.com/FtAxYoAw3a</a></p>&mdash; jazzytea (@jazzytea) <a href=\"https://twitter.com/jazzytea/status/656510403271376896\">October 20, 2015</a></blockquote> <script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>"],
       "description": "",
       "platforms": ["iphone", "watch"],
       "technologies": ["swift", "healthkit", "crashlytics", "researchkit", "bamboo", "fastlane", "fabric", "watch"],
-      "content": ["<i>Currently:</i>Leading development on version 2. Implemented new UI on both iPhone and Apple Watch.", "Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit", "Implemented Dynamic Type, Auto Layout throughout App.", "Lead iOS 10/WatchOS 3 release.", "Configured CI testing with Bamboo and Fastlane. ", "Configured Fastlane Match to simplify the management of Apple Developer Certificates/Keys."]
+      "content": ["<i>Currently:</i>Leading development on version 2. Implemented new UI on both iPhone and Apple Watch.", "Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit", "Implemented Dynamic Type, Auto Layout throughout App.", "Lead iOS 10/WatchOS 3 release.", "Configured CI testing with Bamboo and Fastlane. ", "Improved data integrety by caching requests on disk until a successful response is confirmed.", "Configured Fastlane Match to simplify the management of Apple Developer Certificates/Keys."]
 
     }, {
       "name": "Resident Worklist",
@@ -2892,12 +3070,13 @@ define("personal-site/payload", ["exports"], function (exports) {
       "description": "Teaching tool gives resident radiologists feedback on their reports by showing a diff between their report and the final report.",
       "platforms": ["web"],
       "technologies": ["rails", "PostgreSQL", "jruby", "ember", "emberData"],
-      "content": ["Developed Ember.js front end.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Used daily by over 80 clinicians and radiology residents at Johns Hopkins Hospital."]
+      "content": ["Developed Ember.js front end.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Created a HIPPA complient data export UI/functionality for permitted administrators to create Excel or CSV exports of exam data. This functionality helps administrators audit resident performance.", "Used daily by over 80 clinicians and radiology residents at Johns Hopkins Hospital."]
     }, {
       "name": "Peer Review",
       "tagline": "federal departmental compliance",
       "color": {
-        "primary": "blue"
+        "primary": "black",
+        "text": "white"
       },
       "background": "",
       "customClasses": [],
@@ -2906,13 +3085,21 @@ define("personal-site/payload", ["exports"], function (exports) {
       "logo": "",
       "headshot": "",
       "screenshots": [],
-      "news": [],
       "description": "",
-      "platforms": [],
+      "platforms": ["web"],
       "technologies": ["rails", "ruby", "ember"],
-      "content": ["Used by 80 clinicians and radiology residents at Johns Hopkins Hospital.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Managed development for 7 months during a senior developer’s leave of absence.", "Implemented Patient search functionality, leading to deployment at new hospital."]
+
+      "news": [{
+        "title": "Analytical to Launch Advanced Peer Review at SIIM 2016 in Portland.",
+        "date": "06.23.16",
+        "host": "Analytical Informatics, Inc.",
+        "url": "http://www.analytical.info/news/avp",
+        "comment": "Since the time I worked on the app, Peer Review has since been comercialized by the awesome team at Analytical Informatics! You can now find the application at other hospitals that have purhcaced the AI Bridge software.\nNote: This article describes features implemented after my time as lead on this project."
+      }],
+      "content": ["Used by 80 clinicians and radiology residents daily at Johns Hopkins Hospital.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Managed all development for 7 months during a senior developer’s leave of absence.", "Deployed several point releases to production.", "Implemented Patient search functionality, leading to major deployment at new hospital."]
     }, {
       "name": "Accomplishments",
+      "hidden": true,
       "tagline": "An iOS teleconsultation application connecting radiologists to clinicians.",
       "color": {
         "primary": "red"
@@ -2930,8 +3117,40 @@ define("personal-site/payload", ["exports"], function (exports) {
       "news": [],
       "description": "",
       "platforms": [],
-      "technologies": ["Rails", "GemDevelopment", "NPM", "ember"],
+      "technologies": ["rails", "npm", "ember"],
       "content": ["Created on Ruby on Rails gem consolidating assets, deployment and development scripts, common app functionality, and RESTful APIs to patient data. This gem is now integrated into 5 applications. ", "3 published NPM packages for Ember-CLI."]
+    }], "oss": [{
+      "name": "10Clock",
+      "fullName": "iOS 10 Clock",
+      "color": {
+        "text": "white",
+        "copy": "#01325c",
+        "primary": "#C100FF",
+        "secondary": "#FF009F"
+      },
+      "background": {
+        "src": "10Clock",
+        "card-size": 1,
+        "color": "white"
+      },
+      "customClasses": ["grid-item-white-glow"],
+      "id": "10Clock",
+      "logo": "",
+      "headshot": "",
+      "screenshots": [],
+      "readme": {
+        "markdown": "https://raw.githubusercontent.com/joedaniels29/10Clock/master/README.md"
+      },
+      "news": [],
+      "platforms": ["iphone", "ipad"],
+      "links": {
+        "Github": "https://github.com/joedaniels29/SwiftClock",
+        "CocoaPods": "https://github.com/joedaniels29/SwiftClock",
+        "Report an Issue": "https://github.com/joedaniels29/SwiftClock/issues"
+      },
+      "description": "",
+      "technologies": ["coreanimation", "pod", "swift"],
+      "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application."]
     }],
     "contract": [{
       "name": "ReadAhead Hybrid",
@@ -3000,39 +3219,6 @@ define("personal-site/payload", ["exports"], function (exports) {
       "description": "",
       "technologies": ["appgyver", "html", "jquery"],
       "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application.", "Implemented in-app purchases to allow the user to buy lessons.", "Implemented open source Cordova plugin to access iOS Microphone."]
-    }],
-    "oss": [{
-      "name": "10Clock",
-      "fullName": "iOS 10 Clock",
-      "color": {
-        "text": "white",
-        "copy": "#01325c",
-        "primary": "#C100FF",
-        "secondary": "#FF009F"
-      },
-      "background": {
-        "src": "10Clock",
-        "card-size": 1,
-        "color": "white"
-      },
-      "customClasses": ["grid-item-white-glow"],
-      "id": "10Clock",
-      "logo": "",
-      "headshot": "",
-      "screenshots": [],
-      "readme": {
-        "markdown": "https://raw.githubusercontent.com/joedaniels29/10Clock/master/README.md"
-      },
-      "news": [],
-      "platforms": ["iphone", "ipad"],
-      "links": {
-        "Github": "https://github.com/joedaniels29/SwiftClock",
-        "CocoaPods": "https://github.com/joedaniels29/SwiftClock",
-        "Report an Issue": "https://github.com/joedaniels29/SwiftClock/issues"
-      },
-      "description": "",
-      "technologies": ["coreanimation", "pod", "swift"],
-      "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application."]
     }]
   };
 });
@@ -3157,6 +3343,9 @@ define("personal-site/projects/epiwatch/template", ["exports"], function (export
       templates: []
     };
   })());
+});
+define('personal-site/projects/glob/controller', ['exports', 'ember'], function (exports, _ember) {
+  exports['default'] = _ember['default'].Controller.extend({});
 });
 define("personal-site/projects/glob/route", ["exports", "ember"], function (exports, _ember) {
     exports["default"] = _ember["default"].Route.extend({
@@ -3979,6 +4168,60 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
       };
     })();
     var child11 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 96,
+              "column": 4
+            },
+            "end": {
+              "line": 101,
+              "column": 4
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("        ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("section");
+          dom.setAttribute(el1, "class", "tweets");
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("h3");
+          var el3 = dom.createTextNode("In the Tweets!");
+          dom.appendChild(el2, el3);
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n            ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n        ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 3, 3);
+          return morphs;
+        },
+        statements: [["inline", "application/tweets-group", [], ["model", ["subexpr", "@mut", [["get", "model.tweets", ["loc", [null, [99, 45], [99, 57]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [99, 12], [99, 59]]], 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })();
+    var child12 = (function () {
       var child0 = (function () {
         return {
           meta: {
@@ -3986,11 +4229,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 99,
+                "line": 107,
                 "column": 12
               },
               "end": {
-                "line": 101,
+                "line": 109,
                 "column": 12
               }
             },
@@ -4015,7 +4258,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "skills/platform-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [100, 50], [100, 55]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [100, 16], [100, 57]]], 0, 0]],
+          statements: [["inline", "skills/platform-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [108, 50], [108, 55]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [108, 16], [108, 57]]], 0, 0]],
           locals: ["skill"],
           templates: []
         };
@@ -4026,11 +4269,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 96,
+              "line": 104,
               "column": 4
             },
             "end": {
-              "line": 104,
+              "line": 112,
               "column": 4
             }
           },
@@ -4068,12 +4311,12 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 3, 3);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model.platforms", ["loc", [null, [99, 20], [99, 35]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [99, 12], [101, 21]]]]],
+        statements: [["block", "each", [["get", "model.platforms", ["loc", [null, [107, 20], [107, 35]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [107, 12], [109, 21]]]]],
         locals: [],
         templates: [child0]
       };
     })();
-    var child12 = (function () {
+    var child13 = (function () {
       var child0 = (function () {
         return {
           meta: {
@@ -4081,11 +4324,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 108,
+                "line": 116,
                 "column": 12
               },
               "end": {
-                "line": 110,
+                "line": 118,
                 "column": 12
               }
             },
@@ -4110,7 +4353,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "skills/skill-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [109, 47], [109, 52]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [109, 16], [109, 54]]], 0, 0]],
+          statements: [["inline", "skills/skill-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [117, 47], [117, 52]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [117, 16], [117, 54]]], 0, 0]],
           locals: ["skill"],
           templates: []
         };
@@ -4121,11 +4364,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 105,
+              "line": 113,
               "column": 4
             },
             "end": {
-              "line": 113,
+              "line": 121,
               "column": 4
             }
           },
@@ -4163,7 +4406,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 3, 3);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model.technologies", ["loc", [null, [108, 20], [108, 38]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [108, 12], [110, 21]]]]],
+        statements: [["block", "each", [["get", "model.technologies", ["loc", [null, [116, 20], [116, 38]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [116, 12], [118, 21]]]]],
         locals: [],
         templates: [child0]
       };
@@ -4178,7 +4421,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 115,
+            "line": 123,
             "column": 10
           }
         },
@@ -4237,6 +4480,10 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createComment("");
+        dom.appendChild(el1, el2);
         var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("    ");
@@ -4251,7 +4498,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element9 = dom.childAt(fragment, [0]);
         var element10 = dom.childAt(element9, [1]);
-        var morphs = new Array(13);
+        var morphs = new Array(14);
         morphs[0] = dom.createMorphAt(element10, 1, 1);
         morphs[1] = dom.createMorphAt(element10, 3, 3);
         morphs[2] = dom.createMorphAt(element10, 4, 4);
@@ -4263,13 +4510,14 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         morphs[8] = dom.createMorphAt(element9, 12, 12);
         morphs[9] = dom.createMorphAt(element9, 14, 14);
         morphs[10] = dom.createMorphAt(element9, 16, 16);
-        morphs[11] = dom.createMorphAt(element9, 17, 17);
+        morphs[11] = dom.createMorphAt(element9, 18, 18);
         morphs[12] = dom.createMorphAt(element9, 19, 19);
+        morphs[13] = dom.createMorphAt(element9, 21, 21);
         return morphs;
       },
-      statements: [["block", "if", [["get", "model.icon", ["loc", [null, [3, 14], [3, 24]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [3, 8], [11, 15]]]], ["block", "if", [["get", "model.title", ["loc", [null, [13, 14], [13, 25]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [13, 8], [15, 15]]]], ["block", "if", [["get", "model.tagline", ["loc", [null, [16, 14], [16, 27]]], 0, 0, 0, 0]], [], 3, null, ["loc", [null, [16, 8], [18, 15]]]], ["block", "if", [["get", "model.description", ["loc", [null, [21, 10], [21, 27]]], 0, 0, 0, 0]], [], 4, null, ["loc", [null, [21, 4], [25, 11]]]], ["block", "if", [["get", "model.content", ["loc", [null, [27, 10], [27, 23]]], 0, 0, 0, 0]], [], 5, null, ["loc", [null, [27, 4], [33, 11]]]], ["block", "if", [["get", "model.detailedBackground", ["loc", [null, [36, 10], [36, 34]]], 0, 0, 0, 0]], [], 6, null, ["loc", [null, [36, 4], [41, 11]]]], ["block", "if", [["get", "model.readme", ["loc", [null, [42, 10], [42, 22]]], 0, 0, 0, 0]], [], 7, null, ["loc", [null, [42, 4], [47, 11]]]], ["block", "if", [["get", "model.video", ["loc", [null, [49, 10], [49, 21]]], 0, 0, 0, 0]], [], 8, null, ["loc", [null, [49, 4], [54, 11]]]], ["block", "if", [["get", "model.screenshots", ["loc", [null, [56, 10], [56, 27]]], 0, 0, 0, 0]], [], 9, null, ["loc", [null, [56, 4], [70, 11]]]], ["block", "if", [["get", "model.news", ["loc", [null, [74, 10], [74, 20]]], 0, 0, 0, 0]], [], 10, null, ["loc", [null, [74, 4], [93, 11]]]], ["block", "if", [["get", "model.platforms", ["loc", [null, [96, 10], [96, 25]]], 0, 0, 0, 0]], [], 11, null, ["loc", [null, [96, 4], [104, 11]]]], ["block", "if", [["get", "model.technologies", ["loc", [null, [105, 10], [105, 28]]], 0, 0, 0, 0]], [], 12, null, ["loc", [null, [105, 4], [113, 11]]]], ["content", "outlet", ["loc", [null, [114, 4], [114, 14]]], 0, 0, 0, 0]],
+      statements: [["block", "if", [["get", "model.icon", ["loc", [null, [3, 14], [3, 24]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [3, 8], [11, 15]]]], ["block", "if", [["get", "model.title", ["loc", [null, [13, 14], [13, 25]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [13, 8], [15, 15]]]], ["block", "if", [["get", "model.tagline", ["loc", [null, [16, 14], [16, 27]]], 0, 0, 0, 0]], [], 3, null, ["loc", [null, [16, 8], [18, 15]]]], ["block", "if", [["get", "model.description", ["loc", [null, [21, 10], [21, 27]]], 0, 0, 0, 0]], [], 4, null, ["loc", [null, [21, 4], [25, 11]]]], ["block", "if", [["get", "model.content", ["loc", [null, [27, 10], [27, 23]]], 0, 0, 0, 0]], [], 5, null, ["loc", [null, [27, 4], [33, 11]]]], ["block", "if", [["get", "model.detailedBackground", ["loc", [null, [36, 10], [36, 34]]], 0, 0, 0, 0]], [], 6, null, ["loc", [null, [36, 4], [41, 11]]]], ["block", "if", [["get", "model.readme", ["loc", [null, [42, 10], [42, 22]]], 0, 0, 0, 0]], [], 7, null, ["loc", [null, [42, 4], [47, 11]]]], ["block", "if", [["get", "model.video", ["loc", [null, [49, 10], [49, 21]]], 0, 0, 0, 0]], [], 8, null, ["loc", [null, [49, 4], [54, 11]]]], ["block", "if", [["get", "model.screenshots", ["loc", [null, [56, 10], [56, 27]]], 0, 0, 0, 0]], [], 9, null, ["loc", [null, [56, 4], [70, 11]]]], ["block", "if", [["get", "model.news", ["loc", [null, [74, 10], [74, 20]]], 0, 0, 0, 0]], [], 10, null, ["loc", [null, [74, 4], [93, 11]]]], ["block", "if", [["get", "model.tweets", ["loc", [null, [96, 10], [96, 22]]], 0, 0, 0, 0]], [], 11, null, ["loc", [null, [96, 4], [101, 11]]]], ["block", "if", [["get", "model.platforms", ["loc", [null, [104, 10], [104, 25]]], 0, 0, 0, 0]], [], 12, null, ["loc", [null, [104, 4], [112, 11]]]], ["block", "if", [["get", "model.technologies", ["loc", [null, [113, 10], [113, 28]]], 0, 0, 0, 0]], [], 13, null, ["loc", [null, [113, 4], [121, 11]]]], ["content", "outlet", ["loc", [null, [122, 4], [122, 14]]], 0, 0, 0, 0]],
       locals: [],
-      templates: [child0, child1, child2, child3, child4, child5, child6, child7, child8, child9, child10, child11, child12]
+      templates: [child0, child1, child2, child3, child4, child5, child6, child7, child8, child9, child10, child11, child12, child13]
     };
   })());
 });
@@ -4785,7 +5033,9 @@ define('personal-site/projects/route', ['exports', 'ember', 'personal-site/proje
             for (var p in _personalSiteProjectsOutline['default']) {
                 projects = projects.concat(_personalSiteProjectsOutline['default'][p]);
             }
-            return projects;
+            return projects.filter(function (o) {
+                return !o["hidden"];
+            });
         }
 
     });
@@ -4841,9 +5091,9 @@ define("personal-site/projects/template", ["exports"], function (exports) {
 define('personal-site/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   exports['default'] = _emberResolver['default'];
 });
-define('personal-site/router', ['exports', 'ember', 'personal-site/config/environment'], function (exports, _ember, _personalSiteConfigEnvironment) {
+define('personal-site/router', ['exports', 'ember', 'personal-site/config/environment', 'personal-site/mixins/google-pageview'], function (exports, _ember, _personalSiteConfigEnvironment, _personalSiteMixinsGooglePageview) {
 
-  var Router = _ember['default'].Router.extend({
+  var Router = _ember['default'].Router.extend(_personalSiteMixinsGooglePageview['default'], {
     // location: config.locationType,
     rootURL: _personalSiteConfigEnvironment['default'].rootURL
   });
@@ -6071,7 +6321,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+cc9fc79f"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+e381f3e7"});
 }
 
 /* jshint ignore:end */

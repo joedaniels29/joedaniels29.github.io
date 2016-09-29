@@ -52,6 +52,15 @@ define('personal-site/tests/application/route.jshint', ['exports'], function (ex
     assert.ok(true, 'application/route.js should pass jshint.');
   });
 });
+define('personal-site/tests/application/tweets-group/component.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | application/tweets-group/component.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'application/tweets-group/component.js should pass jshint.\napplication/tweets-group/component.js: line 2, col 8, \'Poll\' is defined but never used.\n\n1 error');
+  });
+});
 define('personal-site/tests/application/youtube-embed/component.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -1071,6 +1080,15 @@ define('personal-site/tests/projects/epiwatch/route.jshint', ['exports'], functi
     assert.ok(true, 'projects/epiwatch/route.js should pass jshint.');
   });
 });
+define('personal-site/tests/projects/glob/controller.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | projects/glob/controller.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'projects/glob/controller.js should pass jshint.');
+  });
+});
 define('personal-site/tests/projects/glob/route.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -1359,6 +1377,28 @@ define('personal-site/tests/unit/projects/epiwatch/route-test.jshint', ['exports
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/projects/epiwatch/route-test.js should pass jshint.');
+  });
+});
+define('personal-site/tests/unit/projects/glob/controller-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleFor)('controller:projects/glob', 'Unit | Controller | projects/glob', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  // Replace this with your real tests.
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var controller = this.subject();
+    assert.ok(controller);
+  });
+});
+define('personal-site/tests/unit/projects/glob/controller-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/projects/glob/controller-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/projects/glob/controller-test.js should pass jshint.');
   });
 });
 define('personal-site/tests/unit/projects/glob/route-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
