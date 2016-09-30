@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
@@ -364,48 +365,63 @@ main {
     content: "";
     display: table; }
 
-main.resume > section > h1 {
-  font-weight: 500;
-  font-size: 2em;
-  border-bottom: solid 1px c82829; }
-
-main.resume > section > article > header {
-  margin: 1.5em 0; }
-
-main.resume > section > article header h2 {
-  font-weight: 200;
-  font-size: 1.5em;
-  margin: 0; }
-
-main.resume > section > article header h3 {
-  font-weight: 400;
-  font-size: 1.2em;
-  margin: 0; }
-
-main.resume > section > article header h4 {
-  font-weight: 400;
-  font-size: 1.5em;
-  margin: 0; }
-
-main.resume > section > article header h6 {
-  font-weight: 400;
-  font-size: 1em;
-  margin: 0; }
-
-main.resume > section > article header aside.timeline {
-  text-align: right; }
-
-main.resume > section > article ul li {
-  font-weight: 200;
-  font-size: 1em; }
-
-main.resume > section article {
-  margin-left: 1.5em; }
-
-main.resume > section#projects article.project {
-  margin-bottom: 1.5em; }
-  main.resume > section#projects article.project > header > aside {
-    display: inline-block; }
+main.resume > section {
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: #f4f4f4;
+  border: 2px solid #eeeeee; }
+  main.resume > section > h1 {
+    font-weight: 500;
+    font-size: 2em;
+    border-bottom: solid 1px c82829; }
+  main.resume > section a {
+    padding-right: 0.75em; }
+  main.resume > section > article article {
+    margin-left: 1.5em; }
+  main.resume > section > article > header {
+    margin: 0; }
+  main.resume > section > article header h2 {
+    font-weight: 200;
+    font-size: 1.5em;
+    margin: 0; }
+  main.resume > section > article header h3 {
+    font-weight: 400;
+    font-size: 1.2em;
+    margin: 0; }
+  main.resume > section > article header h4 {
+    font-weight: 400;
+    font-size: 1.5em;
+    margin: 0; }
+  main.resume > section > article header h6 {
+    font-weight: 400;
+    font-size: 1em;
+    margin: 0; }
+  main.resume > section > article header aside.timeline {
+    text-align: right; }
+  main.resume > section > article ul li {
+    font-weight: 200;
+    font-size: 1em; }
+  main.resume > section#projects article.project {
+    margin-bottom: 1.5em; }
+    main.resume > section#projects article.project > header > aside {
+      display: inline-block; }
+  main.resume > section#download article {
+    text-align: center; }
+    main.resume > section#download article > div.download {
+      display: inline-block;
+      padding: 0.75em;
+      margin: 0.5em;
+      width: 400px;
+      background-color: #f0f0f0;
+      border: 1px solid #dddddd; }
+      main.resume > section#download article > div.download h3 {
+        margin: 0; }
+  main.resume > section#education > article.umbc .classes {
+    text-align: center; }
+    main.resume > section#education > article.umbc .classes li {
+      display: inline-block; }
+    main.resume > section#education > article.umbc .classes li:not(:first-child):before {
+      content: "\2004 • \2004"; }
 
 main.projects article#project-select, main.projects article#project {
   min-height: 1000px; }
@@ -482,73 +498,87 @@ main.projects .grid-items .grid-item {
   main.projects .grid-items .grid-item:nth-child(1) {
     background-color: #FFC700;
     box-shadow: inset 0 0 1px 2px #cc9f00;
+    background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)) top;
     background-image: url("images/background/reach.png"); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       main.projects .grid-items .grid-item:nth-child(1) {
         background-image: url("images/background/reach_2x.png");
         background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(1):focus, main.projects .grid-items .grid-item:nth-child(1):hover {
-      background-color: #cc9f00; }
+      background-color: #cc9f00;
+      background-repeat: no-repeat; }
   main.projects .grid-items .grid-item:nth-child(2) {
     background-color: #01325c;
     box-shadow: inset 0 0 1px 2px #00172a; }
     main.projects .grid-items .grid-item:nth-child(2):focus, main.projects .grid-items .grid-item:nth-child(2):hover {
-      background-color: #00172a; }
+      background-color: #00172a;
+      background-repeat: no-repeat; }
   main.projects .grid-items .grid-item:nth-child(3) {
     background-color: #9A5BB9;
     box-shadow: inset 0 0 1px 2px #80439e;
+    background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)) top;
     background-image: url("images/background/epiwatch.png"); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       main.projects .grid-items .grid-item:nth-child(3) {
         background-image: url("images/background/epiwatch_2x.png");
         background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(3):focus, main.projects .grid-items .grid-item:nth-child(3):hover {
-      background-color: #80439e; }
+      background-color: #80439e;
+      background-repeat: no-repeat; }
   main.projects .grid-items .grid-item:nth-child(4) {
     background-color: #264358;
     box-shadow: inset 0 0 1px 2px #172834;
+    background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)) top;
     background-image: url("images/background/resident-worklist.png"); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       main.projects .grid-items .grid-item:nth-child(4) {
         background-image: url("images/background/resident-worklist_2x.png");
         background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(4):focus, main.projects .grid-items .grid-item:nth-child(4):hover {
-      background-color: #172834; }
+      background-color: #172834;
+      background-repeat: no-repeat; }
   main.projects .grid-items .grid-item:nth-child(5) {
     background-color: black;
     box-shadow: inset 0 0 1px 2px black; }
     main.projects .grid-items .grid-item:nth-child(5):focus, main.projects .grid-items .grid-item:nth-child(5):hover {
-      background-color: black; }
+      background-color: black;
+      background-repeat: no-repeat; }
   main.projects .grid-items .grid-item:nth-child(6) {
     background-color: #C100FF;
     box-shadow: inset 0 0 1px 2px #9a00cc;
+    background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)) top;
     background-image: url("images/background/10Clock.png"); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       main.projects .grid-items .grid-item:nth-child(6) {
         background-image: url("images/background/10Clock_2x.png");
         background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(6):focus, main.projects .grid-items .grid-item:nth-child(6):hover {
-      background-color: #9a00cc; }
+      background-color: #9a00cc;
+      background-repeat: no-repeat; }
   main.projects .grid-items .grid-item:nth-child(7) {
     background-color: #01325c;
     box-shadow: inset 0 0 1px 2px #00172a;
+    background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)) top;
     background-image: url("images/background/readahead_hybrid.png"); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       main.projects .grid-items .grid-item:nth-child(7) {
         background-image: url("images/background/readahead_hybrid_2x.png");
         background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(7):focus, main.projects .grid-items .grid-item:nth-child(7):hover {
-      background-color: #00172a; }
+      background-color: #00172a;
+      background-repeat: no-repeat; }
   main.projects .grid-items .grid-item:nth-child(8) {
     background-color: #2e83d6;
     box-shadow: inset 0 0 1px 2px #2269af;
+    background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)) top;
     background-image: url("images/background/readahead.png"); }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 1.3 / 1), only screen and (min-resolution: 125dpi), only screen and (min-resolution: 1.3dppx) {
       main.projects .grid-items .grid-item:nth-child(8) {
         background-image: url("images/background/readahead_2x.png");
         background-size: 215 800; } }
     main.projects .grid-items .grid-item:nth-child(8):focus, main.projects .grid-items .grid-item:nth-child(8):hover {
-      background-color: #2269af; }
+      background-color: #2269af;
+      background-repeat: no-repeat; }
   main.projects .grid-items .grid-item.moar-spacing img {
     margin-bottom: 30px; }
   main.projects .grid-items .grid-item.moar-spacing h2 {
@@ -561,6 +591,11 @@ main.projects .grid-items .grid-item {
     font-size: 1.8em; }
   main.projects .grid-items .grid-item.grid-item-white-glow h1, main.projects .grid-items .grid-item.grid-item-white-glow h2 {
     text-shadow: 0 0 7px white; }
+  main.projects .grid-items .grid-item.reach h2 {
+    font-size: 1.25em; }
+    @media screen and (min-width: 70em) {
+      main.projects .grid-items .grid-item.reach h2 {
+        font-size: 1.6em; } }
 
 @media screen and (min-width: 900px) {
   main.projects .grid-items .grid-item-big {
@@ -573,7 +608,7 @@ main.projects .grid-items .grid-item {
 main.projects .grid-items .grid-item-image {
   background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
   background-color: #5f7c7e;
-  background-position: top;
+  background-position: top, center;
   background-repeat: no-repeat;
   background-size: cover; }
 
@@ -598,19 +633,42 @@ main.projects .grid-items .grid-item-image {
 main.projects article p {
   font-weight: 200; }
 
-main.projects article header > div.project-title {
+main.projects article header {
   max-width: 1200px;
   margin-left: auto;
-  margin-right: auto; }
-  main.projects article header > div.project-title::after {
+  margin-right: auto;
+  display: table;
+  width: 100%;
+  table-layout: fixed; }
+  main.projects article header::after {
     clear: both;
     content: "";
     display: table; }
-  main.projects article header > div.project-title > img.logo {
-    width: 40px;
-    height: 40px; }
-  main.projects article header > div.project-title > h1.title {
-    display: inline; }
+  main.projects article header section {
+    display: table-cell;
+    width: 83.33333%;
+    vertical-align: bottom; }
+    main.projects article header section > div.project-title {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto; }
+      main.projects article header section > div.project-title::after {
+        clear: both;
+        content: "";
+        display: table; }
+      main.projects article header section > div.project-title > img.logo {
+        width: 40px;
+        height: 40px; }
+      main.projects article header section > div.project-title > h1.title {
+        display: inline; }
+  main.projects article header nav {
+    vertical-align: bottom;
+    display: table-cell;
+    width: 16.66667%;
+    text-align: right; }
+    main.projects article header nav h6 {
+      margin-bottom: 0;
+      font-weight: 400; }
 
 main.projects article > section {
   padding: 1.5em 0; }

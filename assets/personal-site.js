@@ -316,41 +316,6 @@ define("personal-site/application/template", ["exports"], function (exports) {
             },
             "end": {
               "line": 16,
-              "column": 38
-            }
-          },
-          "moduleName": "personal-site/application/template.hbs"
-        },
-        isEmpty: false,
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("Resume");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes() {
-          return [];
-        },
-        statements: [],
-        locals: [],
-        templates: []
-      };
-    })();
-    var child1 = (function () {
-      return {
-        meta: {
-          "revision": "Ember@2.7.0",
-          "loc": {
-            "source": null,
-            "start": {
-              "line": 17,
-              "column": 12
-            },
-            "end": {
-              "line": 17,
               "column": 43
             }
           },
@@ -374,6 +339,41 @@ define("personal-site/application/template", ["exports"], function (exports) {
         templates: []
       };
     })();
+    var child1 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 17,
+              "column": 12
+            },
+            "end": {
+              "line": 17,
+              "column": 38
+            }
+          },
+          "moduleName": "personal-site/application/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("Resume");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
     return {
       meta: {
         "revision": "Ember@2.7.0",
@@ -384,7 +384,7 @@ define("personal-site/application/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 24,
+            "line": 25,
             "column": 0
           }
         },
@@ -501,6 +501,8 @@ define("personal-site/application/template", ["exports"], function (exports) {
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n        ");
+        dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n");
         dom.appendChild(el2, el3);
@@ -534,7 +536,7 @@ define("personal-site/application/template", ["exports"], function (exports) {
         morphs[3] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         return morphs;
       },
-      statements: [["block", "link-to", ["index"], [], 0, null, ["loc", [null, [16, 12], [16, 50]]]], ["block", "link-to", ["projects"], [], 1, null, ["loc", [null, [17, 12], [17, 55]]]], ["inline", "application/lett-r", [], ["models", ["subexpr", "@mut", [["get", "model", ["loc", [null, [19, 43], [19, 48]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [19, 15], [19, 50]]], 0, 0], ["content", "liquid-outlet", ["loc", [null, [23, 0], [23, 17]]], 0, 0, 0, 0]],
+      statements: [["block", "link-to", ["projects"], [], 0, null, ["loc", [null, [16, 12], [16, 55]]]], ["block", "link-to", ["index"], [], 1, null, ["loc", [null, [17, 12], [17, 50]]]], ["inline", "application/lett-r", [], ["models", ["subexpr", "@mut", [["get", "model", ["loc", [null, [20, 43], [20, 48]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [20, 15], [20, 50]]], 0, 0], ["content", "liquid-outlet", ["loc", [null, [24, 0], [24, 17]]], 0, 0, 0, 0]],
       locals: [],
       templates: [child0, child1]
     };
@@ -1916,7 +1918,7 @@ define("personal-site/index/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 188,
+            "line": 209,
             "column": 7
           }
         },
@@ -1979,6 +1981,84 @@ define("personal-site/index/template", ["exports"], function (exports) {
         dom.appendChild(el3, el4);
         var el4 = dom.createElement("section");
         dom.setAttribute(el4, "class", "content");
+        var el5 = dom.createTextNode("\n                ");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createElement("article");
+        dom.setAttribute(el5, "id", "epiwatch");
+        dom.setAttribute(el5, "class", "project");
+        var el6 = dom.createTextNode("\n                    ");
+        dom.appendChild(el5, el6);
+        var el6 = dom.createElement("header");
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("h3");
+        var el8 = dom.createTextNode("EpiWatch");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("h6");
+        var el8 = dom.createTextNode("Seizure Tracking on Apple Watch.");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("aside");
+        var el8 = dom.createElement("a");
+        dom.setAttribute(el8, "href", "hopkinsmedicine.org/epiwatch");
+        var el9 = dom.createTextNode("Homepage");
+        dom.appendChild(el8, el9);
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                    ");
+        dom.appendChild(el6, el7);
+        dom.appendChild(el5, el6);
+        var el6 = dom.createTextNode("\n                    ");
+        dom.appendChild(el5, el6);
+        var el6 = dom.createElement("ul");
+        dom.setAttribute(el6, "class", "content");
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Currently: Lead development on version 2. Implemented new UI on both iPhone and Apple\n                            Watch.\n                        ");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Utilized CoreMotion to capture accelerometer in the background, bringing data coverage from roughly 30% to over 95%, while quartering the EpiWatch's processor usage during seizure tracking. ");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Implemented compact binary file format and protocol for reliably caching/storing/transmitting captured sensor data (HeartRate, Motion Data)");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Implemented seizure monitoring mode: Allows user to enable sensors for several hours a day to proactively monitor for seizures.");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Enabled access to record Gyroscope data on AppleWatch");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                    ");
+        dom.appendChild(el6, el7);
+        dom.appendChild(el5, el6);
+        var el6 = dom.createTextNode("\n                ");
+        dom.appendChild(el5, el6);
+        dom.appendChild(el4, el5);
         var el5 = dom.createTextNode("\n                ");
         dom.appendChild(el4, el5);
         var el5 = dom.createElement("article");
@@ -2052,64 +2132,6 @@ define("personal-site/index/template", ["exports"], function (exports) {
         dom.appendChild(el5, el6);
         dom.appendChild(el4, el5);
         var el5 = dom.createTextNode("\n\n                ");
-        dom.appendChild(el4, el5);
-        var el5 = dom.createElement("article");
-        dom.setAttribute(el5, "id", "epiwatch");
-        dom.setAttribute(el5, "class", "project");
-        var el6 = dom.createTextNode("\n                    ");
-        dom.appendChild(el5, el6);
-        var el6 = dom.createElement("header");
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("h3");
-        var el8 = dom.createTextNode("EpiWatch");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("h6");
-        var el8 = dom.createTextNode("Seizure Tracking on Apple Watch.");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("aside");
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "hopkinsmedicine.org/epiwatch");
-        var el9 = dom.createTextNode("Homepage");
-        dom.appendChild(el8, el9);
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                    ");
-        dom.appendChild(el6, el7);
-        dom.appendChild(el5, el6);
-        var el6 = dom.createTextNode("\n                    ");
-        dom.appendChild(el5, el6);
-        var el6 = dom.createElement("ul");
-        dom.setAttribute(el6, "class", "content");
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("li");
-        var el8 = dom.createElement("i");
-        var el9 = dom.createTextNode("Currently:");
-        dom.appendChild(el8, el9);
-        dom.appendChild(el7, el8);
-        var el8 = dom.createTextNode("Lead development on version 2. Implemented new UI on both iPhone and Apple\n                            Watch.\n                        ");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("li");
-        var el8 = dom.createTextNode("Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                    ");
-        dom.appendChild(el6, el7);
-        dom.appendChild(el5, el6);
-        var el6 = dom.createTextNode("\n                ");
-        dom.appendChild(el5, el6);
-        dom.appendChild(el4, el5);
-        var el5 = dom.createTextNode("\n                ");
         dom.appendChild(el4, el5);
         var el5 = dom.createElement("article");
         dom.setAttribute(el5, "id", "oasis");
@@ -2473,7 +2495,7 @@ define("personal-site/index/template", ["exports"], function (exports) {
         dom.appendChild(el4, el5);
         var el5 = dom.createElement("aside");
         dom.setAttribute(el5, "class", "timeline");
-        var el6 = dom.createTextNode("2012—2016");
+        var el6 = dom.createTextNode("GPA: 3.2 • 2012—2016");
         dom.appendChild(el5, el6);
         dom.appendChild(el4, el5);
         var el5 = dom.createTextNode("\n            ");
@@ -2491,64 +2513,79 @@ define("personal-site/index/template", ["exports"], function (exports) {
         var el6 = dom.createTextNode("\n                    ");
         dom.appendChild(el5, el6);
         var el6 = dom.createElement("header");
-        var el7 = dom.createTextNode("\n                        ");
+        var el7 = dom.createTextNode("\n");
         dom.appendChild(el6, el7);
-        var el7 = dom.createElement("h3");
-        var el8 = dom.createTextNode("ReadAhead Hybrid, Anacrusis LLC");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("h6");
-        var el8 = dom.createTextNode("Sightreading for the modern musician.");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("aside");
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "http://youtu.be/XM1nrW_uLqM");
-        var el9 = dom.createTextNode("Homepage");
-        dom.appendChild(el8, el9);
-        dom.appendChild(el7, el8);
-        var el8 = dom.createTextNode("\n                            ");
-        dom.appendChild(el7, el8);
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "http://youtu.be/XM1nrW_uLqM");
-        var el9 = dom.createTextNode("iTunes");
-        dom.appendChild(el8, el9);
-        dom.appendChild(el7, el8);
-        var el8 = dom.createTextNode("\n                            ");
-        dom.appendChild(el7, el8);
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "http://youtu.be/XM1nrW_uLqM");
-        var el9 = dom.createTextNode("Google Play");
-        dom.appendChild(el8, el9);
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                    ");
+        var el7 = dom.createTextNode("                    ");
         dom.appendChild(el6, el7);
         dom.appendChild(el5, el6);
         var el6 = dom.createTextNode("\n                    ");
         dom.appendChild(el5, el6);
         var el6 = dom.createElement("ul");
-        dom.setAttribute(el6, "class", "content");
+        dom.setAttribute(el6, "class", "classes");
         var el7 = dom.createTextNode("\n                        ");
         dom.appendChild(el6, el7);
         var el7 = dom.createElement("li");
-        var el8 = dom.createTextNode("Constructed Metronome in Javascript using WebAudio API for Cordova iOS application.");
+        var el8 = dom.createTextNode("Software Engineering");
         dom.appendChild(el7, el8);
         dom.appendChild(el6, el7);
         var el7 = dom.createTextNode("\n                        ");
         dom.appendChild(el6, el7);
         var el7 = dom.createElement("li");
-        var el8 = dom.createTextNode("Implemented UI Implemented in-app purchases.");
+        var el8 = dom.createTextNode("Algorithms");
         dom.appendChild(el7, el8);
         dom.appendChild(el6, el7);
         var el7 = dom.createTextNode("\n                        ");
         dom.appendChild(el6, el7);
         var el7 = dom.createElement("li");
-        var el8 = dom.createTextNode("Implemented open source Cordova plugin to access iOS Microphone.");
+        var el8 = dom.createTextNode("Assembly");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Operating Systems");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Architecture");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Quantum Computing");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Artificial Intelligence");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Databases");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Math Modeling");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Real Analysis");
+        dom.appendChild(el7, el8);
+        dom.appendChild(el6, el7);
+        var el7 = dom.createTextNode("\n                        ");
+        dom.appendChild(el6, el7);
+        var el7 = dom.createElement("li");
+        var el8 = dom.createTextNode("Topology");
         dom.appendChild(el7, el8);
         dom.appendChild(el6, el7);
         var el7 = dom.createTextNode("\n                    ");
@@ -2563,108 +2600,12 @@ define("personal-site/index/template", ["exports"], function (exports) {
         var el4 = dom.createTextNode("\n\n        ");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n        ");
+        var el3 = dom.createTextNode("\n");
         dom.appendChild(el2, el3);
-        var el3 = dom.createElement("article");
-        dom.setAttribute(el3, "class", "online");
-        var el4 = dom.createTextNode("\n            ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("header");
-        var el5 = dom.createTextNode("\n                ");
-        dom.appendChild(el4, el5);
-        var el5 = dom.createElement("h2");
-        var el6 = dom.createTextNode("Online Coursework:");
-        dom.appendChild(el5, el6);
-        dom.appendChild(el4, el5);
-        var el5 = dom.createTextNode("\n            ");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n            ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("section");
-        dom.setAttribute(el4, "class", "content");
-        var el5 = dom.createTextNode("\n                ");
-        dom.appendChild(el4, el5);
-        var el5 = dom.createElement("article");
-        dom.setAttribute(el5, "id", "coursera");
-        dom.setAttribute(el5, "class", "project");
-        var el6 = dom.createTextNode("\n                    ");
-        dom.appendChild(el5, el6);
-        var el6 = dom.createElement("header");
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("h3");
-        var el8 = dom.createTextNode("ReadAhead Hybrid, Anacrusis LLC");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("h6");
-        var el8 = dom.createTextNode("Sightreading for the modern musician.");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("aside");
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "http://youtu.be/XM1nrW_uLqM");
-        var el9 = dom.createTextNode("Homepage");
-        dom.appendChild(el8, el9);
-        dom.appendChild(el7, el8);
-        var el8 = dom.createTextNode("\n                            ");
-        dom.appendChild(el7, el8);
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "http://youtu.be/XM1nrW_uLqM");
-        var el9 = dom.createTextNode("iTunes");
-        dom.appendChild(el8, el9);
-        dom.appendChild(el7, el8);
-        var el8 = dom.createTextNode("\n                            ");
-        dom.appendChild(el7, el8);
-        var el8 = dom.createElement("a");
-        dom.setAttribute(el8, "href", "http://youtu.be/XM1nrW_uLqM");
-        var el9 = dom.createTextNode("Google Play");
-        dom.appendChild(el8, el9);
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                    ");
-        dom.appendChild(el6, el7);
-        dom.appendChild(el5, el6);
-        var el6 = dom.createTextNode("\n                    ");
-        dom.appendChild(el5, el6);
-        var el6 = dom.createElement("ul");
-        dom.setAttribute(el6, "class", "content");
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("li");
-        var el8 = dom.createTextNode("Constructed Metronome in Javascript using WebAudio API for Cordova iOS application.");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("li");
-        var el8 = dom.createTextNode("Implemented UI Implemented in-app purchases.");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                        ");
-        dom.appendChild(el6, el7);
-        var el7 = dom.createElement("li");
-        var el8 = dom.createTextNode("Implemented open source Cordova plugin to access iOS Microphone.");
-        dom.appendChild(el7, el8);
-        dom.appendChild(el6, el7);
-        var el7 = dom.createTextNode("\n                    ");
-        dom.appendChild(el6, el7);
-        dom.appendChild(el5, el6);
-        var el6 = dom.createTextNode("\n                ");
-        dom.appendChild(el5, el6);
-        dom.appendChild(el4, el5);
-        var el5 = dom.createTextNode("\n            ");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n        ");
-        dom.appendChild(el3, el4);
+        var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n\n    ");
-        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
@@ -2924,7 +2865,7 @@ define("personal-site/payload", ["exports"], function (exports) {
       "title": "REACH",
       "name": "Radiologists Engaging and Collaborating in Healthcare",
       "fullName": "Radiologists Engaging and Collaborating in Healthcare (REACH)",
-      "links": {},
+      "links": [],
       "detailedBackground": "In the old days before the  PACS (Image servers for Radiological Images), clinicians would walk to Radiology film rooms to consult with Radiologists. Clinicians and radiologists used to spend lots of time together, discussing and interpreting medical Images. \n\nNowadays this face to face communication is virtually nonexistant. Radiological images becmome a formal written report that's signed and sent electronically.  As a result, Radiologists' productivity has increased—they're reading more and more cases every day but at a cost: \n\n Consults generally happen only after scheduling, and then usually happen over the phone where both parties have their image viewer open, trying their best to keep their screens in sync (there can be hundereds or thousands of images in a procedure).\n\n REACH solves these problems by reintroducing face to face contact through an iPad VoIP session. REACH has a search interface to find exams, an embedded clinical viewer that syncs between the people on the call, and an intuitive UI to make it easy to connect.",
       "video": {
         "link": "http://youtu.be/XM1nrW_uLqM",
@@ -2963,7 +2904,6 @@ define("personal-site/payload", ["exports"], function (exports) {
         "comment": "REACH is built on the Analytical Informatics SDK. AI's platform (AI Bridge) provides a data warehouse that acts as a middle layer between client applications and the untenable HL7 messages that are so foundational to hospital IT systems."
       }],
       "technologies": ["ActiveRecord", "rails", "fastlane", "jruby", "ReactiveCocoa", "PostgreSQL", "ember", "javascript", "emberData", "asterisk"],
-
       "content": ["Designed/Built/Maintain iOS application in Swift and Objective-C.", "Embedded enterprise clinical medical image viewer into native iOS client application.", "Leveraged open source where possible: SIP video soft-phone library Liblinphone, JSON modeling framework Mantle, networking framework Alamofire, functional reactive programming", "Built web client with Ember.js leveraging WebRTC library SIP.js to connect iOS clients to Chrome, Firefox users.", "Configured a HIPAA compliant on-site Asterisk PBX server for WebRTC and h.264."]
     }, {
       "name": "OASIS",
@@ -3001,9 +2941,10 @@ define("personal-site/payload", ["exports"], function (exports) {
         "link": "http://youtu.be/k8N6zQnNpGI",
         "embed": "https://www.youtube.com/embed/k8N6zQnNpGI"
       },
-      "links": {
-        "Homepage": "hopkinsmedicine.org/epiwatch"
-      },
+      "links": [{
+        "name": "Homepage",
+        "link": "hopkinsmedicine.org/epiwatch"
+      }],
       "background": {
         "src": "epiwatch.png",
         "card-size": 2
@@ -3049,7 +2990,6 @@ define("personal-site/payload", ["exports"], function (exports) {
       "platforms": ["iphone", "watch"],
       "technologies": ["swift", "healthkit", "crashlytics", "researchkit", "bamboo", "fastlane", "fabric", "watch"],
       "content": ["<i>Currently:</i>Leading development on version 2. Implemented new UI on both iPhone and Apple Watch.", "Implemented surveys, user tasks, and charts/dashboards using ResearchKit and HealthKit", "Implemented Dynamic Type, Auto Layout throughout App.", "Lead iOS 10/WatchOS 3 release.", "Configured CI testing with Bamboo and Fastlane. ", "Improved data integrety by caching requests on disk until a successful response is confirmed.", "Configured Fastlane Match to simplify the management of Apple Developer Certificates/Keys."]
-
     }, {
       "name": "Resident Worklist",
       "color": {
@@ -3088,7 +3028,6 @@ define("personal-site/payload", ["exports"], function (exports) {
       "description": "",
       "platforms": ["web"],
       "technologies": ["rails", "ruby", "ember"],
-
       "news": [{
         "title": "Analytical to Launch Advanced Peer Review at SIIM 2016 in Portland.",
         "date": "06.23.16",
@@ -3119,7 +3058,8 @@ define("personal-site/payload", ["exports"], function (exports) {
       "platforms": [],
       "technologies": ["rails", "npm", "ember"],
       "content": ["Created on Ruby on Rails gem consolidating assets, deployment and development scripts, common app functionality, and RESTful APIs to patient data. This gem is now integrated into 5 applications. ", "3 published NPM packages for Ember-CLI."]
-    }], "oss": [{
+    }],
+    "oss": [{
       "name": "10Clock",
       "fullName": "iOS 10 Clock",
       "color": {
@@ -3143,11 +3083,16 @@ define("personal-site/payload", ["exports"], function (exports) {
       },
       "news": [],
       "platforms": ["iphone", "ipad"],
-      "links": {
-        "Github": "https://github.com/joedaniels29/SwiftClock",
-        "CocoaPods": "https://github.com/joedaniels29/SwiftClock",
-        "Report an Issue": "https://github.com/joedaniels29/SwiftClock/issues"
-      },
+      "links": [{
+        "name": "Github",
+        "link": "https://github.com/joedaniels29/SwiftClock"
+      }, {
+        "name": "CocoaPods",
+        "link": "https://github.com/joedaniels29/SwiftClock"
+      }, {
+        "name": "Report an Issue",
+        "link": "https://github.com/joedaniels29/SwiftClock/issues"
+      }],
       "description": "",
       "technologies": ["coreanimation", "pod", "swift"],
       "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application."]
@@ -3177,11 +3122,16 @@ define("personal-site/payload", ["exports"], function (exports) {
       "screenshots": [],
       "news": [],
       "platforms": ["iphone", "android"],
-      "links": {
-        "Homepage": "https://readaheadapp.com/",
-        "iTunes": "https://itunes.apple.com/us/app/read-ahead-hybrid-piano-sight/id1057615897?mt=8",
-        "Google Play": "https://play.google.com/store/apps/details?id=com.anacrusisllc.readahead&hl=en"
-      },
+      "links": [{
+        "name": "Homepage",
+        "link": "https://readaheadapp.com/"
+      }, {
+        "name": "iTunes",
+        "link": "https://itunes.apple.com/us/app/read-ahead-hybrid-piano-sight/id1057615897?mt=8"
+      }, {
+        "name": "Google Play",
+        "link": "https://play.google.com/store/apps/details?id=com.anacrusisllc.readahead&hl=en"
+      }],
       "description": "",
       "technologies": ["html", "appgyver", "cordova", "jquery"],
       "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application."]
@@ -3212,10 +3162,16 @@ define("personal-site/payload", ["exports"], function (exports) {
       "screenshots": [],
       "news": [],
       "platforms": ["ipad"],
-      "links": {
-        "Homepage": "https://readaheadapp.com/",
-        "iTunes": "https://itunes.apple.com/us/app/read-ahead-practice-piano/id806292431?mt=8"
-      },
+      "links": [{
+        "name": "Homepage",
+        "link": "https://readaheadapp.com/"
+      }, {
+        "name": "iTunes",
+        "link": "https://itunes.apple.com/us/app/read-ahead-practice-piano/id806292431?mt=8"
+      }, {
+        "name": "Steroids Microphone",
+        "link": "https://github.com/joedaniels29/cordova-plugin-mediocre-media"
+      }],
       "description": "",
       "technologies": ["appgyver", "html", "jquery"],
       "content": ["Constructed Metronome in Javascript using WebAudio API for Cordova iOS application.", "Implemented in-app purchases to allow the user to buy lessons.", "Implemented open source Cordova plugin to access iOS Microphone."]
@@ -3363,12 +3319,12 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 3,
-              "column": 8
+              "line": 5,
+              "column": 16
             },
             "end": {
-              "line": 9,
-              "column": 8
+              "line": 7,
+              "column": 16
             }
           },
           "moduleName": "personal-site/projects/glob/template.hbs"
@@ -3379,38 +3335,20 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("            ");
+          var el1 = dom.createTextNode("                    ");
           dom.appendChild(el0, el1);
-          var el1 = dom.createElement("div");
-          dom.setAttribute(el1, "class", "project-title");
-          var el2 = dom.createTextNode("\n                ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n                ");
-          dom.appendChild(el1, el2);
-          var el2 = dom.createElement("h1");
-          dom.setAttribute(el2, "class", "title");
-          var el3 = dom.createComment("");
-          dom.appendChild(el2, el3);
-          dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n            ");
-          dom.appendChild(el1, el2);
+          var el1 = dom.createComment("");
           dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n\n");
+          var el1 = dom.createTextNode("\n");
           dom.appendChild(el0, el1);
           return el0;
         },
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element7 = dom.childAt(fragment, [1]);
-          var element8 = dom.childAt(element7, [3]);
-          var morphs = new Array(3);
-          morphs[0] = dom.createMorphAt(element7, 1, 1);
-          morphs[1] = dom.createAttrMorph(element8, 'style');
-          morphs[2] = dom.createMorphAt(element8, 0, 0);
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
           return morphs;
         },
-        statements: [["inline", "application/hosted-img", [], ["pch", "icon", "name", ["subexpr", "or", [["get", "model.icon.src", ["loc", [null, [5, 61], [5, 75]]], 0, 0, 0, 0], ["get", "model.icon", ["loc", [null, [5, 76], [5, 86]]], 0, 0, 0, 0]], [], ["loc", [null, [5, 57], [5, 87]]], 0, 0], "alt", ["subexpr", "or", [["get", "model.icon.alt", ["loc", [null, [5, 96], [5, 110]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [5, 111], [5, 121]]], 0, 0, 0, 0]], [], ["loc", [null, [5, 92], [5, 122]]], 0, 0], "class", "logo"], ["loc", [null, [5, 16], [5, 137]]], 0, 0], ["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [6, 50], [6, 69]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["inline", "or", [["get", "model.title", ["loc", [null, [6, 79], [6, 90]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [6, 91], [6, 101]]], 0, 0, 0, 0]], [], ["loc", [null, [6, 74], [6, 103]]], 0, 0]],
+        statements: [["inline", "application/hosted-img", [], ["pch", "icon", "name", ["subexpr", "or", [["get", "model.icon.src", ["loc", [null, [6, 65], [6, 79]]], 0, 0, 0, 0], ["get", "model.icon", ["loc", [null, [6, 80], [6, 90]]], 0, 0, 0, 0]], [], ["loc", [null, [6, 61], [6, 91]]], 0, 0], "alt", ["subexpr", "or", [["get", "model.icon.alt", ["loc", [null, [6, 100], [6, 114]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [6, 115], [6, 125]]], 0, 0, 0, 0]], [], ["loc", [null, [6, 96], [6, 126]]], 0, 0], "class", "logo"], ["loc", [null, [6, 20], [6, 141]]], 0, 0]],
         locals: [],
         templates: []
       };
@@ -3422,12 +3360,12 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 9,
-              "column": 8
+              "line": 11,
+              "column": 12
             },
             "end": {
-              "line": 11,
-              "column": 8
+              "line": 13,
+              "column": 12
             }
           },
           "moduleName": "personal-site/projects/glob/template.hbs"
@@ -3438,9 +3376,9 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("            ");
+          var el1 = dom.createTextNode("                ");
           dom.appendChild(el0, el1);
-          var el1 = dom.createElement("h1");
+          var el1 = dom.createElement("h2");
           var el2 = dom.createComment("");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
@@ -3455,7 +3393,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[1] = dom.createMorphAt(element6, 0, 0);
           return morphs;
         },
-        statements: [["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [10, 32], [10, 51]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["inline", "or", [["get", "model.title", ["loc", [null, [10, 61], [10, 72]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [10, 73], [10, 83]]], 0, 0, 0, 0]], [], ["loc", [null, [10, 56], [10, 85]]], 0, 0]],
+        statements: [["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [12, 36], [12, 55]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "model.name", ["loc", [null, [12, 60], [12, 74]]], 0, 0, 0, 0]],
         locals: [],
         templates: []
       };
@@ -3467,57 +3405,12 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 13,
-              "column": 8
+              "line": 14,
+              "column": 12
             },
             "end": {
-              "line": 15,
-              "column": 8
-            }
-          },
-          "moduleName": "personal-site/projects/glob/template.hbs"
-        },
-        isEmpty: false,
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("            ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("h2");
-          var el2 = dom.createComment("");
-          dom.appendChild(el1, el2);
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-          var element5 = dom.childAt(fragment, [1]);
-          var morphs = new Array(2);
-          morphs[0] = dom.createAttrMorph(element5, 'style');
-          morphs[1] = dom.createMorphAt(element5, 0, 0);
-          return morphs;
-        },
-        statements: [["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [14, 32], [14, 51]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "model.name", ["loc", [null, [14, 56], [14, 70]]], 0, 0, 0, 0]],
-        locals: [],
-        templates: []
-      };
-    })();
-    var child3 = (function () {
-      return {
-        meta: {
-          "revision": "Ember@2.7.0",
-          "loc": {
-            "source": null,
-            "start": {
               "line": 16,
-              "column": 8
-            },
-            "end": {
-              "line": 18,
-              "column": 8
+              "column": 12
             }
           },
           "moduleName": "personal-site/projects/glob/template.hbs"
@@ -3528,7 +3421,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         hasRendered: false,
         buildFragment: function buildFragment(dom) {
           var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("            ");
+          var el1 = dom.createTextNode("                ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("h4");
           var el2 = dom.createComment("");
@@ -3543,9 +3436,109 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
           return morphs;
         },
-        statements: [["content", "model.tagline", ["loc", [null, [17, 16], [17, 33]]], 0, 0, 0, 0]],
+        statements: [["content", "model.tagline", ["loc", [null, [15, 20], [15, 37]]], 0, 0, 0, 0]],
         locals: [],
         templates: []
+      };
+    })();
+    var child3 = (function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            "revision": "Ember@2.7.0",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 23,
+                "column": 20
+              },
+              "end": {
+                "line": 25,
+                "column": 20
+              }
+            },
+            "moduleName": "personal-site/projects/glob/template.hbs"
+          },
+          isEmpty: false,
+          arity: 1,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode("                        ");
+            dom.appendChild(el0, el1);
+            var el1 = dom.createElement("li");
+            var el2 = dom.createElement("a");
+            var el3 = dom.createComment("");
+            dom.appendChild(el2, el3);
+            dom.appendChild(el1, el2);
+            dom.appendChild(el0, el1);
+            var el1 = dom.createTextNode("\n");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var element5 = dom.childAt(fragment, [1, 0]);
+            var morphs = new Array(2);
+            morphs[0] = dom.createAttrMorph(element5, 'href');
+            morphs[1] = dom.createMorphAt(element5, 0, 0);
+            return morphs;
+          },
+          statements: [["attribute", "href", ["concat", [["get", "val.link", ["loc", [null, [24, 39], [24, 47]]], 0, 0, 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "val.name", ["loc", [null, [24, 51], [24, 63]]], 0, 0, 0, 0]],
+          locals: ["val"],
+          templates: []
+        };
+      })();
+      return {
+        meta: {
+          "revision": "Ember@2.7.0",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 20,
+              "column": 12
+            },
+            "end": {
+              "line": 27,
+              "column": 12
+            }
+          },
+          "moduleName": "personal-site/projects/glob/template.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("                ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("h6");
+          var el2 = dom.createTextNode("Links");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n                ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("ul");
+          var el2 = dom.createTextNode("\n");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createComment("");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("                ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(dom.childAt(fragment, [3]), 1, 1);
+          return morphs;
+        },
+        statements: [["block", "each", [["get", "model.links", ["loc", [null, [23, 28], [23, 39]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [23, 20], [25, 29]]]]],
+        locals: [],
+        templates: [child0]
       };
     })();
     var child4 = (function () {
@@ -3555,11 +3548,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 21,
+              "line": 31,
               "column": 4
             },
             "end": {
-              "line": 25,
+              "line": 35,
               "column": 4
             }
           },
@@ -3593,7 +3586,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 1]), 0, 0);
           return morphs;
         },
-        statements: [["content", "model.description", ["loc", [null, [23, 15], [23, 36]]], 0, 0, 0, 0]],
+        statements: [["content", "model.description", ["loc", [null, [33, 15], [33, 36]]], 0, 0, 0, 0]],
         locals: [],
         templates: []
       };
@@ -3606,11 +3599,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 29,
+                "line": 39,
                 "column": 12
               },
               "end": {
-                "line": 31,
+                "line": 41,
                 "column": 12
               }
             },
@@ -3637,7 +3630,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
             return morphs;
           },
-          statements: [["inline", "safe-string", [["get", "val", ["loc", [null, [30, 34], [30, 37]]], 0, 0, 0, 0]], [], ["loc", [null, [30, 20], [30, 39]]], 0, 0]],
+          statements: [["inline", "safe-string", [["get", "val", ["loc", [null, [40, 34], [40, 37]]], 0, 0, 0, 0]], [], ["loc", [null, [40, 20], [40, 39]]], 0, 0]],
           locals: ["val"],
           templates: []
         };
@@ -3648,11 +3641,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 27,
+              "line": 37,
               "column": 4
             },
             "end": {
-              "line": 33,
+              "line": 43,
               "column": 4
             }
           },
@@ -3683,7 +3676,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 1, 1);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model.content", ["loc", [null, [29, 20], [29, 33]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [29, 12], [31, 21]]]]],
+        statements: [["block", "each", [["get", "model.content", ["loc", [null, [39, 20], [39, 33]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [39, 12], [41, 21]]]]],
         locals: [],
         templates: [child0]
       };
@@ -3695,11 +3688,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 36,
+              "line": 46,
               "column": 4
             },
             "end": {
-              "line": 41,
+              "line": 51,
               "column": 4
             }
           },
@@ -3739,7 +3732,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 3]), 0, 0);
           return morphs;
         },
-        statements: [["content", "model.detailedBackground", ["loc", [null, [39, 15], [39, 43]]], 0, 0, 0, 0]],
+        statements: [["content", "model.detailedBackground", ["loc", [null, [49, 15], [49, 43]]], 0, 0, 0, 0]],
         locals: [],
         templates: []
       };
@@ -3751,11 +3744,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 42,
+              "line": 52,
               "column": 4
             },
             "end": {
-              "line": 47,
+              "line": 57,
               "column": 4
             }
           },
@@ -3795,7 +3788,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 3]), 0, 0);
           return morphs;
         },
-        statements: [["inline", "render-markdown", [], ["url", ["subexpr", "@mut", [["get", "model.readme.markdown", ["loc", [null, [45, 37], [45, 58]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [45, 15], [45, 60]]], 0, 0]],
+        statements: [["inline", "render-markdown", [], ["url", ["subexpr", "@mut", [["get", "model.readme.markdown", ["loc", [null, [55, 37], [55, 58]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [55, 15], [55, 60]]], 0, 0]],
         locals: [],
         templates: []
       };
@@ -3807,11 +3800,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 49,
+              "line": 59,
               "column": 4
             },
             "end": {
-              "line": 54,
+              "line": 64,
               "column": 4
             }
           },
@@ -3854,7 +3847,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createAttrMorph(element4, 'src');
           return morphs;
         },
-        statements: [["attribute", "src", ["concat", [["get", "model.video.embed", ["loc", [null, [52, 52], [52, 69]]], 0, 0, 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0]],
+        statements: [["attribute", "src", ["concat", [["get", "model.video.embed", ["loc", [null, [62, 52], [62, 69]]], 0, 0, 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0]],
         locals: [],
         templates: []
       };
@@ -3868,11 +3861,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 65,
+                  "line": 75,
                   "column": 12
                 },
                 "end": {
-                  "line": 67,
+                  "line": 77,
                   "column": 12
                 }
               },
@@ -3900,7 +3893,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
               morphs[0] = dom.createAttrMorph(element3, 'src');
               return morphs;
             },
-            statements: [["attribute", "src", ["get", "s", ["loc", [null, [66, 32], [66, 33]]], 0, 0, 0, 0], 0, 0, 0, 0]],
+            statements: [["attribute", "src", ["get", "s", ["loc", [null, [76, 32], [76, 33]]], 0, 0, 0, 0], 0, 0, 0, 0]],
             locals: ["s"],
             templates: []
           };
@@ -3911,11 +3904,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 57,
+                "line": 67,
                 "column": 8
               },
               "end": {
-                "line": 69,
+                "line": 79,
                 "column": 8
               }
             },
@@ -3939,7 +3932,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             dom.insertBoundary(fragment, 0);
             return morphs;
           },
-          statements: [["block", "each", [["get", "model.screenshots", ["loc", [null, [65, 20], [65, 37]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [65, 12], [67, 21]]]]],
+          statements: [["block", "each", [["get", "model.screenshots", ["loc", [null, [75, 20], [75, 37]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [75, 12], [77, 21]]]]],
           locals: [],
           templates: [child0]
         };
@@ -3950,11 +3943,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 56,
+              "line": 66,
               "column": 4
             },
             "end": {
-              "line": 70,
+              "line": 80,
               "column": 4
             }
           },
@@ -3977,7 +3970,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           dom.insertBoundary(fragment, null);
           return morphs;
         },
-        statements: [["block", "slick-carousel", [], ["class", "ember-carousel", "autoplay", true, "autoplaySpeed", 2000, "slidesToShow", 1, "slidesToScroll", 1, "dots", true, "fade", true], 0, null, ["loc", [null, [57, 8], [69, 27]]]]],
+        statements: [["block", "slick-carousel", [], ["class", "ember-carousel", "autoplay", true, "autoplaySpeed", 2000, "slidesToShow", 1, "slidesToScroll", 1, "dots", true, "fade", true], 0, null, ["loc", [null, [67, 8], [79, 27]]]]],
         locals: [],
         templates: [child0]
       };
@@ -3991,11 +3984,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
               "loc": {
                 "source": null,
                 "start": {
-                  "line": 84,
+                  "line": 94,
                   "column": 24
                 },
                 "end": {
-                  "line": 86,
+                  "line": 96,
                   "column": 24
                 }
               },
@@ -4022,7 +4015,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
               morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 0, 0);
               return morphs;
             },
-            statements: [["content", "story.comment", ["loc", [null, [85, 37], [85, 54]]], 0, 0, 0, 0]],
+            statements: [["content", "story.comment", ["loc", [null, [95, 37], [95, 54]]], 0, 0, 0, 0]],
             locals: [],
             templates: []
           };
@@ -4033,11 +4026,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 78,
+                "line": 88,
                 "column": 16
               },
               "end": {
-                "line": 88,
+                "line": 98,
                 "column": 16
               }
             },
@@ -4103,7 +4096,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             morphs[4] = dom.createMorphAt(element0, 5, 5);
             return morphs;
           },
-          statements: [["content", "story.date", ["loc", [null, [81, 47], [81, 61]]], 0, 0, 0, 0], ["content", "story.host", ["loc", [null, [81, 90], [81, 104]]], 0, 0, 0, 0], ["attribute", "href", ["concat", [["get", "story.url", ["loc", [null, [83, 35], [83, 44]]], 0, 0, 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "story.title", ["loc", [null, [83, 52], [83, 67]]], 0, 0, 0, 0], ["block", "if", [["get", "story.comment", ["loc", [null, [84, 30], [84, 43]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [84, 24], [86, 31]]]]],
+          statements: [["content", "story.date", ["loc", [null, [91, 47], [91, 61]]], 0, 0, 0, 0], ["content", "story.host", ["loc", [null, [91, 90], [91, 104]]], 0, 0, 0, 0], ["attribute", "href", ["concat", [["get", "story.url", ["loc", [null, [93, 35], [93, 44]]], 0, 0, 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "story.title", ["loc", [null, [93, 52], [93, 67]]], 0, 0, 0, 0], ["block", "if", [["get", "story.comment", ["loc", [null, [94, 30], [94, 43]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [94, 24], [96, 31]]]]],
           locals: ["story"],
           templates: [child0]
         };
@@ -4114,11 +4107,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 74,
+              "line": 84,
               "column": 4
             },
             "end": {
-              "line": 93,
+              "line": 103,
               "column": 4
             }
           },
@@ -4162,7 +4155,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1, 3]), 1, 1);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model.news", ["loc", [null, [78, 24], [78, 34]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [78, 16], [88, 25]]]]],
+        statements: [["block", "each", [["get", "model.news", ["loc", [null, [88, 24], [88, 34]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [88, 16], [98, 25]]]]],
         locals: [],
         templates: [child0]
       };
@@ -4174,11 +4167,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 96,
+              "line": 106,
               "column": 4
             },
             "end": {
-              "line": 101,
+              "line": 111,
               "column": 4
             }
           },
@@ -4216,7 +4209,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 3, 3);
           return morphs;
         },
-        statements: [["inline", "application/tweets-group", [], ["model", ["subexpr", "@mut", [["get", "model.tweets", ["loc", [null, [99, 45], [99, 57]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [99, 12], [99, 59]]], 0, 0]],
+        statements: [["inline", "application/tweets-group", [], ["model", ["subexpr", "@mut", [["get", "model.tweets", ["loc", [null, [109, 45], [109, 57]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [109, 12], [109, 59]]], 0, 0]],
         locals: [],
         templates: []
       };
@@ -4229,11 +4222,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 107,
+                "line": 117,
                 "column": 12
               },
               "end": {
-                "line": 109,
+                "line": 119,
                 "column": 12
               }
             },
@@ -4258,7 +4251,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "skills/platform-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [108, 50], [108, 55]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [108, 16], [108, 57]]], 0, 0]],
+          statements: [["inline", "skills/platform-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [118, 50], [118, 55]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [118, 16], [118, 57]]], 0, 0]],
           locals: ["skill"],
           templates: []
         };
@@ -4269,11 +4262,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 104,
+              "line": 114,
               "column": 4
             },
             "end": {
-              "line": 112,
+              "line": 122,
               "column": 4
             }
           },
@@ -4311,7 +4304,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 3, 3);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model.platforms", ["loc", [null, [107, 20], [107, 35]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [107, 12], [109, 21]]]]],
+        statements: [["block", "each", [["get", "model.platforms", ["loc", [null, [117, 20], [117, 35]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [117, 12], [119, 21]]]]],
         locals: [],
         templates: [child0]
       };
@@ -4324,11 +4317,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "loc": {
               "source": null,
               "start": {
-                "line": 116,
+                "line": 126,
                 "column": 12
               },
               "end": {
-                "line": 118,
+                "line": 128,
                 "column": 12
               }
             },
@@ -4353,7 +4346,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
             return morphs;
           },
-          statements: [["inline", "skills/skill-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [117, 47], [117, 52]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [117, 16], [117, 54]]], 0, 0]],
+          statements: [["inline", "skills/skill-display", [], ["modelId", ["subexpr", "@mut", [["get", "skill", ["loc", [null, [127, 47], [127, 52]]], 0, 0, 0, 0]], [], [], 0, 0]], ["loc", [null, [127, 16], [127, 54]]], 0, 0]],
           locals: ["skill"],
           templates: []
         };
@@ -4364,11 +4357,11 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 113,
+              "line": 123,
               "column": 4
             },
             "end": {
-              "line": 121,
+              "line": 131,
               "column": 4
             }
           },
@@ -4406,7 +4399,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
           morphs[0] = dom.createMorphAt(dom.childAt(fragment, [1]), 3, 3);
           return morphs;
         },
-        statements: [["block", "each", [["get", "model.technologies", ["loc", [null, [116, 20], [116, 38]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [116, 12], [118, 21]]]]],
+        statements: [["block", "each", [["get", "model.technologies", ["loc", [null, [126, 20], [126, 38]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [126, 12], [128, 21]]]]],
         locals: [],
         templates: [child0]
       };
@@ -4421,7 +4414,7 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 123,
+            "line": 133,
             "column": 10
           }
         },
@@ -4437,15 +4430,46 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         var el2 = dom.createTextNode("\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("header");
-        var el3 = dom.createTextNode("\n");
+        var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
+        var el3 = dom.createElement("section");
+        var el4 = dom.createTextNode("\n            ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createElement("div");
+        dom.setAttribute(el4, "class", "project-title");
+        var el5 = dom.createTextNode("\n");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createComment("");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createTextNode("                ");
+        dom.appendChild(el4, el5);
+        var el5 = dom.createElement("h1");
+        dom.setAttribute(el5, "class", "title");
+        var el6 = dom.createComment("");
+        dom.appendChild(el5, el6);
+        dom.appendChild(el4, el5);
+        var el5 = dom.createTextNode("\n            ");
+        dom.appendChild(el4, el5);
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n\n");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("        ");
+        dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n");
+        var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createComment("");
+        var el3 = dom.createElement("nav");
+        dom.setAttribute(el3, "class", "links");
+        var el4 = dom.createTextNode("\n\n");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n        ");
+        dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
@@ -4496,26 +4520,32 @@ define("personal-site/projects/glob/template", ["exports"], function (exports) {
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var element9 = dom.childAt(fragment, [0]);
+        var element7 = dom.childAt(fragment, [0]);
+        var element8 = dom.childAt(element7, [1]);
+        var element9 = dom.childAt(element8, [1]);
         var element10 = dom.childAt(element9, [1]);
-        var morphs = new Array(14);
+        var element11 = dom.childAt(element10, [3]);
+        var morphs = new Array(17);
         morphs[0] = dom.createMorphAt(element10, 1, 1);
-        morphs[1] = dom.createMorphAt(element10, 3, 3);
-        morphs[2] = dom.createMorphAt(element10, 4, 4);
+        morphs[1] = dom.createAttrMorph(element11, 'style');
+        morphs[2] = dom.createMorphAt(element11, 0, 0);
         morphs[3] = dom.createMorphAt(element9, 3, 3);
-        morphs[4] = dom.createMorphAt(element9, 5, 5);
-        morphs[5] = dom.createMorphAt(element9, 7, 7);
-        morphs[6] = dom.createMorphAt(element9, 8, 8);
-        morphs[7] = dom.createMorphAt(element9, 10, 10);
-        morphs[8] = dom.createMorphAt(element9, 12, 12);
-        morphs[9] = dom.createMorphAt(element9, 14, 14);
-        morphs[10] = dom.createMorphAt(element9, 16, 16);
-        morphs[11] = dom.createMorphAt(element9, 18, 18);
-        morphs[12] = dom.createMorphAt(element9, 19, 19);
-        morphs[13] = dom.createMorphAt(element9, 21, 21);
+        morphs[4] = dom.createMorphAt(element9, 4, 4);
+        morphs[5] = dom.createMorphAt(dom.childAt(element8, [3]), 1, 1);
+        morphs[6] = dom.createMorphAt(element7, 3, 3);
+        morphs[7] = dom.createMorphAt(element7, 5, 5);
+        morphs[8] = dom.createMorphAt(element7, 7, 7);
+        morphs[9] = dom.createMorphAt(element7, 8, 8);
+        morphs[10] = dom.createMorphAt(element7, 10, 10);
+        morphs[11] = dom.createMorphAt(element7, 12, 12);
+        morphs[12] = dom.createMorphAt(element7, 14, 14);
+        morphs[13] = dom.createMorphAt(element7, 16, 16);
+        morphs[14] = dom.createMorphAt(element7, 18, 18);
+        morphs[15] = dom.createMorphAt(element7, 19, 19);
+        morphs[16] = dom.createMorphAt(element7, 21, 21);
         return morphs;
       },
-      statements: [["block", "if", [["get", "model.icon", ["loc", [null, [3, 14], [3, 24]]], 0, 0, 0, 0]], [], 0, 1, ["loc", [null, [3, 8], [11, 15]]]], ["block", "if", [["get", "model.title", ["loc", [null, [13, 14], [13, 25]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [13, 8], [15, 15]]]], ["block", "if", [["get", "model.tagline", ["loc", [null, [16, 14], [16, 27]]], 0, 0, 0, 0]], [], 3, null, ["loc", [null, [16, 8], [18, 15]]]], ["block", "if", [["get", "model.description", ["loc", [null, [21, 10], [21, 27]]], 0, 0, 0, 0]], [], 4, null, ["loc", [null, [21, 4], [25, 11]]]], ["block", "if", [["get", "model.content", ["loc", [null, [27, 10], [27, 23]]], 0, 0, 0, 0]], [], 5, null, ["loc", [null, [27, 4], [33, 11]]]], ["block", "if", [["get", "model.detailedBackground", ["loc", [null, [36, 10], [36, 34]]], 0, 0, 0, 0]], [], 6, null, ["loc", [null, [36, 4], [41, 11]]]], ["block", "if", [["get", "model.readme", ["loc", [null, [42, 10], [42, 22]]], 0, 0, 0, 0]], [], 7, null, ["loc", [null, [42, 4], [47, 11]]]], ["block", "if", [["get", "model.video", ["loc", [null, [49, 10], [49, 21]]], 0, 0, 0, 0]], [], 8, null, ["loc", [null, [49, 4], [54, 11]]]], ["block", "if", [["get", "model.screenshots", ["loc", [null, [56, 10], [56, 27]]], 0, 0, 0, 0]], [], 9, null, ["loc", [null, [56, 4], [70, 11]]]], ["block", "if", [["get", "model.news", ["loc", [null, [74, 10], [74, 20]]], 0, 0, 0, 0]], [], 10, null, ["loc", [null, [74, 4], [93, 11]]]], ["block", "if", [["get", "model.tweets", ["loc", [null, [96, 10], [96, 22]]], 0, 0, 0, 0]], [], 11, null, ["loc", [null, [96, 4], [101, 11]]]], ["block", "if", [["get", "model.platforms", ["loc", [null, [104, 10], [104, 25]]], 0, 0, 0, 0]], [], 12, null, ["loc", [null, [104, 4], [112, 11]]]], ["block", "if", [["get", "model.technologies", ["loc", [null, [113, 10], [113, 28]]], 0, 0, 0, 0]], [], 13, null, ["loc", [null, [113, 4], [121, 11]]]], ["content", "outlet", ["loc", [null, [122, 4], [122, 14]]], 0, 0, 0, 0]],
+      statements: [["block", "if", [["get", "model.icon", ["loc", [null, [5, 22], [5, 32]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [5, 16], [7, 23]]]], ["attribute", "style", ["concat", ["color: ", ["get", "model.color.primary", ["loc", [null, [8, 50], [8, 69]]], 0, 0, 0, 0], ";"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["inline", "or", [["get", "model.title", ["loc", [null, [8, 79], [8, 90]]], 0, 0, 0, 0], ["get", "model.name", ["loc", [null, [8, 91], [8, 101]]], 0, 0, 0, 0]], [], ["loc", [null, [8, 74], [8, 103]]], 0, 0], ["block", "if", [["get", "model.title", ["loc", [null, [11, 18], [11, 29]]], 0, 0, 0, 0]], [], 1, null, ["loc", [null, [11, 12], [13, 19]]]], ["block", "if", [["get", "model.tagline", ["loc", [null, [14, 18], [14, 31]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [14, 12], [16, 19]]]], ["block", "if", [["get", "model.links", ["loc", [null, [20, 18], [20, 29]]], 0, 0, 0, 0]], [], 3, null, ["loc", [null, [20, 12], [27, 19]]]], ["block", "if", [["get", "model.description", ["loc", [null, [31, 10], [31, 27]]], 0, 0, 0, 0]], [], 4, null, ["loc", [null, [31, 4], [35, 11]]]], ["block", "if", [["get", "model.content", ["loc", [null, [37, 10], [37, 23]]], 0, 0, 0, 0]], [], 5, null, ["loc", [null, [37, 4], [43, 11]]]], ["block", "if", [["get", "model.detailedBackground", ["loc", [null, [46, 10], [46, 34]]], 0, 0, 0, 0]], [], 6, null, ["loc", [null, [46, 4], [51, 11]]]], ["block", "if", [["get", "model.readme", ["loc", [null, [52, 10], [52, 22]]], 0, 0, 0, 0]], [], 7, null, ["loc", [null, [52, 4], [57, 11]]]], ["block", "if", [["get", "model.video", ["loc", [null, [59, 10], [59, 21]]], 0, 0, 0, 0]], [], 8, null, ["loc", [null, [59, 4], [64, 11]]]], ["block", "if", [["get", "model.screenshots", ["loc", [null, [66, 10], [66, 27]]], 0, 0, 0, 0]], [], 9, null, ["loc", [null, [66, 4], [80, 11]]]], ["block", "if", [["get", "model.news", ["loc", [null, [84, 10], [84, 20]]], 0, 0, 0, 0]], [], 10, null, ["loc", [null, [84, 4], [103, 11]]]], ["block", "if", [["get", "model.tweets", ["loc", [null, [106, 10], [106, 22]]], 0, 0, 0, 0]], [], 11, null, ["loc", [null, [106, 4], [111, 11]]]], ["block", "if", [["get", "model.platforms", ["loc", [null, [114, 10], [114, 25]]], 0, 0, 0, 0]], [], 12, null, ["loc", [null, [114, 4], [122, 11]]]], ["block", "if", [["get", "model.technologies", ["loc", [null, [123, 10], [123, 28]]], 0, 0, 0, 0]], [], 13, null, ["loc", [null, [123, 4], [131, 11]]]], ["content", "outlet", ["loc", [null, [132, 4], [132, 14]]], 0, 0, 0, 0]],
       locals: [],
       templates: [child0, child1, child2, child3, child4, child5, child6, child7, child8, child9, child10, child11, child12, child13]
     };
@@ -4740,7 +4770,7 @@ define("personal-site/projects/index/template", ["exports"], function (exports) 
           morphs[7] = dom.createMorphAt(element4, 0, 0);
           return morphs;
         },
-        statements: [["attribute", "style", ["subexpr", "concat", [["subexpr", "if", [["subexpr", "and", [["get", "m.background", ["loc", [null, [6, 24], [6, 36]]], 0, 0, 0, 0], ["get", "m.background.image", ["loc", [null, [6, 37], [6, 55]]], 0, 0, 0, 0]], [], ["loc", [null, [6, 19], [6, 56]]], 0, 0], ["subexpr", "concat", ["background-image: url(", "assets/images/", ["get", "m.background.image", ["loc", [null, [7, 66], [7, 84]]], 0, 0, 0, 0], ");"], [], ["loc", [null, [7, 16], [7, 90]]], 0, 0], ["subexpr", "if", [["get", "m.background", ["loc", [null, [8, 20], [8, 32]]], 0, 0, 0, 0], ["subexpr", "concat", ["background-color:", ["get", "m.background.color", ["loc", [null, [8, 61], [8, 79]]], 0, 0, 0, 0], ";"], [], ["loc", [null, [8, 33], [8, 84]]], 0, 0]], [], ["loc", [null, [8, 16], [8, 85]]], 0, 0]], [], ["loc", [null, [6, 15], [9, 16]]], 0, 0]], [], ["loc", [null, [null, null], [10, 17]]], 0, 0], 0, 0, 0, 0], ["attribute", "class", ["subexpr", "join", [" ", ["subexpr", "flatten", [["subexpr", "array", ["grid-item", ["get", "m.customClasses", ["loc", [null, [12, 60], [12, 75]]], 0, 0, 0, 0]], [], ["loc", [null, [12, 41], [12, 76]]], 0, 0]], [], ["loc", [null, [12, 32], [12, 77]]], 0, 0]], [], ["loc", [null, [null, null], [12, 79]]], 0, 0], 0, 0, 0, 0], ["element", "action", ["transition", "projects.glob", ["get", "m.id", ["loc", [null, [4, 53], [4, 57]]], 0, 0, 0, 0]], [], ["loc", [null, [4, 15], [4, 59]]], 0, 0], ["block", "if", [["get", "m.icon", ["loc", [null, [14, 22], [14, 28]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [14, 16], [16, 23]]]], ["block", "if", [["get", "m.title", ["loc", [null, [18, 22], [18, 29]]], 0, 0, 0, 0]], [], 1, null, ["loc", [null, [18, 16], [22, 23]]]], ["block", "if", [["get", "m.name", ["loc", [null, [24, 22], [24, 28]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [24, 16], [29, 23]]]], ["attribute", "style", ["concat", [["subexpr", "if", [["get", "m.color.copy", ["loc", [null, [30, 35], [30, 47]]], 0, 0, 0, 0], ["subexpr", "join", [" ", ["subexpr", "array", ["color:", ["get", "m.color.copy", ["loc", [null, [30, 74], [30, 86]]], 0, 0, 0, 0], ";"], [], ["loc", [null, [30, 58], [30, 91]]], 0, 0]], [], ["loc", [null, [30, 48], [30, 92]]], 0, 0]], [], ["loc", [null, [30, 30], [30, 94]]], 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "m.tagline", ["loc", [null, [30, 96], [30, 109]]], 0, 0, 0, 0]],
+        statements: [["attribute", "style", ["subexpr", "concat", [["subexpr", "if", [["subexpr", "and", [["get", "m.background", ["loc", [null, [6, 24], [6, 36]]], 0, 0, 0, 0], ["get", "m.background.image", ["loc", [null, [6, 37], [6, 55]]], 0, 0, 0, 0]], [], ["loc", [null, [6, 19], [6, 56]]], 0, 0], ["subexpr", "concat", ["background-image: url(", "assets/images/", ["get", "m.background.image", ["loc", [null, [7, 66], [7, 84]]], 0, 0, 0, 0], ");"], [], ["loc", [null, [7, 16], [7, 90]]], 0, 0], ["subexpr", "if", [["get", "m.background", ["loc", [null, [8, 20], [8, 32]]], 0, 0, 0, 0], ["subexpr", "concat", ["background-color:", ["get", "m.background.color", ["loc", [null, [8, 61], [8, 79]]], 0, 0, 0, 0], ";"], [], ["loc", [null, [8, 33], [8, 84]]], 0, 0]], [], ["loc", [null, [8, 16], [8, 85]]], 0, 0]], [], ["loc", [null, [6, 15], [9, 16]]], 0, 0]], [], ["loc", [null, [null, null], [10, 17]]], 0, 0], 0, 0, 0, 0], ["attribute", "class", ["subexpr", "join", [" ", ["subexpr", "flatten", [["subexpr", "array", ["grid-item", ["get", "m.customClasses", ["loc", [null, [12, 60], [12, 75]]], 0, 0, 0, 0], ["get", "m.id", ["loc", [null, [12, 76], [12, 80]]], 0, 0, 0, 0]], [], ["loc", [null, [12, 41], [12, 81]]], 0, 0]], [], ["loc", [null, [12, 32], [12, 82]]], 0, 0]], [], ["loc", [null, [null, null], [12, 84]]], 0, 0], 0, 0, 0, 0], ["element", "action", ["transition", "projects.glob", ["get", "m.id", ["loc", [null, [4, 53], [4, 57]]], 0, 0, 0, 0]], [], ["loc", [null, [4, 15], [4, 59]]], 0, 0], ["block", "if", [["get", "m.icon", ["loc", [null, [14, 22], [14, 28]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [14, 16], [16, 23]]]], ["block", "if", [["get", "m.title", ["loc", [null, [18, 22], [18, 29]]], 0, 0, 0, 0]], [], 1, null, ["loc", [null, [18, 16], [22, 23]]]], ["block", "if", [["get", "m.name", ["loc", [null, [24, 22], [24, 28]]], 0, 0, 0, 0]], [], 2, null, ["loc", [null, [24, 16], [29, 23]]]], ["attribute", "style", ["concat", [["subexpr", "if", [["get", "m.color.copy", ["loc", [null, [30, 35], [30, 47]]], 0, 0, 0, 0], ["subexpr", "join", [" ", ["subexpr", "array", ["color:", ["get", "m.color.copy", ["loc", [null, [30, 74], [30, 86]]], 0, 0, 0, 0], ";"], [], ["loc", [null, [30, 58], [30, 91]]], 0, 0]], [], ["loc", [null, [30, 48], [30, 92]]], 0, 0]], [], ["loc", [null, [30, 30], [30, 94]]], 0, 0]], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["content", "m.tagline", ["loc", [null, [30, 96], [30, 109]]], 0, 0, 0, 0]],
         locals: ["m"],
         templates: [child0, child1, child2]
       };
@@ -5099,9 +5129,9 @@ define('personal-site/router', ['exports', 'ember', 'personal-site/config/enviro
   });
 
   Router.map(function () {
-    this.route('index', { path: "/" });
+    this.route('index', { path: "/resume" });
 
-    this.route('projects', function () {
+    this.route('projects', { path: "/" }, function () {
       // this.route('index');
       // this.route('epiwatch');
       // this.route('oasis');
@@ -5848,7 +5878,7 @@ define('personal-site/transitions', ['exports'], function (exports) {
      */
 
     exports['default'] = function () {
-        this.transition(this.fromRoute('index'), this.toRoute('projects'), this.use('toLeft'), this.reverse('toRight'));
+        this.transition(this.toRoute('index'), this.fromRoute('projects'), this.use('toLeft'), this.reverse('toRight'));
         var duration = 500;
         this.transition(this.childOf('.lett-r-container'), this.use('custom-explode', {
             matchBy: 'data-letter',
@@ -6321,7 +6351,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+e5b2d687"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+2971ced6"});
 }
 
 /* jshint ignore:end */
